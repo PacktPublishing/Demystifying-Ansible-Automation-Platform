@@ -1,0 +1,79 @@
+---
+apiVersion: automationcontroller.ansible.com/v1beta1
+kind: AutomationController
+metadata:
+  name: example
+  namespace: ansible-automation-platform
+spec:
+  ee_resource_requirements:
+    limits:
+      cpu: cpu
+      memory: memor
+      ephemeral-storage: storage
+    requests:
+      cpu: cpu
+      memory: memory
+      ephemeral-storage: storage
+  create_preload_data: true
+  route_tls_termination_mechanism: Edge
+  garbage_collect_secrets: false
+  loadbalancer_port: 80
+  task_resource_requirements:
+    limits:
+      cpu: cpu
+      memory: mem
+      ephemeral-storage: stor
+    requests:
+      cpu: cpu
+      memory: mem
+      ephemeral-storage: stor
+  image_pull_policy: IfNotPresent
+  projects_storage_size: 8Gi
+  task_privileged: false
+  projects_storage_access_mode: ReadWriteMany
+  web_resource_requirements:
+    limits:
+      cpu: cpu
+      memory: mem
+      ephemeral-storage: stor
+    requests:
+      cpu: cpu
+      memory: mem
+      ephemeral-storage: stor
+  postgres_storage_requirements:
+    limits:
+      cpu: cpu
+      memory: memory
+      ephemeral-storage: stor
+    requests:
+      cpu: cpu
+      memory: mem
+      ephemeral-storage: stor
+  projects_persistence: true
+  postgres_resource_requirements:
+    limits:
+      cpu: cpu
+      memory: memory
+      ephemeral-storage: storage
+    requests:
+      cpu: cpu
+      memory: memory
+      ephemeral-storage: storage
+  replicas: 1
+  admin_user: admin
+  loadbalancer_protocol: http
+  nodeport_port: 30080
+  service_type: NodePort
+  ingress_type: none
+  bundle_cacert_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+  ee_pull_credentials_secret: automation-controller-operator-controller-manager-token-l29sx
+  ldap_cacert_secret: automation-controller-operator-controller-manager-token-l29sx
+  hostname: asdf
+  admin_email: asdf@asdf.com
+  admin_password_secret: builder-dockercfg-tbbzq
+  postgres_configuration_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+  old_postgres_configuration_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+  secret_key_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+  service_account_annotations: asdf
+  image_pull_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+...

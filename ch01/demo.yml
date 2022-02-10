@@ -1,0 +1,9 @@
+---
+- name: Demo Playbook
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - debug:
+        msg: Hello world
+...

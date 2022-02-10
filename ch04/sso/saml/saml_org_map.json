@@ -1,0 +1,10 @@
+{
+    "Default": {
+       "users": true,
+       "admins": [
+          "ansible_admin"
+       ],
+       "remove_admins": false,
+       "remove_users": false,
+    }
+ }

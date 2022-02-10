@@ -1,0 +1,664 @@
+# extended LDIF
+#
+# LDAPv3
+# base <cn=Users,dc=ansible,dc=lcl> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# Users, ansible.lcl
+dn: CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: container
+cn: Users
+description: Default container for upgraded user accounts
+distinguishedName: CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025123.0Z
+whenChanged: 20220202025123.0Z
+uSNCreated: 5660
+uSNChanged: 5660
+showInAdvancedViewOnly: FALSE
+name: Users
+objectGUID:: EPcBSfIWdkWKeNdRXBRVzQ==
+systemFlags: -1946157056
+objectCategory: CN=Container,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220203044328.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+
+# krbtgt, Users, ansible.lcl
+dn: CN=krbtgt,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: krbtgt
+description: Key Distribution Center Service Account
+distinguishedName: CN=krbtgt,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025209.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 12324
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+uSNChanged: 12798
+showInAdvancedViewOnly: TRUE
+name: krbtgt
+objectGUID:: ujiMdq2u8EGerUplyT1bzA==
+userAccountControl: 514
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132882439297231855
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2d9gEAAA==
+adminCount: 1
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: krbtgt
+sAMAccountType: 805306368
+servicePrincipalName: kadmin/changepw
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+msDS-SupportedEncryptionTypes: 0
+
+# Domain Computers, Users, ansible.lcl
+dn: CN=Domain Computers,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Domain Computers
+description: All workstations and servers joined to the domain
+distinguishedName: CN=Domain Computers,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025209.0Z
+whenChanged: 20220202025209.0Z
+uSNCreated: 12330
+uSNChanged: 12332
+name: Domain Computers
+objectGUID:: t2vjmon/akaFS3+0EfC5+w==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dAwIAAA==
+sAMAccountName: Domain Computers
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Domain Controllers, Users, ansible.lcl
+dn: CN=Domain Controllers,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Domain Controllers
+description: All domain controllers in the domain
+distinguishedName: CN=Domain Controllers,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025209.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 12333
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+uSNChanged: 12799
+name: Domain Controllers
+objectGUID:: NIhXixnw8UmjLuufjVpQPw==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dBAIAAA==
+adminCount: 1
+sAMAccountName: Domain Controllers
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+
+# Schema Admins, Users, ansible.lcl
+dn: CN=Schema Admins,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Schema Admins
+description: Designated administrators of the schema
+member: CN=Administrator,CN=Users,DC=ansible,DC=lcl
+distinguishedName: CN=Schema Admins,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025209.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 12336
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+uSNChanged: 12782
+name: Schema Admins
+objectGUID:: k7dJnfN3G0+yKkh0eswCSw==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dBgIAAA==
+adminCount: 1
+sAMAccountName: Schema Admins
+sAMAccountType: 268435456
+groupType: -2147483640
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+
+# Enterprise Admins, Users, ansible.lcl
+dn: CN=Enterprise Admins,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Enterprise Admins
+description: Designated administrators of the enterprise
+member: CN=Administrator,CN=Users,DC=ansible,DC=lcl
+distinguishedName: CN=Enterprise Admins,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025209.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 12339
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+memberOf: CN=Administrators,CN=Builtin,DC=ansible,DC=lcl
+uSNChanged: 12780
+name: Enterprise Admins
+objectGUID:: Y+c60DZTqUC0ADH69CrqWg==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dBwIAAA==
+adminCount: 1
+sAMAccountName: Enterprise Admins
+sAMAccountType: 268435456
+groupType: -2147483640
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+
+# Cert Publishers, Users, ansible.lcl
+dn: CN=Cert Publishers,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Cert Publishers
+description: Members of this group are permitted to publish certificates to th
+ e directory
+distinguishedName: CN=Cert Publishers,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025209.0Z
+whenChanged: 20220202025209.0Z
+uSNCreated: 12342
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+uSNChanged: 12344
+name: Cert Publishers
+objectGUID:: 7bhUFG1vcUKMrCJlo+BN0g==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dBQIAAA==
+sAMAccountName: Cert Publishers
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Domain Admins, Users, ansible.lcl
+dn: CN=Domain Admins,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Domain Admins
+description: Designated administrators of the domain
+member: CN=Administrator,CN=Users,DC=ansible,DC=lcl
+distinguishedName: CN=Domain Admins,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025209.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 12345
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+memberOf: CN=Administrators,CN=Builtin,DC=ansible,DC=lcl
+uSNChanged: 12785
+name: Domain Admins
+objectGUID:: sxxO2BKvFkqY+uXgSvgQkQ==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dAAIAAA==
+adminCount: 1
+sAMAccountName: Domain Admins
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+
+# Domain Users, Users, ansible.lcl
+dn: CN=Domain Users,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Domain Users
+description: All domain users
+distinguishedName: CN=Domain Users,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025209.0Z
+whenChanged: 20220202025209.0Z
+uSNCreated: 12348
+memberOf: CN=Users,CN=Builtin,DC=ansible,DC=lcl
+uSNChanged: 12350
+name: Domain Users
+objectGUID:: Zvl39S48AkiAkOZS1wwX6Q==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dAQIAAA==
+sAMAccountName: Domain Users
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Domain Guests, Users, ansible.lcl
+dn: CN=Domain Guests,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Domain Guests
+description: All domain guests
+distinguishedName: CN=Domain Guests,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025210.0Z
+whenChanged: 20220202025210.0Z
+uSNCreated: 12351
+memberOf: CN=Guests,CN=Builtin,DC=ansible,DC=lcl
+uSNChanged: 12353
+name: Domain Guests
+objectGUID:: cKbTZ7FTHkebuTArDJPx1g==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dAgIAAA==
+sAMAccountName: Domain Guests
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Group Policy Creator Owners, Users, ansible.lcl
+dn: CN=Group Policy Creator Owners,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Group Policy Creator Owners
+description: Members in this group can modify group policy for the domain
+member: CN=Administrator,CN=Users,DC=ansible,DC=lcl
+distinguishedName: CN=Group Policy Creator Owners,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025210.0Z
+whenChanged: 20220202025210.0Z
+uSNCreated: 12354
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+uSNChanged: 12391
+name: Group Policy Creator Owners
+objectGUID:: dRfgdtItjE6LaFV4Shya6g==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dCAIAAA==
+sAMAccountName: Group Policy Creator Owners
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# RAS and IAS Servers, Users, ansible.lcl
+dn: CN=RAS and IAS Servers,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: RAS and IAS Servers
+description: Servers in this group can access remote access properties of user
+ s
+distinguishedName: CN=RAS and IAS Servers,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025210.0Z
+whenChanged: 20220202025210.0Z
+uSNCreated: 12357
+uSNChanged: 12359
+name: RAS and IAS Servers
+objectGUID:: /ZK7Uzfv4EKhm8EEBnBPIQ==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dKQIAAA==
+sAMAccountName: RAS and IAS Servers
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Allowed RODC Password Replication Group, Users, ansible.lcl
+dn: CN=Allowed RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Allowed RODC Password Replication Group
+description: Members in this group can have their passwords replicated to all 
+ read-only domain controllers in the domain
+distinguishedName: CN=Allowed RODC Password Replication Group,CN=Users,DC=ansi
+ ble,DC=lcl
+instanceType: 4
+whenCreated: 20220202025211.0Z
+whenChanged: 20220202025211.0Z
+uSNCreated: 12402
+uSNChanged: 12404
+name: Allowed RODC Password Replication Group
+objectGUID:: IQ73DOBOM02PrGy7Ws0lnA==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dOwIAAA==
+sAMAccountName: Allowed RODC Password Replication Group
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Denied RODC Password Replication Group, Users, ansible.lcl
+dn: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Denied RODC Password Replication Group
+description: Members in this group cannot have their passwords replicated to a
+ ny read-only domain controllers in the domain
+member: CN=Read-only Domain Controllers,CN=Users,DC=ansible,DC=lcl
+member: CN=Group Policy Creator Owners,CN=Users,DC=ansible,DC=lcl
+member: CN=Domain Admins,CN=Users,DC=ansible,DC=lcl
+member: CN=Cert Publishers,CN=Users,DC=ansible,DC=lcl
+member: CN=Enterprise Admins,CN=Users,DC=ansible,DC=lcl
+member: CN=Schema Admins,CN=Users,DC=ansible,DC=lcl
+member: CN=Domain Controllers,CN=Users,DC=ansible,DC=lcl
+member: CN=krbtgt,CN=Users,DC=ansible,DC=lcl
+distinguishedName: CN=Denied RODC Password Replication Group,CN=Users,DC=ansib
+ le,DC=lcl
+instanceType: 4
+whenCreated: 20220202025211.0Z
+whenChanged: 20220202025211.0Z
+uSNCreated: 12405
+uSNChanged: 12433
+name: Denied RODC Password Replication Group
+objectGUID:: gsqkpmrOY0uRSxmPmHR0xQ==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dPAIAAA==
+sAMAccountName: Denied RODC Password Replication Group
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Read-only Domain Controllers, Users, ansible.lcl
+dn: CN=Read-only Domain Controllers,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Read-only Domain Controllers
+description: Members of this group are Read-Only Domain Controllers in the dom
+ ain
+distinguishedName: CN=Read-only Domain Controllers,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025211.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 12419
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
+uSNChanged: 12800
+name: Read-only Domain Controllers
+objectGUID:: eCfG7yzCykCUYlI8pTIDYA==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dCQIAAA==
+adminCount: 1
+sAMAccountName: Read-only Domain Controllers
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+
+# Enterprise Read-only Domain Controllers, Users, ansible.lcl
+dn: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Enterprise Read-only Domain Controllers
+description: Members of this group are Read-Only Domain Controllers in the ent
+ erprise
+distinguishedName: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=ansi
+ ble,DC=lcl
+instanceType: 4
+whenCreated: 20220202025211.0Z
+whenChanged: 20220202025211.0Z
+uSNCreated: 12429
+uSNChanged: 12431
+name: Enterprise Read-only Domain Controllers
+objectGUID:: GLKfSCKP9UmD8aJeWVO7kg==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2d8gEAAA==
+sAMAccountName: Enterprise Read-only Domain Controllers
+sAMAccountType: 268435456
+groupType: -2147483640
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Cloneable Domain Controllers, Users, ansible.lcl
+dn: CN=Cloneable Domain Controllers,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Cloneable Domain Controllers
+description: Members of this group that are domain controllers may be cloned.
+distinguishedName: CN=Cloneable Domain Controllers,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025211.0Z
+whenChanged: 20220202025211.0Z
+uSNCreated: 12440
+uSNChanged: 12442
+name: Cloneable Domain Controllers
+objectGUID:: aQKW3P+phEyJl/p7u1YBGA==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dCgIAAA==
+sAMAccountName: Cloneable Domain Controllers
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Protected Users, Users, ansible.lcl
+dn: CN=Protected Users,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Protected Users
+description: Members of this group are afforded additional protections against
+  authentication security threats. See http://go.microsoft.com/fwlink/?LinkId=
+ 298939 for more information.
+distinguishedName: CN=Protected Users,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025211.0Z
+whenChanged: 20220202025211.0Z
+uSNCreated: 12445
+uSNChanged: 12447
+name: Protected Users
+objectGUID:: 5SnAS/r4MU+qcwuQlp6hRA==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dDQIAAA==
+sAMAccountName: Protected Users
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Key Admins, Users, ansible.lcl
+dn: CN=Key Admins,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Key Admins
+description: Members of this group can perform administrative actions on key o
+ bjects within the domain.
+distinguishedName: CN=Key Admins,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025212.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 12450
+uSNChanged: 12786
+name: Key Admins
+objectGUID:: /hDITiL31EisMFQi9/UVew==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dDgIAAA==
+adminCount: 1
+sAMAccountName: Key Admins
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+
+# Enterprise Key Admins, Users, ansible.lcl
+dn: CN=Enterprise Key Admins,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: Enterprise Key Admins
+description: Members of this group can perform administrative actions on key o
+ bjects within the forest.
+distinguishedName: CN=Enterprise Key Admins,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025212.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 12453
+uSNChanged: 12781
+name: Enterprise Key Admins
+objectGUID:: a4tBH0SSuUKKez7grk1uxA==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dDwIAAA==
+adminCount: 1
+sAMAccountName: Enterprise Key Admins
+sAMAccountType: 268435456
+groupType: -2147483640
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000416.0Z
+
+# DnsAdmins, Users, ansible.lcl
+dn: CN=DnsAdmins,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: DnsAdmins
+description: DNS Administrators Group
+distinguishedName: CN=DnsAdmins,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025249.0Z
+whenChanged: 20220202025249.0Z
+uSNCreated: 12486
+uSNChanged: 12488
+name: DnsAdmins
+objectGUID:: wQCBYpFKEUmobLRWOCEKMw==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dTQQAAA==
+sAMAccountName: DnsAdmins
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+dSCorePropagationData: 16010101000000.0Z
+
+# DnsUpdateProxy, Users, ansible.lcl
+dn: CN=DnsUpdateProxy,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: group
+cn: DnsUpdateProxy
+description: DNS clients who are permitted to perform dynamic updates on behal
+ f of some other clients (such as DHCP servers).
+distinguishedName: CN=DnsUpdateProxy,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025249.0Z
+whenChanged: 20220202025249.0Z
+uSNCreated: 12491
+uSNChanged: 12491
+name: DnsUpdateProxy
+objectGUID:: xzFg9AIco0ecvMiBHduYNg==
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2dTgQAAA==
+sAMAccountName: DnsUpdateProxy
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+dSCorePropagationData: 16010101000000.0Z
+
+# Administrator, Users, ansible.lcl
+dn: CN=Administrator,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Administrator
+description: Built-in account for administering the computer/domain
+distinguishedName: CN=Administrator,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025124.0Z
+whenChanged: 20220202030719.0Z
+uSNCreated: 8196
+memberOf: CN=Group Policy Creator Owners,CN=Users,DC=ansible,DC=lcl
+memberOf: CN=Domain Admins,CN=Users,DC=ansible,DC=lcl
+memberOf: CN=Enterprise Admins,CN=Users,DC=ansible,DC=lcl
+memberOf: CN=Schema Admins,CN=Users,DC=ansible,DC=lcl
+memberOf: CN=Administrators,CN=Builtin,DC=ansible,DC=lcl
+uSNChanged: 12784
+name: Administrator
+objectGUID:: rsGwoolkLEyUwj7w2JBn4w==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 132883959747375554
+lastLogoff: 0
+lastLogon: 132885035866266761
+pwdLastSet: 132882429902003067
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2d9AEAAA==
+adminCount: 1
+accountExpires: 9223372036854775807
+logonCount: 18
+sAMAccountName: Administrator
+sAMAccountType: 805306368
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202030719.0Z
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101181216.0Z
+lastLogonTimestamp: 132882441284903853
+
+# Guest, Users, ansible.lcl
+dn: CN=Guest,CN=Users,DC=ansible,DC=lcl
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Guest
+description: Built-in account for guest access to the computer/domain
+distinguishedName: CN=Guest,CN=Users,DC=ansible,DC=lcl
+instanceType: 4
+whenCreated: 20220202025124.0Z
+whenChanged: 20220202025124.0Z
+uSNCreated: 8197
+memberOf: CN=Guests,CN=Builtin,DC=ansible,DC=lcl
+uSNChanged: 8197
+name: Guest
+objectGUID:: EZmxoBY/EkG9kfHLxZhUvg==
+userAccountControl: 66082
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 0
+primaryGroupID: 514
+objectSid:: AQUAAAAAAAUVAAAA3mHQr/XUfHzzcQ2d9QEAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: Guest
+sAMAccountType: 805306368
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=ansible,DC=lcl
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20220202025212.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 25
+# numEntries: 24

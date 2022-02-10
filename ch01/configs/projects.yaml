@@ -1,0 +1,17 @@
+---
+controller_projects:
+  - name: Test Project
+    scm_type: git
+    scm_url: https://github.com/ansible/tower-example.git
+    scm_branch: master
+    scm_clean: true
+    description: Test Project 1
+    organization: Default
+    wait: true
+    update: true
+  - name: Test Project 2
+    scm_type: git
+    scm_url: https://github.com/ansible/ansible-examples.git
+    description: Test Project 2
+    organization: Default
+...

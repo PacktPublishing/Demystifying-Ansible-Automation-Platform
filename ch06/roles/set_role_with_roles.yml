@@ -1,0 +1,29 @@
+---
+- name: Playbook add role to a team
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    controller_hostname: https://10.0.0.1
+    controller_username: admin
+    controller_password: password
+    controller_validate_certs: false
+    controller_roles:
+      - projects:
+          - Demo Project
+        job_templates:
+          - Demo Job Template
+        team: satlab
+        role: admin
+      - projects:
+          - Demo Project
+        job_templates:
+          - Demo Job Template
+        user: joe123
+        role: admin
+  collections:
+    - awx.awx
+    - redhat_cop.controller_configuration
+  roles:
+    - redhat_cop.controller_configuration.roles
+...

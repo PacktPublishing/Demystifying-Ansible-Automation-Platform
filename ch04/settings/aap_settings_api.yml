@@ -1,0 +1,25 @@
+---
+- name: Change Settings
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Change Settings
+      uri:
+        url: https://controller.node/api/v2/settings/all/
+        user: admin
+        password: secret123
+        method: PATCH
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 200
+        body_format: json
+        body:
+          SESSION_COOKIE_AGE: 3600
+          CUSTOM_LOGIN_INFO: "Welcome to the Automation Controller"
+      register: settings
+
+    - name: List Result
+      debug:
+        var: settings
+...

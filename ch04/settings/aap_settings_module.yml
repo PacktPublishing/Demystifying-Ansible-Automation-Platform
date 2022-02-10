@@ -1,0 +1,18 @@
+---
+- name: Change settings on controller
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Change settings
+      ansible.controller.settings:
+        settings:
+          SESSION_COOKIE_AGE: 3600
+          CUSTOM_LOGIN_INFO: "Welcome to the Automation Controller"
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+...

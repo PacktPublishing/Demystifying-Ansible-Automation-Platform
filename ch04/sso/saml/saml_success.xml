@@ -1,0 +1,136 @@
+<samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"
+                xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+                Destination="https://controller.node/sso/complete/saml/"
+                ID="ID_3f415617-0e5a-4312-bf7d-6e254dd65422"
+                InResponseTo="ONELOGIN_9709a7a4e724187ec846e5efbf0cc9eda1b43d16"
+                IssueInstant="2022-02-05T01:15:05.479Z"
+                Version="2.0"
+                >
+    <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://sso.node:8443/auth/realms/ansible-automation-platform</saml:Issuer>
+    <dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+        <dsig:SignedInfo>
+            <dsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <dsig:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <dsig:Reference URI="#ID_3f415617-0e5a-4312-bf7d-6e254dd65422">
+                <dsig:Transforms>
+                    <dsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                    <dsig:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                </dsig:Transforms>
+                <dsig:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <dsig:DigestValue>uW2PLzYyx9Exr5ZCluhJMGgM5BT5gHEmzytCfKYi4XI=</dsig:DigestValue>
+            </dsig:Reference>
+        </dsig:SignedInfo>
+        <dsig:SignatureValue>eJ2tn0OwAPsXqarzAoP50694RyJgzVVPLdfvPgLuSd3cOjM6b0FcSXSVg1Tr5yFJY1zzzUZZe4MgSA/UH/NH5BnJM+cZj6NFqLPVIZas1BtzUKvvsXDQjXgWJnCkhRKagRCRAJHqO2uqtf0JjLajggPsUel/v5jRRhlnn5EXmxmhx5lzQHgp7R0X92mB+K4Jypu2+OcBxg4pYCkJbzRRxxHQMTt34lV0J7/1ol0OjqhXid56LRO7deCWwbmSW6XcDQ7eBXyxvkaeQP/hsQWiclWopHuCIYw0BnyYtaglPlvhatFwlH5ZOlMCbMmWD6dFfUpjmyFXb1W5cxIoK9uEKA==</dsig:SignatureValue>
+        <dsig:KeyInfo>
+            <dsig:KeyName>e9Fcvk4AeF8FRfN_UZSPs1JGmP42WnEUwwOmhRu45TY</dsig:KeyName>
+            <dsig:X509Data>
+                <dsig:X509Certificate>MIICxTCCAa0CBgF+qBeJYjANBgkqhkiG9w0BAQsFADAmMSQwIgYDVQQDDBthbnNpYmxlLWF1dG9tYXRpb24tcGxhdGZvcm0wHhcNMjIwMTI5MjMwNTIxWhcNMzIwMTI5MjMwNzAxWjAmMSQwIgYDVQQDDBthbnNpYmxlLWF1dG9tYXRpb24tcGxhdGZvcm0wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0HvEZX60GM5yf5WDT3spHh9L5DkOXGR8SQ5vKpSvVe2e/hd3QGnSXS8TYZihRDSosw2G7FF0n9zdTL8dNRw/LLyu89DIDI0HTW39B4goCaNuUQVO93uyKGkbAv+j8bqRUdM6ifuNEO7QpeRGPzThhmpuR3x10N9Jwl91Ihi2EBw5SossVSMlN2LKYYlNVZ5VaFd3TXKDg/k5NsGX4dctjG2TLiwEdSnTgNqmTP6TFYlrXnCRcdJOEgY+FPNhg/zpd1pPWMXwPKA9jIWejJ6ZhWD5S7vXSEuRcSCLq98UVczF+GM23Z6db4GuuOHlxAquuxI2s8FcqOkO4zo65xyiPAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAA5RGvql6rYakjLJl4Vj6lGgb1fOyNPBN5GXLNGJ0kfgQuYcrN3v4Vnrm/dwjgzeQFqySoMTVVyKr7eQuN7XE4rRiLDHXoTPVg2hPYg1uDv3yur8iRzuozJVR5fNuADt0YaR6HtNyqY3Ers1KyN+J/iAy7xxvBUNYKSk+6jAh2BOIBI4GtWLqlZM0v3MqoVLt/3m7LRknxegDRReAOM4bAA/uRkurbs/JqwVv18a5QT4plbOxnDG4VXSqwdMqelxcP9c6DNPVw3LROzxlK2hqhZm+o1LfXOtUAQaQrniaQ3CUhaNlpqhXu59FAAL8lZ2ttjiSw1+Of5ohqYeLVPvrY0=</dsig:X509Certificate>
+            </dsig:X509Data>
+            <dsig:KeyValue>
+                <dsig:RSAKeyValue>
+                    <dsig:Modulus>tB7xGV+tBjOcn+Vg097KR4fS+Q5DlxkfEkObyqUr1Xtnv4Xd0Bp0l0vE2GYoUQ0qLMNhuxRdJ/c3Uy/HTUcPyy8rvPQyAyNB01t/QeIKAmjblEFTvd7sihpGwL/o/G6kVHTOon7jRDu0KXkRj804YZqbkd8ddDfScJfdSIYthAcOUqLLFUjJTdiymGJTVWeVWhXd01yg4P5OTbBl+HXLYxtky4sBHUp04Dapkz+kxWJa15wkXHSThIGPhTzYYP86XdaT1jF8DygPYyFnoyemYVg+Uu710hLkXEgi6vfFFXMxfhjNt2enW+Brrjh5cQKrrsSNrPBXKjpDuM6Ouccojw==</dsig:Modulus>
+                    <dsig:Exponent>AQAB</dsig:Exponent>
+                </dsig:RSAKeyValue>
+            </dsig:KeyValue>
+        </dsig:KeyInfo>
+    </dsig:Signature>
+    <samlp:Status>
+        <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
+    </samlp:Status>
+    <saml:Assertion xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+                    ID="ID_646cc26c-572f-40aa-bdf7-6b21becb5bd1"
+                    IssueInstant="2022-02-05T01:15:05.479Z"
+                    Version="2.0"
+                    xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+                    >
+        <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">https://sso.node:8443/auth/realms/ansible-automation-platform</saml:Issuer>
+        <saml:Subject>
+            <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+                         xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+                         >ansible_admin</saml:NameID>
+            <saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+                <saml:SubjectConfirmationData InResponseTo="ONELOGIN_9709a7a4e724187ec846e5efbf0cc9eda1b43d16"
+                                              NotOnOrAfter="2022-02-05T01:20:03.479Z"
+                                              Recipient="https://controller.node/sso/complete/saml/"
+                                              />
+            </saml:SubjectConfirmation>
+        </saml:Subject>
+        <saml:Conditions NotBefore="2022-02-05T01:15:03.479Z"
+                         NotOnOrAfter="2022-02-05T01:16:03.479Z"
+                         >
+            <saml:AudienceRestriction>
+                <saml:Audience>controller.node</saml:Audience>
+            </saml:AudienceRestriction>
+        </saml:Conditions>
+        <saml:AuthnStatement AuthnInstant="2022-02-05T01:15:05.479Z"
+                             SessionIndex="82d4de3f-4663-4438-8abc-3be3b4c1c033::98dfc368-4b35-4753-a4fa-b6ca14362843"
+                             SessionNotOnOrAfter="2022-02-05T11:15:05.479Z"
+                             >
+            <saml:AuthnContext>
+                <saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef>
+            </saml:AuthnContext>
+        </saml:AuthnStatement>
+        <saml:AttributeStatement>
+            <saml:Attribute FriendlyName="Email"
+                            Name="email"
+                            NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                            >
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >ansible_admin@gmail.com</saml:AttributeValue>
+            </saml:Attribute>
+            <saml:Attribute FriendlyName="Last Name"
+                            Name="last_name"
+                            NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                            >
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >_admin</saml:AttributeValue>
+            </saml:Attribute>
+            <saml:Attribute FriendlyName="First Name"
+                            Name="first_name"
+                            NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                            >
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >ansible</saml:AttributeValue>
+            </saml:Attribute>
+            <saml:Attribute FriendlyName="User Name"
+                            Name="username"
+                            NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                            >
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >ansible_admin</saml:AttributeValue>
+            </saml:Attribute>
+            <saml:Attribute Name="Role"
+                            NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+                            >
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >uma_authorization</saml:AttributeValue>
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >manage-account-links</saml:AttributeValue>
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >offline_access</saml:AttributeValue>
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >view-profile</saml:AttributeValue>
+                <saml:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                     xsi:type="xs:string"
+                                     >manage-account</saml:AttributeValue>
+            </saml:Attribute>
+        </saml:AttributeStatement>
+    </saml:Assertion>
+</samlp:Response>

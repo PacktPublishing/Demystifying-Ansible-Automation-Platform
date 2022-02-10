@@ -1,0 +1,75 @@
+---
+- name: Add Execute permision of job template to user
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Find the data to get user id
+      uri:
+        url: https://controller.node/api/v2/users/?username=joe123
+        user: admin
+        password: secret123
+        method: GET
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 200
+        body_format: json
+      register: user_data
+
+    - name: List Result
+      debug:
+        var: user_data.json.results[0].id
+  
+    - name: Find the data to get job template id and objects
+      uri:
+        url: "https://controller.node/api/v2/job_templates/?name=Demo%20Job%20Template"
+        user: admin
+        password: secret123
+        method: GET
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 200
+        body_format: json
+      register: job_template_data
+
+    - name: List Result
+      debug:
+        var: job_template_data.json.results[0].id
+
+    - name: Find the data to get job template role id
+      uri:
+        url: "https://controller.node{{job_template_data.json.results[0].related.object_roles}}?search=Execute"
+        user: admin
+        password: secret123
+        method: GET
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 200
+        body_format: json
+      register: job_object_role_id
+
+    - name: List Result
+      debug:
+        var: job_object_role_id.json.results[0].id
+
+    - name: Change role for user
+      uri:
+        url: "https://controller.node{{job_object_role_id.json.results[0].related.users}}"
+        user: admin
+        password: secret123
+        method: POST
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 204
+        body_format: json
+        body: |
+          {
+            "id": {{user_data.json.results[0].id | int }}
+          }
+      register: add_user_to_role
+      changed_when: "add_user_to_role.status == 204"
+
+    - name: Result from adding user to role
+      debug:
+        var: add_user_to_role
+...

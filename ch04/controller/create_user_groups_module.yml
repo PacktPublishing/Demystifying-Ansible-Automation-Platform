@@ -1,0 +1,42 @@
+---
+- name: Add user, group, and user to group
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Create user
+      ansible.controller.user:
+        username: joe_123
+        password: password123
+        email: joe_123@example.org
+        superuser: yes
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+
+    - name: Create team
+      ansible.controller.team:
+        name: Joes
+        description: All the Joes
+        organization: Default
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+
+    - name: Add jdoe to the member role of My Team
+      ansible.controller.role:
+        user: joe_123
+        target_team: Joes
+        role: member
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+...

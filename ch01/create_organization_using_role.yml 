@@ -1,0 +1,18 @@
+---
+- name: Playbook to push organizations to controller
+  hosts: localhost
+  connection: local
+  vars:
+    controller_host: 10.0.0.1
+    controller_username: admin
+    controller_password: password
+    controller_validate_certs: false
+    controller_organizations:
+      - name: Satellite
+      - name: Default
+  collections:
+    - awx.awx
+    - redhat_cop.controller_configuration
+  roles:
+    - redhat_cop.controller_configuration.organizations
+...

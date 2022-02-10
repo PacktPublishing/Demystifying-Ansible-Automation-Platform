@@ -1,0 +1,13 @@
+{
+   "RHSSO": {
+     "entity_id": "https://sso.node:8443/auth/realms/ansible-automation-platform",
+     "attr_user_permanent_id": "name_id",
+     "attr_email": "email",
+     "attr_username": "username",
+     "attr_groups": "groups",
+     "url": "https://sso.node:8443/auth/realms/ansible-automation-platform/protocol/saml",
+     "x509cert": "-----BEGIN CERTIFICATE-----MIICxTCCAa0CBgF+qBeJYjANBgkqhkiG9w0BAQsFADAmMSQwIgYDVQQDDBthbnNpYmxlLWF1dG9tYXRpb24tcGxhdGZvcm0wHhcNMjIwMTI5MjMwNTIxWhcNMzIwMTI5MjMwNzAxWjAmMSQwIgYDVQQDDBthbnNpYmxlLWF1dG9tYXRpb24tcGxhdGZvcm0wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0HvEZX60GM5yf5WDT3spHh9L5DkOXGR8SQ5vKpSvVe2e/hd3QGnSXS8TYZihRDSosw2G7FF0n9zdTL8dNRw/LLyu89DIDI0HTW39B4goCaNuUQVO93uyKGkbAv+j8bqRUdM6ifuNEO7QpeRGPzThhmpuR3x10N9Jwl91Ihi2EBw5SossVSMlN2LKYYlNVZ5VaFd3TXKDg/k5NsGX4dctjG2TLiwEdSnTgNqmTP6TFYlrXnCRcdJOEgY+FPNhg/zpd1pPWMXwPKA9jIWejJ6ZhWD5S7vXSEuRcSCLq98UVczF+GM23Z6db4GuuOHlxAquuxI2s8FcqOkO4zo65xyiPAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAA5RGvql6rYakjLJl4Vj6lGgb1fOyNPBN5GXLNGJ0kfgQuYcrN3v4Vnrm/dwjgzeQFqySoMTVVyKr7eQuN7XE4rRiLDHXoTPVg2hPYg1uDv3yur8iRzuozJVR5fNuADt0YaR6HtNyqY3Ers1KyN+J/iAy7xxvBUNYKSk+6jAh2BOIBI4GtWLqlZM0v3MqoVLt/3m7LRknxegDRReAOM4bAA/uRkurbs/JqwVv18a5QT4plbOxnDG4VXSqwdMqelxcP9c6DNPVw3LROzxlK2hqhZm+o1LfXOtUAQaQrniaQ3CUhaNlpqhXu59FAAL8lZ2ttjiSw1+Of5ohqYeLVPvrY0=-----END CERTIFICATE-----",
+     "attr_last_name": "last_name",
+     "attr_first_name": "first_name"
+   }
+ }

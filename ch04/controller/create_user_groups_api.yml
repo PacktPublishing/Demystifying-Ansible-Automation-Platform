@@ -1,0 +1,61 @@
+---
+- name: Add a user and a team to controller
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Find the data to get organization id
+      uri:
+        url: https://controller.node/api/v2/organizations/?name=Default
+        user: admin
+        password: secret123
+        method: GET
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 200
+        body_format: json
+      register: organization_data
+
+    - name: List Result
+      debug:
+        var: organization_data.json.results[0].id
+
+    - name: Create the User
+      uri:
+        url: https://controller.node/api/v2/users/
+        user: admin
+        password: secret123
+        method: POST
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 201
+        body_format: json
+        body: 
+          username: joe_123
+          password: password123
+          organization: "{{ organization_data.json.results[0].id }}"
+      register: user_data
+
+    - name: Show Result
+      debug:
+        var: user_data.json.id
+
+    - name: Create the Team
+      uri:
+        url: https://controller.node/api/v2/teams/
+        user: admin
+        password: secret123
+        method: POST
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 201
+        body_format: json
+        body: 
+          name: joes
+          organization: "{{ organization_data.json.results[0].id }}"
+      register: team_data
+
+    - name: Show Result
+      debug:
+        var: team_data.json.id
+...

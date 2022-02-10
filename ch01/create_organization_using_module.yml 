@@ -1,0 +1,16 @@
+---
+- name: Create Organization
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Create Organization
+      ansible.controller.organization:
+        name: Satellite
+        controller_host: https://10.0.0.1
+        controller_username: admin
+        controller_password: password
+        validate_certs: false
+...

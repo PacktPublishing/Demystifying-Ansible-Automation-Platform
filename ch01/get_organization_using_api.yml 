@@ -1,0 +1,23 @@
+---
+- name: Create Organization
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Get list of applications
+      uri:
+        url: https://192.168.122.22/api/v2/organizations/
+        user: admin
+        password: password
+        method: GET
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 200
+      register: organizations
+
+    - name: List Organizations
+      debug:
+        var: organizations.json.results
+...

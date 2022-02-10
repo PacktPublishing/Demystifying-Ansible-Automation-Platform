@@ -1,0 +1,40 @@
+---
+- name: Add group and group permisions to automation hub
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Create the group
+      uri:
+        url: https://ah.node/api/galaxy/_ui/v1/groups/
+        headers:
+          Authorization: Token asdf
+        method: POST
+        validate_certs: false
+        status_code: 201
+        body_format: json
+        body: 
+          name: Joes123
+      register: group_data
+
+    - name: Show Result
+      debug:
+        var: group_data.json.id
+
+    - name: Create the group permisions
+      uri:
+        url: "https://ah.node/api/galaxy/_ui/v1/groups/5/model-permissions/"
+        headers:
+          Authorization: Token asdf
+        method: POST
+        validate_certs: false
+        status_code: 201
+        body_format: json
+        body: 
+          permission: ansible.change_collectionremote
+      register: group_perm_data
+
+    - name: Show Result
+      debug:
+        var: group_perm_data.json.id
+...

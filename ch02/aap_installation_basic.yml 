@@ -1,0 +1,15 @@
+---
+- name: Playbook to install the AAP Platform
+  hosts: localhost
+  connection: local
+  vars:
+    aap_setup_down_offline_token: password123
+    aap_setup_working_dir: /home/username/Documents/aap_lab_prep
+    aap_setup_down_type: setup
+  vars_files:
+    - inventory_vars/variables.yml
+  roles:
+    - redhat_cop.tower_utilities.aap_setup_download
+    - redhat_cop.tower_utilities.aap_setup_prepare
+    - redhat_cop.tower_utilities.aap_setup_install
+...

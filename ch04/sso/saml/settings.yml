@@ -1,0 +1,33 @@
+---
+controller_settings:
+  settings:
+    SOCIAL_AUTH_SAML_SP_ENTITY_ID: controller.node
+    SOCIAL_AUTH_SAML_SP_PUBLIC_CERT: |-
+      -----BEGIN CERTIFICATE-----
+      -----END CERTIFICATE-----
+    SOCIAL_AUTH_SAML_SP_PRIVATE_KEY: |-
+      -----BEGIN CERTIFICATE-----
+      -----END CERTIFICATE-----
+    SOCIAL_AUTH_SAML_ORG_INFO:
+      en-US:
+        displayname: RHSSO
+        url: https://sso.node:8443
+        name: rsa-generated
+    SOCIAL_AUTH_SAML_TECHNICAL_CONTACT:
+      givenName: Person
+      emailAddress: person@org.com
+    SOCIAL_AUTH_SAML_SUPPORT_CONTACT:
+      givenName: Person
+      emailAddress: person@org.com
+    SOCIAL_AUTH_SAML_ENABLED_IDPS:
+      RHSSO:
+        entity_id: https://sso.node:8443/auth/realms/ansible-automation-platform
+        attr_user_permanent_id: name_id
+        attr_email: email
+        attr_username: username
+        attr_groups: groups
+        url: https://sso.node:8443/auth/realms/ansible-automation-platform/protocol/saml
+        x509cert: "-----BEGIN CERTIFICATE-----CERTVALUE-----END CERTIFICATE-----"
+        attr_last_name: last_name
+        attr_first_name: first_name
+...

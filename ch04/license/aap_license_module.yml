@@ -1,0 +1,17 @@
+---
+- name: Push manifest to controller
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Push Manifest
+      ansible.controller.license:
+        manifest: manifest_file.zip
+        force: true
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123s
+        validate_certs: false
+...

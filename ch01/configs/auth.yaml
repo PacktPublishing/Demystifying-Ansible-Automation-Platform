@@ -1,0 +1,6 @@
+---
+controller_host: 10.0.0.1
+controller_username: admin
+controller_password: password
+controller_validate_certs: false
+...

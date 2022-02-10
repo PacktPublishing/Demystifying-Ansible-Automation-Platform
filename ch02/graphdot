@@ -1,0 +1,14 @@
+strict digraph "" {
+    rankdir = TB
+    node [shape=box];
+    subgraph cluster_0 {
+        graph [label="Control Nodes", type=solid];
+        {
+            rank = same;
+            "controller.node";
+        }
+    }
+
+    "exec.node";
+    "controller.node" -> "exec.node";
+}

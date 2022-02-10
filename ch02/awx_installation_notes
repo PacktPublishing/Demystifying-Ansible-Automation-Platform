@@ -1,0 +1,2 @@
+line 82 of the Makefile needed to be changed to
+	$(KUSTOMIZE) build config/default | minikube kubectl -- apply -f -

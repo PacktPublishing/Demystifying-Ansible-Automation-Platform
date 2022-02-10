@@ -1,0 +1,105 @@
+apiVersion: automationhub.ansible.com/v1beta1
+kind: AutomationHub
+metadata:
+  name: example
+  namespace: ansible-automation-platform
+spec:
+  route_tls_termination_mechanism: Edge
+  ingress_type: Route
+  loadbalancer_port: 80
+  affinity:
+    node_affinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+  file_storage_size: 100Gi
+  image_pull_policy: IfNotPresent
+web:
+  log_level: INFO
+  replicas: 1
+  resource_requirements:
+    limits:
+      cpu: cpu
+      memory: memory
+      ephemeral-storage: storage
+    requests:
+      cpu: cpu
+      memory: memory
+      ephemeral-storage: storage
+  file_storage_access_mode: ReadWriteMany
+  content:
+    log_level: INFO
+    replicas: 2
+    resource_requirements:
+      limits:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+      requests:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+  postgres_storage_requirements:
+    limits:
+      storage: 50Gi
+    requests:
+      storage: 8Gi
+  api:
+    log_level: INFO
+    replicas: 1
+    resource_requirements:
+      limits:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+      requests:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+  postgres_resource_requirements:
+    limits:
+      cpu: 1000m
+      memory: 8Gi
+    requests:
+      cpu: 500m
+      memory: 2Gi
+  loadbalancer_protocol: http
+  resource_manager:
+    replicas: 1
+    resource_requirements:
+      limits:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+      requests:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+  redis_resource_requirements:
+    limits:
+      cpu: cpu
+      memory: memory
+      ephemeral-storage: storage
+    requests:
+      cpu: cpu
+      memory: memory
+      ephemeral-storage: storage
+  worker:
+    replicas: 2
+    resource_requirements:
+      limits:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+      requests:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+  storage_type: File
+  file_storage_storage_class: asdf
+  db_fields_encryption_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+  image_pull_secret: asdf
+  postgres_migrant_configuration_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+  postgres_configuration_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+  sso_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
+  admin_password_secret: automation-controller-operator-controller-manager-token-l9wgx
+  hostname: hostname
