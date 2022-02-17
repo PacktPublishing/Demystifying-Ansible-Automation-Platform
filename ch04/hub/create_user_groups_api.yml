@@ -1,5 +1,5 @@
 ---
-- name: Add group and group permisions to automation hub
+- name: Add group and group permissions  to automation hub
   hosts: localhost
   connection: local
   gather_facts: false
