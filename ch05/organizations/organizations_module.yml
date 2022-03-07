@@ -1,0 +1,18 @@
+---
+- name: Playbook to Create controller Organizations with module
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Create Organizations
+      ansible.controller.organization:
+        name: Engineering
+        galaxy_credentials:
+          - Ansible Galaxy
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+...

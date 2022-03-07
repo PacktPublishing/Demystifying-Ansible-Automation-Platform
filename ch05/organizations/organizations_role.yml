@@ -1,0 +1,23 @@
+---
+- name: Playbook to Create controller Organizations with role
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    controller_hostname: https://controller.node
+    controller_username: admin
+    controller_password: secret123
+    controller_validate_certs: false
+    controller_organizations:
+      - name: Satellite
+        galaxy_credentials:
+          - Ansible Galaxy
+      - name: Default
+        galaxy_credentials:
+          - Ansible Galaxy
+  collections:
+    - awx.awx
+    - redhat_cop.controller_configuration
+  roles:
+    - redhat_cop.controller_configuration.organizations
+...

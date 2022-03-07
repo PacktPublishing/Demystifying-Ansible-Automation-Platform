@@ -1,0 +1,25 @@
+---
+- name: Playbook to Create controller Organizations with api
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Create Organizations
+      uri:
+        url: https://controller.node/api/v2/organizations/
+        user: admin
+        password: secret123
+        method: POST
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 201
+        body_format: json
+        body:
+          name: Engineering
+          description: Engineering group
+      register: organization_api
+
+    - name: List Result
+      debug:
+        var: organization_api
+...
