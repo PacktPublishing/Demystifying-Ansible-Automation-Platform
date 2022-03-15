@@ -1,0 +1,2705 @@
+{
+     "users": [
+          {
+               "username": "admin",
+               "first_name": "",
+               "last_name": "",
+               "email": "admin@example.com",
+               "is_superuser": true,
+               "is_system_auditor": false,
+               "related": {
+                    "roles": [
+                         {
+                              "name": "Admin",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "test-template-1",
+                                   "type": "job_template"
+                              }
+                         },
+                         {
+                              "name": "Admin",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": null,
+                                   "name": "Demo Credential",
+                                   "credential_type": {
+                                        "name": "Machine",
+                                        "kind": "ssh",
+                                        "type": "credential_type"
+                                   },
+                                   "type": "credential"
+                              }
+                         },
+                         {
+                              "name": "Admin",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": null,
+                                   "name": "asdf",
+                                   "credential_type": {
+                                        "name": "Vault",
+                                        "kind": "vault",
+                                        "type": "credential_type"
+                                   },
+                                   "type": "credential"
+                              }
+                         },
+                         {
+                              "name": "Admin",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": null,
+                                   "name": "asdf",
+                                   "credential_type": {
+                                        "name": "Vault",
+                                        "kind": "vault",
+                                        "type": "credential_type"
+                                   },
+                                   "type": "credential"
+                              }
+                         },
+                         {
+                              "name": "Admin",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": {
+                                        "name": "Satellite",
+                                        "type": "organization"
+                                   },
+                                   "name": "machine-creds-with-jenkins-pvt-key @ 10:28 AM",
+                                   "credential_type": {
+                                        "name": "Machine",
+                                        "kind": "ssh",
+                                        "type": "credential_type"
+                                   },
+                                   "type": "credential"
+                              }
+                         },
+                         {
+                              "name": "System Administrator",
+                              "type": "role"
+                         }
+                    ]
+               },
+               "natural_key": {
+                    "username": "admin",
+                    "type": "user"
+               }
+          },
+          {
+               "username": "ansible_admin",
+               "first_name": "ansible",
+               "last_name": "_admin",
+               "email": "ansible_admin@gmail.com",
+               "is_superuser": false,
+               "is_system_auditor": false,
+               "related": {
+                    "roles": []
+               },
+               "natural_key": {
+                    "username": "ansible_admin",
+                    "type": "user"
+               }
+          },
+          {
+               "username": "controller_user",
+               "first_name": "",
+               "last_name": "",
+               "email": "",
+               "is_superuser": false,
+               "is_system_auditor": false,
+               "related": {
+                    "roles": []
+               },
+               "natural_key": {
+                    "username": "controller_user",
+                    "type": "user"
+               }
+          },
+          {
+               "username": "joe_123",
+               "first_name": "",
+               "last_name": "",
+               "email": "joe_123@example.org",
+               "is_superuser": false,
+               "is_system_auditor": false,
+               "related": {
+                    "roles": [
+                         {
+                              "name": "Admin",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": null,
+                                   "name": "joe_123",
+                                   "credential_type": {
+                                        "name": "Vault",
+                                        "kind": "vault",
+                                        "type": "credential_type"
+                                   },
+                                   "type": "credential"
+                              }
+                         }
+                    ]
+               },
+               "natural_key": {
+                    "username": "joe_123",
+                    "type": "user"
+               }
+          },
+          {
+               "username": "joe123",
+               "first_name": "Joe",
+               "last_name": "User",
+               "email": "joe@example.org",
+               "is_superuser": false,
+               "is_system_auditor": false,
+               "related": {
+                    "roles": [
+                         {
+                              "name": "Admin",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              }
+                         },
+                         {
+                              "name": "Execute",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              }
+                         },
+                         {
+                              "name": "Admin",
+                              "type": "role",
+                              "content_object": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Inventory",
+                                   "type": "inventory"
+                              }
+                         },
+                         {
+                              "name": "Member",
+                              "type": "role",
+                              "content_object": {
+                                   "name": "Default",
+                                   "type": "organization"
+                              }
+                         },
+                         {
+                              "name": "Member",
+                              "type": "role",
+                              "content_object": {
+                                   "name": "Satellite",
+                                   "type": "organization"
+                              }
+                         }
+                    ]
+               },
+               "natural_key": {
+                    "username": "joe123",
+                    "type": "user"
+               }
+          }
+     ],
+     "organizations": [
+          {
+               "name": "Default",
+               "description": "",
+               "max_hosts": 0,
+               "default_environment": null,
+               "related": {
+                    "execution_environments": [
+                         {
+                              "name": "asdf",
+                              "type": "execution_environment"
+                         }
+                    ],
+                    "notification_templates": [
+                         {
+                              "organization": {
+                                   "name": "Default",
+                                   "type": "organization"
+                              },
+                              "name": "Email notification",
+                              "type": "notification_template"
+                         },
+                         {
+                              "organization": {
+                                   "name": "Default",
+                                   "type": "organization"
+                              },
+                              "name": "Email notification differential",
+                              "type": "notification_template"
+                         }
+                    ],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "galaxy_credentials": [
+                         {
+                              "organization": null,
+                              "name": "Ansible Galaxy",
+                              "credential_type": {
+                                   "name": "Ansible Galaxy/Automation Hub API Token",
+                                   "kind": "galaxy",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ]
+               },
+               "natural_key": {
+                    "name": "Default",
+                    "type": "organization"
+               }
+          },
+          {
+               "name": "Engineering",
+               "description": "Engineering group",
+               "max_hosts": 0,
+               "default_environment": null,
+               "related": {
+                    "execution_environments": [],
+                    "notification_templates": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "galaxy_credentials": [
+                         {
+                              "organization": null,
+                              "name": "Ansible Galaxy",
+                              "credential_type": {
+                                   "name": "Ansible Galaxy/Automation Hub API Token",
+                                   "kind": "galaxy",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ]
+               },
+               "natural_key": {
+                    "name": "Engineering",
+                    "type": "organization"
+               }
+          },
+          {
+               "name": "Satellite",
+               "description": "",
+               "max_hosts": 0,
+               "default_environment": null,
+               "related": {
+                    "execution_environments": [],
+                    "notification_templates": [
+                         {
+                              "organization": {
+                                   "name": "Satellite",
+                                   "type": "organization"
+                              },
+                              "name": "irc-satqe-chat-notification",
+                              "type": "notification_template"
+                         }
+                    ],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "galaxy_credentials": [
+                         {
+                              "organization": null,
+                              "name": "Ansible Galaxy",
+                              "credential_type": {
+                                   "name": "Ansible Galaxy/Automation Hub API Token",
+                                   "kind": "galaxy",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ]
+               },
+               "natural_key": {
+                    "name": "Satellite",
+                    "type": "organization"
+               }
+          }
+     ],
+     "teams": [
+          {
+               "name": "differential-1",
+               "description": "",
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "roles": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "differential-1",
+                    "type": "team"
+               }
+          },
+          {
+               "name": "differential-2",
+               "description": "",
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "roles": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "differential-2",
+                    "type": "team"
+               }
+          },
+          {
+               "name": "satellite-qe",
+               "description": "",
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "related": {
+                    "roles": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "satellite-qe",
+                    "type": "team"
+               }
+          },
+          {
+               "name": "satlab-admin",
+               "description": "",
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "related": {
+                    "roles": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "satlab-admin",
+                    "type": "team"
+               }
+          }
+     ],
+     "credential_types": [
+          {
+               "name": "asdf",
+               "description": "",
+               "kind": "cloud",
+               "inputs": {
+                    "fields": [
+                         {
+                              "id": "cert",
+                              "type": "string",
+                              "label": "Certificate"
+                         },
+                         {
+                              "id": "key",
+                              "type": "string",
+                              "label": "Key"
+                         }
+                    ]
+               },
+               "injectors": {
+                    "env": {
+                         "MY_KEY_INI_FILE": "{{ tower.filename.key_file }}",
+                         "MY_CERT_INI_FILE": "{{ tower.filename.cert_file }}"
+                    },
+                    "file": {
+                         "template.key_file": "[mykey]\n{{ key }}",
+                         "template.cert_file": "[mycert]\n{{ cert }}"
+                    }
+               },
+               "natural_key": {
+                    "name": "asdf",
+                    "kind": "cloud",
+                    "type": "credential_type"
+               }
+          },
+          {
+               "name": "REST API Credential",
+               "description": "REST API Credential",
+               "kind": "cloud",
+               "inputs": {
+                    "fields": [
+                         {
+                              "id": "rest_username",
+                              "type": "string",
+                              "label": "REST Username"
+                         },
+                         {
+                              "id": "rest_password",
+                              "type": "string",
+                              "label": "REST Password",
+                              "secret": true
+                         }
+                    ],
+                    "required": [
+                         "rest_username",
+                         "rest_password"
+                    ]
+               },
+               "injectors": {
+                    "env": {
+                         "rest_password_env": "{{ rest_password }}",
+                         "rest_username_env": "{{ rest_username }}"
+                    },
+                    "extra_vars": {
+                         "rest_password": "{{ rest_password }}",
+                         "rest_username": "{{ rest_username }}"
+                    }
+               },
+               "natural_key": {
+                    "name": "REST API Credential",
+                    "kind": "cloud",
+                    "type": "credential_type"
+               }
+          }
+     ],
+     "credentials": [
+          {
+               "name": "admin@internal-RHVM-01",
+               "description": "infra-rhvm-01 creds for inventory sources.",
+               "inputs": {
+                    "host": "https://example.com/ovirt-engine/api",
+                    "password": "",
+                    "username": "user"
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "credential_type": {
+                    "name": "Red Hat Virtualization",
+                    "kind": "cloud",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "admin@internal-RHVM-01",
+                    "credential_type": {
+                         "name": "Red Hat Virtualization",
+                         "kind": "cloud",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "asdf",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "vault_id": "",
+                    "vault_password": ""
+               },
+               "credential_type": {
+                    "name": "Vault",
+                    "kind": "vault",
+                    "type": "credential_type"
+               },
+               "user": {
+                    "username": "admin",
+                    "type": "user"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "asdf",
+                    "credential_type": {
+                         "name": "Vault",
+                         "kind": "vault",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "asdf",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "vault_id": "",
+                    "vault_password": ""
+               },
+               "credential_type": {
+                    "name": "Vault",
+                    "kind": "vault",
+                    "type": "credential_type"
+               },
+               "user": {
+                    "username": "admin",
+                    "type": "user"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "asdf",
+                    "credential_type": {
+                         "name": "Vault",
+                         "kind": "vault",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "Automation Hub Community Repository",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "url": "https://ah.node/api/galaxy/content/community/",
+                    "token": ""
+               },
+               "credential_type": {
+                    "name": "Ansible Galaxy/Automation Hub API Token",
+                    "kind": "galaxy",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "Automation Hub Community Repository",
+                    "credential_type": {
+                         "name": "Ansible Galaxy/Automation Hub API Token",
+                         "kind": "galaxy",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "Automation Hub Container Registry",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "host": "ah.node",
+                    "password": "",
+                    "username": "admin",
+                    "verify_ssl": false
+               },
+               "credential_type": {
+                    "name": "Container Registry",
+                    "kind": "registry",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "Automation Hub Container Registry",
+                    "credential_type": {
+                         "name": "Container Registry",
+                         "kind": "registry",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "Automation Hub Published Repository",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "url": "https://ah.node/api/galaxy/content/published/",
+                    "token": ""
+               },
+               "credential_type": {
+                    "name": "Ansible Galaxy/Automation Hub API Token",
+                    "kind": "galaxy",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "Automation Hub Published Repository",
+                    "credential_type": {
+                         "name": "Ansible Galaxy/Automation Hub API Token",
+                         "kind": "galaxy",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "Automation Hub RH Certified Repository",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "url": "https://ah.node/api/galaxy/content/rh-certified/",
+                    "token": ""
+               },
+               "credential_type": {
+                    "name": "Ansible Galaxy/Automation Hub API Token",
+                    "kind": "galaxy",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "Automation Hub RH Certified Repository",
+                    "credential_type": {
+                         "name": "Ansible Galaxy/Automation Hub API Token",
+                         "kind": "galaxy",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "cyberark",
+               "description": "CyberArk Lookup Credential",
+               "inputs": {
+                    "url": "https://cyberark.example.com",
+                    "app_id": ""
+               },
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "credential_type": {
+                    "name": "CyberArk AIM Central Credential Provider Lookup",
+                    "kind": "external",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "cyberark",
+                    "credential_type": {
+                         "name": "CyberArk AIM Central Credential Provider Lookup",
+                         "kind": "external",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "Demo Credential",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "username": "admin"
+               },
+               "credential_type": {
+                    "name": "Machine",
+                    "kind": "ssh",
+                    "type": "credential_type"
+               },
+               "user": {
+                    "username": "admin",
+                    "type": "user"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "Demo Credential",
+                    "credential_type": {
+                         "name": "Machine",
+                         "kind": "ssh",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "gitlab-personal-access-token for satqe_auto_droid",
+               "description": "General purpose token that can be used by anyone for satlab-admin(or other private) repo clone",
+               "inputs": {
+                    "password": "",
+                    "username": "gitlab"
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "credential_type": {
+                    "name": "Source Control",
+                    "kind": "scm",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "gitlab-personal-access-token for satqe_auto_droid",
+                    "credential_type": {
+                         "name": "Source Control",
+                         "kind": "scm",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "joe_123",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "vault_id": "",
+                    "vault_password": ""
+               },
+               "credential_type": {
+                    "name": "Vault",
+                    "kind": "vault",
+                    "type": "credential_type"
+               },
+               "user": {
+                    "username": "joe_123",
+                    "type": "user"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "joe_123",
+                    "credential_type": {
+                         "name": "Vault",
+                         "kind": "vault",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "machine-creds-with-jenkins-pvt-key",
+               "description": "This credential can be used with any vm that contains jenkins_public key in authorized keys",
+               "inputs": {
+                    "username": "root",
+                    "ssh_key_data": ""
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "credential_type": {
+                    "name": "Machine",
+                    "kind": "ssh",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "machine-creds-with-jenkins-pvt-key",
+                    "credential_type": {
+                         "name": "Machine",
+                         "kind": "ssh",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "machine-creds-with-jenkins-pvt-key @ 10:28 AM",
+               "description": "This credential can be used with any vm that contains jenkins_public key in authorized keys",
+               "inputs": {
+                    "username": "root",
+                    "ssh_key_data": ""
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "credential_type": {
+                    "name": "Machine",
+                    "kind": "ssh",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "machine-creds-with-jenkins-pvt-key @ 10:28 AM",
+                    "credential_type": {
+                         "name": "Machine",
+                         "kind": "ssh",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "REST API Credential",
+               "description": "REST API Credential",
+               "inputs": {
+                    "rest_password": "",
+                    "rest_username": "rest_user"
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "credential_type": {
+                    "name": "REST API Credential",
+                    "kind": "cloud",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "REST API Credential",
+                    "credential_type": {
+                         "name": "REST API Credential",
+                         "kind": "cloud",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "REST API Credential2",
+               "description": "REST API Credential",
+               "inputs": {
+                    "rest_password": "",
+                    "rest_username": "rest_user"
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "credential_type": {
+                    "name": "REST API Credential",
+                    "kind": "cloud",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "REST API Credential2",
+                    "credential_type": {
+                         "name": "REST API Credential",
+                         "kind": "cloud",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          },
+          {
+               "name": "satlab-admin-vault",
+               "description": "satlab-admin-vault password aka vault_secret",
+               "inputs": {
+                    "vault_password": ""
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "credential_type": {
+                    "name": "Vault",
+                    "kind": "vault",
+                    "type": "credential_type"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "satlab-admin-vault",
+                    "credential_type": {
+                         "name": "Vault",
+                         "kind": "vault",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          }
+     ],
+     "notification_templates": [
+          {
+               "name": "Email notification",
+               "description": "Send out emails for tower jobs",
+               "notification_type": "email",
+               "notification_configuration": {
+                    "username": "",
+                    "sender": "tower0@example.com",
+                    "recipients": [
+                         "admin@example.com"
+                    ],
+                    "use_tls": false,
+                    "host": "smtp.example.com",
+                    "use_ssl": false,
+                    "password": "",
+                    "port": 25,
+                    "timeout": 30
+               },
+               "messages": {
+                    "started": null,
+                    "success": null,
+                    "error": null,
+                    "workflow_approval": null
+               },
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Email notification",
+                    "type": "notification_template"
+               }
+          },
+          {
+               "name": "Email notification differential",
+               "description": "Send out emails for tower jobs",
+               "notification_type": "email",
+               "notification_configuration": {
+                    "username": "",
+                    "sender": "tower0@example.com",
+                    "recipients": [
+                         "admin@example.com"
+                    ],
+                    "use_tls": false,
+                    "host": "smtp.example.com",
+                    "use_ssl": false,
+                    "password": "",
+                    "port": 25,
+                    "timeout": 30
+               },
+               "messages": {
+                    "started": null,
+                    "success": null,
+                    "error": null,
+                    "workflow_approval": null
+               },
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Email notification differential",
+                    "type": "notification_template"
+               }
+          },
+          {
+               "name": "irc-satqe-chat-notification",
+               "description": "Notify us on job in IRC!",
+               "notification_type": "irc",
+               "notification_configuration": {
+                    "use_tls": false,
+                    "use_ssl": false,
+                    "password": "",
+                    "port": 6667,
+                    "server": "irc.freenode.com",
+                    "nickname": "Ansible-Tower-Stage-Bot-01",
+                    "targets": [
+                         "#my-channel"
+                    ]
+               },
+               "messages": {
+                    "success": {
+                         "body": "{\"fields\": {\"project\": {\"id\": \"11111\"},\"summary\": \"Lab {{ job.status }} Ansible Tower {{ job.name }}\",\"description\": \"{{ job.status }} in {{ job.name }} {{ job.id }} {{url}}\",\"issuetype\": {\"id\": \"1\"}}}"
+                    }
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "irc-satqe-chat-notification",
+                    "type": "notification_template"
+               }
+          }
+     ],
+     "projects": [
+          {
+               "name": "Test Project",
+               "description": "Test Project 1",
+               "local_path": "_12__test_project",
+               "scm_type": "git",
+               "scm_url": "https://github.com/ansible/tower-example.git",
+               "scm_branch": "master",
+               "scm_refspec": "",
+               "scm_clean": true,
+               "scm_track_submodules": false,
+               "scm_delete_on_update": false,
+               "credential": null,
+               "timeout": 0,
+               "scm_update_on_launch": false,
+               "scm_update_cache_timeout": 0,
+               "allow_override": false,
+               "default_environment": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Test Project",
+                    "type": "project"
+               }
+          },
+          {
+               "name": "Test Project 2",
+               "description": "Test Project 2",
+               "local_path": "_13__test_project_2",
+               "scm_type": "git",
+               "scm_url": "https://github.com/ansible/tower-example.git",
+               "scm_branch": "",
+               "scm_refspec": "",
+               "scm_clean": false,
+               "scm_track_submodules": false,
+               "scm_delete_on_update": false,
+               "credential": null,
+               "timeout": 0,
+               "scm_update_on_launch": false,
+               "scm_update_cache_timeout": 0,
+               "allow_override": false,
+               "default_environment": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Test Project 2",
+                    "type": "project"
+               }
+          },
+          {
+               "name": "Test Inventory source project",
+               "description": "ansible-examples",
+               "local_path": "_14__test_inventory_source_project",
+               "scm_type": "git",
+               "scm_url": "https://github.com/ansible/ansible-examples.git",
+               "scm_branch": "",
+               "scm_refspec": "",
+               "scm_clean": false,
+               "scm_track_submodules": false,
+               "scm_delete_on_update": false,
+               "credential": null,
+               "timeout": 0,
+               "scm_update_on_launch": false,
+               "scm_update_cache_timeout": 0,
+               "allow_override": false,
+               "default_environment": null,
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "Test Inventory source project",
+                    "type": "project"
+               }
+          },
+          {
+               "name": "Test Inventory source project with credential",
+               "description": "ansible-examples",
+               "local_path": "_15__test_inventory_source_project_with_credential",
+               "scm_type": "git",
+               "scm_url": "https://github.com/ansible/ansible-examples.git",
+               "scm_branch": "",
+               "scm_refspec": "",
+               "scm_clean": false,
+               "scm_track_submodules": false,
+               "scm_delete_on_update": false,
+               "timeout": 0,
+               "scm_update_on_launch": false,
+               "scm_update_cache_timeout": 0,
+               "allow_override": false,
+               "default_environment": null,
+               "credential": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "gitlab-personal-access-token for satqe_auto_droid",
+                    "credential_type": {
+                         "name": "Source Control",
+                         "kind": "scm",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "Test Inventory source project with credential",
+                    "type": "project"
+               }
+          },
+          {
+               "name": "Test Inventory source project",
+               "description": "ansible-examples",
+               "local_path": "_22__test_inventory_source_project",
+               "scm_type": "git",
+               "scm_url": "https://github.com/ansible/ansible-examples.git",
+               "scm_branch": "",
+               "scm_refspec": "",
+               "scm_clean": false,
+               "scm_track_submodules": false,
+               "scm_delete_on_update": false,
+               "credential": null,
+               "timeout": 0,
+               "scm_update_on_launch": false,
+               "scm_update_cache_timeout": 0,
+               "allow_override": false,
+               "default_environment": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Test Inventory source project",
+                    "type": "project"
+               }
+          },
+          {
+               "name": "Test Inventory source project with credential",
+               "description": "ansible-examples",
+               "local_path": "_23__test_inventory_source_project_with_credential",
+               "scm_type": "git",
+               "scm_url": "https://github.com/ansible/ansible-examples.git",
+               "scm_branch": "",
+               "scm_refspec": "",
+               "scm_clean": false,
+               "scm_track_submodules": false,
+               "scm_delete_on_update": false,
+               "timeout": 0,
+               "scm_update_on_launch": false,
+               "scm_update_cache_timeout": 0,
+               "allow_override": false,
+               "default_environment": null,
+               "credential": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "gitlab-personal-access-token for satqe_auto_droid",
+                    "credential_type": {
+                         "name": "Source Control",
+                         "kind": "scm",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Test Inventory source project with credential",
+                    "type": "project"
+               }
+          }
+     ],
+     "inventory": [
+          {
+               "name": "Demo Inventory",
+               "description": "",
+               "kind": "",
+               "host_filter": null,
+               "variables": "",
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "hosts": [
+                         {
+                              "name": "localhost",
+                              "description": "",
+                              "enabled": true,
+                              "instance_id": "",
+                              "variables": "ansible_connection: local\nansible_python_interpreter: '{{ ansible_playbook_python }}'",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "groups": []
+                              },
+                              "natural_key": {
+                                   "name": "localhost",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "host"
+                              }
+                         }
+                    ],
+                    "groups": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Demo Inventory",
+                    "type": "inventory"
+               }
+          },
+          {
+               "name": "localhost",
+               "description": "inventory for localhost",
+               "kind": "",
+               "host_filter": null,
+               "variables": "",
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "related": {
+                    "hosts": [
+                         {
+                              "name": "localhost",
+                              "description": "",
+                              "enabled": true,
+                              "instance_id": "",
+                              "variables": "{\"some_var\": \"some_val\", \"ansible_connection\": \"local\"}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Satellite",
+                                        "type": "organization"
+                                   },
+                                   "name": "localhost",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "groups": []
+                              },
+                              "natural_key": {
+                                   "name": "localhost",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Satellite",
+                                             "type": "organization"
+                                        },
+                                        "name": "localhost",
+                                        "type": "inventory"
+                                   },
+                                   "type": "host"
+                              }
+                         }
+                    ],
+                    "groups": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "localhost",
+                    "type": "inventory"
+               }
+          },
+          {
+               "name": "RHVM-01",
+               "description": "created by Ansible Playbook - for RHVM-01",
+               "kind": "",
+               "host_filter": null,
+               "variables": "{\"site_subnet\": \"{% if site == 'SITE-2' %}10.200.{% else %}10.100.{% endif%}\", \"remote_subnet\": \"{% if site == 'SITE-2' %}10.100.{% else %}10.200.{% endif%}\"}",
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "related": {
+                    "hosts": [
+                         {
+                              "name": "localhost",
+                              "description": "imported",
+                              "enabled": true,
+                              "instance_id": "",
+                              "variables": "{}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Satellite",
+                                        "type": "organization"
+                                   },
+                                   "name": "RHVM-01",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "groups": []
+                              },
+                              "natural_key": {
+                                   "name": "localhost",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Satellite",
+                                             "type": "organization"
+                                        },
+                                        "name": "RHVM-01",
+                                        "type": "inventory"
+                                   },
+                                   "type": "host"
+                              }
+                         }
+                    ],
+                    "groups": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "RHVM-01",
+                    "type": "inventory"
+               }
+          },
+          {
+               "name": "RHVM-02",
+               "description": "created by Ansible Playbook - for RHVM-02",
+               "kind": "",
+               "host_filter": null,
+               "variables": "",
+               "organization": {
+                    "name": "Satellite",
+                    "type": "organization"
+               },
+               "related": {
+                    "hosts": [],
+                    "groups": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "RHVM-02",
+                    "type": "inventory"
+               }
+          },
+          {
+               "name": "satlab-admin-inventory",
+               "description": "Load inventory from satlab-admin hosts file",
+               "kind": "",
+               "host_filter": null,
+               "variables": "",
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "hosts": [
+                         {
+                              "name": "PSQL1",
+                              "description": "",
+                              "enabled": true,
+                              "instance_id": "",
+                              "variables": "{\"some_var\": \"some_val\", \"ansible_connection\": \"local\"}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "satlab-admin-inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "groups": [
+                                        {
+                                             "name": "sat_lab_group",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "group"
+                                        }
+                                   ]
+                              },
+                              "natural_key": {
+                                   "name": "PSQL1",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "satlab-admin-inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "host"
+                              }
+                         },
+                         {
+                              "name": "PSQL2",
+                              "description": "",
+                              "enabled": true,
+                              "instance_id": "",
+                              "variables": "{\"some_var\": \"some_val\", \"ansible_connection\": \"local\", \"site_subnet\": \"{% if site == 'SITE-2' %}10.200.{% else %}10.100.{% endif%}\", \"remote_subnet\": \"{% if site == 'SITE-2' %}10.100.{% else %}10.200.{% endif%}\"}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "satlab-admin-inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "groups": [
+                                        {
+                                             "name": "sat_lab_group",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "group"
+                                        }
+                                   ]
+                              },
+                              "natural_key": {
+                                   "name": "PSQL2",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "satlab-admin-inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "host"
+                              }
+                         },
+                         {
+                              "name": "PSQL3",
+                              "description": "",
+                              "enabled": true,
+                              "instance_id": "",
+                              "variables": "{\"some_var\": \"some_val\", \"ansible_connection\": \"local\"}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "satlab-admin-inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "groups": [
+                                        {
+                                             "name": "sat_lab_group",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "group"
+                                        }
+                                   ]
+                              },
+                              "natural_key": {
+                                   "name": "PSQL3",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "satlab-admin-inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "host"
+                              }
+                         }
+                    ],
+                    "groups": [
+                         {
+                              "name": "group1",
+                              "description": "",
+                              "variables": "{\"some_var\": \"some_val\", \"ansible_connection\": \"local\"}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "satlab-admin-inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "hosts": [],
+                                   "children": []
+                              },
+                              "natural_key": {
+                                   "name": "group1",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "satlab-admin-inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "group"
+                              }
+                         },
+                         {
+                              "name": "group2",
+                              "description": "",
+                              "variables": "{\"some_var\": \"some_val\", \"ansible_connection\": \"local\"}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "satlab-admin-inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "hosts": [],
+                                   "children": []
+                              },
+                              "natural_key": {
+                                   "name": "group2",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "satlab-admin-inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "group"
+                              }
+                         },
+                         {
+                              "name": "group3",
+                              "description": "",
+                              "variables": "{\"some_var\": \"some_val\", \"ansible_connection\": \"local\", \"site_subnet\": \"{% if site == 'SITE-2' %}10.200.{% else %}10.100.{% endif%}\", \"remote_subnet\": \"{% if site == 'SITE-2' %}10.100.{% else %}10.200.{% endif%}\"}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "satlab-admin-inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "hosts": [],
+                                   "children": []
+                              },
+                              "natural_key": {
+                                   "name": "group3",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "satlab-admin-inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "group"
+                              }
+                         },
+                         {
+                              "name": "sat_lab_group",
+                              "description": "",
+                              "variables": "{\"some_var\": \"some_val\", \"ansible_connection\": \"local\"}",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "satlab-admin-inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "hosts": [
+                                        {
+                                             "name": "PSQL1",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "host"
+                                        },
+                                        {
+                                             "name": "PSQL2",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "host"
+                                        },
+                                        {
+                                             "name": "PSQL3",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "host"
+                                        }
+                                   ],
+                                   "children": [
+                                        {
+                                             "name": "group1",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "group"
+                                        },
+                                        {
+                                             "name": "group2",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "group"
+                                        },
+                                        {
+                                             "name": "group3",
+                                             "inventory": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "satlab-admin-inventory",
+                                                  "type": "inventory"
+                                             },
+                                             "type": "group"
+                                        }
+                                   ]
+                              },
+                              "natural_key": {
+                                   "name": "sat_lab_group",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "satlab-admin-inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "group"
+                              }
+                         }
+                    ]
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "satlab-admin-inventory",
+                    "type": "inventory"
+               }
+          },
+          {
+               "name": "Test Inventory - Smart",
+               "description": "created by Ansible Playbook",
+               "kind": "smart",
+               "host_filter": "name__icontains=localhost",
+               "variables": "",
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "hosts": [
+                         {
+                              "name": "localhost",
+                              "description": "",
+                              "enabled": true,
+                              "instance_id": "",
+                              "variables": "ansible_connection: local\nansible_python_interpreter: '{{ ansible_playbook_python }}'",
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Inventory",
+                                   "type": "inventory"
+                              },
+                              "related": {
+                                   "groups": []
+                              },
+                              "natural_key": {
+                                   "name": "localhost",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Inventory",
+                                        "type": "inventory"
+                                   },
+                                   "type": "host"
+                              }
+                         }
+                    ],
+                    "groups": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Test Inventory - Smart",
+                    "type": "inventory"
+               }
+          }
+     ],
+     "inventory_sources": [
+          {
+               "name": "RHVM-01",
+               "description": "",
+               "source": "scm",
+               "source_path": "phillips_hue/hosts",
+               "source_vars": "",
+               "enabled_var": "",
+               "enabled_value": "",
+               "host_filter": "",
+               "overwrite": true,
+               "overwrite_vars": false,
+               "timeout": 0,
+               "verbosity": 1,
+               "execution_environment": null,
+               "update_on_launch": true,
+               "update_cache_timeout": 0,
+               "update_on_project_update": false,
+               "credential": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "admin@internal-RHVM-01",
+                    "credential_type": {
+                         "name": "Red Hat Virtualization",
+                         "kind": "cloud",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "inventory": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "RHVM-01",
+                    "type": "inventory"
+               },
+               "source_project": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "Test Inventory source project",
+                    "type": "project"
+               },
+               "related": {
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": []
+               },
+               "natural_key": {
+                    "name": "RHVM-01",
+                    "inventory": {
+                         "organization": {
+                              "name": "Satellite",
+                              "type": "organization"
+                         },
+                         "name": "RHVM-01",
+                         "type": "inventory"
+                    },
+                    "type": "inventory_source"
+               }
+          }
+     ],
+     "job_templates": [
+          {
+               "name": "Demo Job Template",
+               "description": "",
+               "job_type": "run",
+               "playbook": "helloworld.yml",
+               "scm_branch": "",
+               "forks": 0,
+               "limit": "",
+               "verbosity": 0,
+               "extra_vars": "",
+               "job_tags": "",
+               "force_handlers": false,
+               "skip_tags": "",
+               "start_at_task": "",
+               "timeout": 0,
+               "use_fact_cache": false,
+               "execution_environment": null,
+               "host_config_key": "",
+               "ask_scm_branch_on_launch": false,
+               "ask_diff_mode_on_launch": false,
+               "ask_variables_on_launch": false,
+               "ask_limit_on_launch": false,
+               "ask_tags_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_job_type_on_launch": false,
+               "ask_verbosity_on_launch": false,
+               "ask_inventory_on_launch": false,
+               "ask_credential_on_launch": false,
+               "survey_enabled": false,
+               "become_enabled": false,
+               "diff_mode": false,
+               "allow_simultaneous": false,
+               "job_slice_count": 1,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "inventory": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "localhost",
+                    "type": "inventory"
+               },
+               "project": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Test Project",
+                    "type": "project"
+               },
+               "related": {
+                    "labels": [],
+                    "credentials": [
+                         {
+                              "organization": null,
+                              "name": "Demo Credential",
+                              "credential_type": {
+                                   "name": "Machine",
+                                   "kind": "ssh",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ],
+                    "schedules": [
+                         {
+                              "rrule": "DTSTART:20200101T000000Z RRULE:FREQ=HOURLY;INTERVAL=3",
+                              "name": "Demo Schedule 2",
+                              "description": "Another demonstration",
+                              "extra_data": {},
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "enabled": true,
+                              "inventory": {
+                                   "organization": {
+                                        "name": "Satellite",
+                                        "type": "organization"
+                                   },
+                                   "name": "localhost",
+                                   "type": "inventory"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": []
+                              },
+                              "natural_key": {
+                                   "unified_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Job Template",
+                                        "type": "job_template"
+                                   },
+                                   "name": "Demo Schedule 2",
+                                   "type": "schedule"
+                              }
+                         }
+                    ],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Demo Job Template",
+                    "type": "job_template"
+               }
+          },
+          {
+               "name": "test-template-1",
+               "description": "created by Ansible Playbook",
+               "job_type": "run",
+               "playbook": "helloworld.yml",
+               "scm_branch": "",
+               "forks": 0,
+               "limit": "",
+               "verbosity": 2,
+               "extra_vars": "{\"target_hosts\": \"infra-ansible-tower-01.example.com\"}",
+               "job_tags": "",
+               "force_handlers": false,
+               "skip_tags": "",
+               "start_at_task": "",
+               "timeout": 0,
+               "use_fact_cache": false,
+               "execution_environment": null,
+               "host_config_key": "",
+               "ask_scm_branch_on_launch": false,
+               "ask_diff_mode_on_launch": false,
+               "ask_variables_on_launch": false,
+               "ask_limit_on_launch": false,
+               "ask_tags_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_job_type_on_launch": false,
+               "ask_verbosity_on_launch": false,
+               "ask_inventory_on_launch": false,
+               "ask_credential_on_launch": false,
+               "survey_enabled": false,
+               "become_enabled": false,
+               "diff_mode": false,
+               "allow_simultaneous": false,
+               "job_slice_count": 1,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "inventory": {
+                    "organization": {
+                         "name": "Satellite",
+                         "type": "organization"
+                    },
+                    "name": "RHVM-01",
+                    "type": "inventory"
+               },
+               "project": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Test Project",
+                    "type": "project"
+               },
+               "related": {
+                    "labels": [
+                         {
+                              "name": "Prod",
+                              "organization": {
+                                   "name": "Default",
+                                   "type": "organization"
+                              },
+                              "natural_key": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Prod",
+                                   "type": "label"
+                              }
+                         }
+                    ],
+                    "credentials": [
+                         {
+                              "organization": {
+                                   "name": "Satellite",
+                                   "type": "organization"
+                              },
+                              "name": "admin@internal-RHVM-01",
+                              "credential_type": {
+                                   "name": "Red Hat Virtualization",
+                                   "kind": "cloud",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ],
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "test-template-1",
+                    "type": "job_template"
+               }
+          }
+     ],
+     "workflow_job_templates": [
+          {
+               "name": "Simple workflow schema",
+               "description": "a basic workflow",
+               "extra_vars": "",
+               "survey_enabled": false,
+               "allow_simultaneous": false,
+               "ask_variables_on_launch": false,
+               "inventory": null,
+               "limit": null,
+               "scm_branch": null,
+               "ask_inventory_on_launch": false,
+               "ask_scm_branch_on_launch": false,
+               "ask_limit_on_launch": false,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "workflow_nodes": [
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "node101",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Simple workflow schema",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "name": "RHVM-01",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Satellite",
+                                             "type": "organization"
+                                        },
+                                        "name": "RHVM-01",
+                                        "type": "inventory"
+                                   },
+                                   "type": "inventory_source"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [
+                                        {
+                                             "workflow_job_template": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "Simple workflow schema",
+                                                  "type": "workflow_job_template"
+                                             },
+                                             "identifier": "node201",
+                                             "type": "workflow_job_template_node"
+                                        }
+                                   ],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Simple workflow schema",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "node101",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "node201",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Simple workflow schema",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "test-template-1",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Simple workflow schema",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "node201",
+                                   "type": "workflow_job_template_node"
+                              }
+                         }
+                    ],
+                    "labels": [
+                         {
+                              "name": "Prod",
+                              "organization": {
+                                   "name": "Default",
+                                   "type": "organization"
+                              },
+                              "natural_key": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Prod",
+                                   "type": "label"
+                              }
+                         }
+                    ],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Simple workflow schema",
+                    "type": "workflow_job_template"
+               }
+          },
+          {
+               "name": "Simple workflow schema2",
+               "description": "a basic workflow",
+               "extra_vars": "",
+               "survey_enabled": false,
+               "allow_simultaneous": false,
+               "ask_variables_on_launch": false,
+               "inventory": null,
+               "limit": null,
+               "scm_branch": null,
+               "ask_inventory_on_launch": false,
+               "ask_scm_branch_on_launch": false,
+               "ask_limit_on_launch": false,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "workflow_nodes": [
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "node101",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Simple workflow schema2",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "name": "RHVM-01",
+                                   "inventory": {
+                                        "organization": {
+                                             "name": "Satellite",
+                                             "type": "organization"
+                                        },
+                                        "name": "RHVM-01",
+                                        "type": "inventory"
+                                   },
+                                   "type": "inventory_source"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [
+                                        {
+                                             "workflow_job_template": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "Simple workflow schema2",
+                                                  "type": "workflow_job_template"
+                                             },
+                                             "identifier": "node201",
+                                             "type": "workflow_job_template_node"
+                                        }
+                                   ],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Simple workflow schema2",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "node101",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "node201",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Simple workflow schema2",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "test-template-1",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Simple workflow schema2",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "node201",
+                                   "type": "workflow_job_template_node"
+                              }
+                         }
+                    ],
+                    "labels": [
+                         {
+                              "name": "Prod",
+                              "organization": {
+                                   "name": "Default",
+                                   "type": "organization"
+                              },
+                              "natural_key": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Prod",
+                                   "type": "label"
+                              }
+                         }
+                    ],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Simple workflow schema2",
+                    "type": "workflow_job_template"
+               }
+          },
+          {
+               "name": "test-role-workflow",
+               "description": "",
+               "extra_vars": "",
+               "survey_enabled": false,
+               "allow_simultaneous": false,
+               "ask_variables_on_launch": false,
+               "inventory": null,
+               "limit": null,
+               "scm_branch": null,
+               "ask_inventory_on_launch": false,
+               "ask_scm_branch_on_launch": false,
+               "ask_limit_on_launch": false,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "schedules": [],
+                    "workflow_nodes": [],
+                    "labels": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "test-role-workflow",
+                    "type": "workflow_job_template"
+               }
+          }
+     ],
+     "execution_environments": [
+          {
+               "name": "My EE",
+               "description": "",
+               "organization": null,
+               "image": "quay.io/ansible/awx-ee",
+               "credential": null,
+               "pull": "always",
+               "natural_key": {
+                    "name": "My EE",
+                    "type": "execution_environment"
+               }
+          },
+          {
+               "name": "asdf",
+               "description": "",
+               "image": "asdf",
+               "credential": null,
+               "pull": "never",
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "natural_key": {
+                    "name": "asdf",
+                    "type": "execution_environment"
+               }
+          },
+          {
+               "name": "Default execution environment",
+               "description": "",
+               "organization": null,
+               "image": "registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:latest",
+               "pull": "",
+               "credential": {
+                    "organization": null,
+                    "name": "Default Execution Environment Registry Credential",
+                    "credential_type": {
+                         "name": "Container Registry",
+                         "kind": "registry",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "natural_key": {
+                    "name": "Default execution environment",
+                    "type": "execution_environment"
+               }
+          },
+          {
+               "name": "Ansible Engine 2.9 execution environment",
+               "description": "",
+               "organization": null,
+               "image": "registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8:latest",
+               "pull": "",
+               "credential": {
+                    "organization": null,
+                    "name": "Default Execution Environment Registry Credential",
+                    "credential_type": {
+                         "name": "Container Registry",
+                         "kind": "registry",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "natural_key": {
+                    "name": "Ansible Engine 2.9 execution environment",
+                    "type": "execution_environment"
+               }
+          },
+          {
+               "name": "Minimal execution environment",
+               "description": "",
+               "organization": null,
+               "image": "registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8:latest",
+               "pull": "",
+               "credential": {
+                    "organization": null,
+                    "name": "Default Execution Environment Registry Credential",
+                    "credential_type": {
+                         "name": "Container Registry",
+                         "kind": "registry",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "natural_key": {
+                    "name": "Minimal execution environment",
+                    "type": "execution_environment"
+               }
+          },
+          {
+               "name": "Automation Hub Default execution environment",
+               "description": "",
+               "organization": null,
+               "image": "ah.node/ee-supported-rhel8:latest",
+               "pull": "",
+               "credential": {
+                    "organization": null,
+                    "name": "Automation Hub Container Registry",
+                    "credential_type": {
+                         "name": "Container Registry",
+                         "kind": "registry",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "natural_key": {
+                    "name": "Automation Hub Default execution environment",
+                    "type": "execution_environment"
+               }
+          },
+          {
+               "name": "Automation Hub Ansible Engine 2.9 execution environment",
+               "description": "",
+               "organization": null,
+               "image": "ah.node/ee-29-rhel8:latest",
+               "pull": "",
+               "credential": {
+                    "organization": null,
+                    "name": "Automation Hub Container Registry",
+                    "credential_type": {
+                         "name": "Container Registry",
+                         "kind": "registry",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "natural_key": {
+                    "name": "Automation Hub Ansible Engine 2.9 execution environment",
+                    "type": "execution_environment"
+               }
+          },
+          {
+               "name": "Automation Hub Minimal execution environment",
+               "description": "",
+               "organization": null,
+               "image": "ah.node/ee-minimal-rhel8:latest",
+               "pull": "",
+               "credential": {
+                    "organization": null,
+                    "name": "Automation Hub Container Registry",
+                    "credential_type": {
+                         "name": "Container Registry",
+                         "kind": "registry",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               },
+               "natural_key": {
+                    "name": "Automation Hub Minimal execution environment",
+                    "type": "execution_environment"
+               }
+          }
+     ]
+}
