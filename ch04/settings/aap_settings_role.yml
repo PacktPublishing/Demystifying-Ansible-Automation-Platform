@@ -2,21 +2,18 @@
 - name: Playbook to add change controller settings
   hosts: localhost
   connection: local
-  vars:
-    controller_hostname: https://controller.node
-    controller_username: admin
-    controller_password: secret123
-    controller_validate_certs: false
-    controller_license:
-      manifest_file: manifest_file.zip
-      force: true
-    controller_settings:
-      settings:
-        SESSION_COOKIE_AGE: 3600
-        CUSTOM_LOGIN_INFO: "Welcome to the Automation Controller"
   collections:
     - awx.awx
     - redhat_cop.controller_configuration
+  pre_tasks:
+    - name: Include vars from configs directory
+      include_vars:
+        dir: ./configs
+        ignore_files: [controller_config.yml.template]
+        extensions: ["yml"]
+      tags:
+        - always
   roles:
+    - redhat_cop.controller_configuration.license
     - redhat_cop.controller_configuration.settings
 ...

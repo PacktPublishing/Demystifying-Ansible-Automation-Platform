@@ -1,0 +1,2073 @@
+assets:
+  credential_types:
+  - description: ''
+    injectors:
+      env:
+        MY_CERT_INI_FILE: '{{ tower.filename.cert_file }}'
+        MY_KEY_INI_FILE: '{{ tower.filename.key_file }}'
+      file:
+        template.cert_file: '[mycert]
+
+          {{ cert }}'
+        template.key_file: '[mykey]
+
+          {{ key }}'
+    inputs:
+      fields:
+      - id: cert
+        label: Certificate
+        type: string
+      - id: key
+        label: Key
+        type: string
+    kind: cloud
+    name: asdf
+    natural_key:
+      kind: cloud
+      name: asdf
+      type: credential_type
+  - description: REST API Credential
+    injectors:
+      env:
+        rest_password_env: '{{ rest_password }}'
+        rest_username_env: '{{ rest_username }}'
+      extra_vars:
+        rest_password: '{{ rest_password }}'
+        rest_username: '{{ rest_username }}'
+    inputs:
+      fields:
+      - id: rest_username
+        label: REST Username
+        type: string
+      - id: rest_password
+        label: REST Password
+        secret: true
+        type: string
+      required:
+      - rest_username
+      - rest_password
+    kind: cloud
+    name: REST API Credential
+    natural_key:
+      kind: cloud
+      name: REST API Credential
+      type: credential_type
+  credentials:
+  - credential_type:
+      kind: cloud
+      name: Red Hat Virtualization
+      type: credential_type
+    description: infra-rhvm-01 creds for inventory sources.
+    inputs:
+      host: https://example.com/ovirt-engine/api
+      password: ''
+      username: user
+    name: admin@internal-RHVM-01
+    natural_key:
+      credential_type:
+        kind: cloud
+        name: Red Hat Virtualization
+        type: credential_type
+      name: admin@internal-RHVM-01
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    organization:
+      name: Satellite
+      type: organization
+  - credential_type:
+      kind: vault
+      name: Vault
+      type: credential_type
+    description: ''
+    inputs:
+      vault_id: ''
+      vault_password: ''
+    name: asdf
+    natural_key:
+      credential_type:
+        kind: vault
+        name: Vault
+        type: credential_type
+      name: asdf
+      organization: null
+      type: credential
+    organization: null
+    user:
+      type: user
+      username: admin
+  - credential_type:
+      kind: vault
+      name: Vault
+      type: credential_type
+    description: ''
+    inputs:
+      vault_id: ''
+      vault_password: ''
+    name: asdf
+    natural_key:
+      credential_type:
+        kind: vault
+        name: Vault
+        type: credential_type
+      name: asdf
+      organization: null
+      type: credential
+    organization: null
+    user:
+      type: user
+      username: admin
+  - credential_type:
+      kind: galaxy
+      name: Ansible Galaxy/Automation Hub API Token
+      type: credential_type
+    description: ''
+    inputs:
+      token: ''
+      url: https://ah.node/api/galaxy/content/community/
+    name: Automation Hub Community Repository
+    natural_key:
+      credential_type:
+        kind: galaxy
+        name: Ansible Galaxy/Automation Hub API Token
+        type: credential_type
+      name: Automation Hub Community Repository
+      organization: null
+      type: credential
+    organization: null
+  - credential_type:
+      kind: registry
+      name: Container Registry
+      type: credential_type
+    description: ''
+    inputs:
+      host: ah.node
+      password: ''
+      username: admin
+      verify_ssl: false
+    name: Automation Hub Container Registry
+    natural_key:
+      credential_type:
+        kind: registry
+        name: Container Registry
+        type: credential_type
+      name: Automation Hub Container Registry
+      organization: null
+      type: credential
+    organization: null
+  - credential_type:
+      kind: galaxy
+      name: Ansible Galaxy/Automation Hub API Token
+      type: credential_type
+    description: ''
+    inputs:
+      token: ''
+      url: https://ah.node/api/galaxy/content/published/
+    name: Automation Hub Published Repository
+    natural_key:
+      credential_type:
+        kind: galaxy
+        name: Ansible Galaxy/Automation Hub API Token
+        type: credential_type
+      name: Automation Hub Published Repository
+      organization: null
+      type: credential
+    organization: null
+  - credential_type:
+      kind: galaxy
+      name: Ansible Galaxy/Automation Hub API Token
+      type: credential_type
+    description: ''
+    inputs:
+      token: ''
+      url: https://ah.node/api/galaxy/content/rh-certified/
+    name: Automation Hub RH Certified Repository
+    natural_key:
+      credential_type:
+        kind: galaxy
+        name: Ansible Galaxy/Automation Hub API Token
+        type: credential_type
+      name: Automation Hub RH Certified Repository
+      organization: null
+      type: credential
+    organization: null
+  - credential_type:
+      kind: external
+      name: CyberArk AIM Central Credential Provider Lookup
+      type: credential_type
+    description: CyberArk Lookup Credential
+    inputs:
+      app_id: ''
+      url: https://cyberark.example.com
+    name: cyberark
+    natural_key:
+      credential_type:
+        kind: external
+        name: CyberArk AIM Central Credential Provider Lookup
+        type: credential_type
+      name: cyberark
+      organization:
+        name: Default
+        type: organization
+      type: credential
+    organization:
+      name: Default
+      type: organization
+  - credential_type:
+      kind: ssh
+      name: Machine
+      type: credential_type
+    description: ''
+    inputs:
+      username: admin
+    name: Demo Credential
+    natural_key:
+      credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: Demo Credential
+      organization: null
+      type: credential
+    organization: null
+    user:
+      type: user
+      username: admin
+  - credential_type:
+      kind: scm
+      name: Source Control
+      type: credential_type
+    description: General purpose token that can be used by anyone for satlab-admin(or
+      other private) repo clone
+    inputs:
+      password: ''
+      username: gitlab
+    name: gitlab-personal-access-token for satqe_auto_droid
+    natural_key:
+      credential_type:
+        kind: scm
+        name: Source Control
+        type: credential_type
+      name: gitlab-personal-access-token for satqe_auto_droid
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    organization:
+      name: Satellite
+      type: organization
+  - credential_type:
+      kind: vault
+      name: Vault
+      type: credential_type
+    description: ''
+    inputs:
+      vault_id: ''
+      vault_password: ''
+    name: joe_123
+    natural_key:
+      credential_type:
+        kind: vault
+        name: Vault
+        type: credential_type
+      name: joe_123
+      organization: null
+      type: credential
+    organization: null
+    user:
+      type: user
+      username: joe_123
+  - credential_type:
+      kind: ssh
+      name: Machine
+      type: credential_type
+    description: This credential can be used with any vm that contains jenkins_public
+      key in authorized keys
+    inputs:
+      ssh_key_data: ''
+      username: root
+    name: machine-creds-with-jenkins-pvt-key
+    natural_key:
+      credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: machine-creds-with-jenkins-pvt-key
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    organization:
+      name: Satellite
+      type: organization
+  - credential_type:
+      kind: ssh
+      name: Machine
+      type: credential_type
+    description: This credential can be used with any vm that contains jenkins_public
+      key in authorized keys
+    inputs:
+      ssh_key_data: ''
+      username: root
+    name: machine-creds-with-jenkins-pvt-key @ 10:28 AM
+    natural_key:
+      credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: machine-creds-with-jenkins-pvt-key @ 10:28 AM
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    organization:
+      name: Satellite
+      type: organization
+  - credential_type:
+      kind: cloud
+      name: REST API Credential
+      type: credential_type
+    description: REST API Credential
+    inputs:
+      rest_password: ''
+      rest_username: rest_user
+    name: REST API Credential
+    natural_key:
+      credential_type:
+        kind: cloud
+        name: REST API Credential
+        type: credential_type
+      name: REST API Credential
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    organization:
+      name: Satellite
+      type: organization
+  - credential_type:
+      kind: cloud
+      name: REST API Credential
+      type: credential_type
+    description: REST API Credential
+    inputs:
+      rest_password: ''
+      rest_username: rest_user
+    name: REST API Credential2
+    natural_key:
+      credential_type:
+        kind: cloud
+        name: REST API Credential
+        type: credential_type
+      name: REST API Credential2
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    organization:
+      name: Satellite
+      type: organization
+  - credential_type:
+      kind: vault
+      name: Vault
+      type: credential_type
+    description: satlab-admin-vault password aka vault_secret
+    inputs:
+      vault_password: ''
+    name: satlab-admin-vault
+    natural_key:
+      credential_type:
+        kind: vault
+        name: Vault
+        type: credential_type
+      name: satlab-admin-vault
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    organization:
+      name: Satellite
+      type: organization
+  execution_environments:
+  - credential: null
+    description: ''
+    image: quay.io/ansible/awx-ee
+    name: My EE
+    natural_key:
+      name: My EE
+      type: execution_environment
+    organization: null
+    pull: always
+  - credential: null
+    description: ''
+    image: asdf
+    name: asdf
+    natural_key:
+      name: asdf
+      type: execution_environment
+    organization:
+      name: Default
+      type: organization
+    pull: never
+  - credential:
+      credential_type:
+        kind: registry
+        name: Container Registry
+        type: credential_type
+      name: Default Execution Environment Registry Credential
+      organization: null
+      type: credential
+    description: ''
+    image: registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:latest
+    name: Default execution environment
+    natural_key:
+      name: Default execution environment
+      type: execution_environment
+    organization: null
+    pull: ''
+  - credential:
+      credential_type:
+        kind: registry
+        name: Container Registry
+        type: credential_type
+      name: Default Execution Environment Registry Credential
+      organization: null
+      type: credential
+    description: ''
+    image: registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8:latest
+    name: Ansible Engine 2.9 execution environment
+    natural_key:
+      name: Ansible Engine 2.9 execution environment
+      type: execution_environment
+    organization: null
+    pull: ''
+  - credential:
+      credential_type:
+        kind: registry
+        name: Container Registry
+        type: credential_type
+      name: Default Execution Environment Registry Credential
+      organization: null
+      type: credential
+    description: ''
+    image: registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8:latest
+    name: Minimal execution environment
+    natural_key:
+      name: Minimal execution environment
+      type: execution_environment
+    organization: null
+    pull: ''
+  - credential:
+      credential_type:
+        kind: registry
+        name: Container Registry
+        type: credential_type
+      name: Automation Hub Container Registry
+      organization: null
+      type: credential
+    description: ''
+    image: ah.node/ee-supported-rhel8:latest
+    name: Automation Hub Default execution environment
+    natural_key:
+      name: Automation Hub Default execution environment
+      type: execution_environment
+    organization: null
+    pull: ''
+  - credential:
+      credential_type:
+        kind: registry
+        name: Container Registry
+        type: credential_type
+      name: Automation Hub Container Registry
+      organization: null
+      type: credential
+    description: ''
+    image: ah.node/ee-29-rhel8:latest
+    name: Automation Hub Ansible Engine 2.9 execution environment
+    natural_key:
+      name: Automation Hub Ansible Engine 2.9 execution environment
+      type: execution_environment
+    organization: null
+    pull: ''
+  - credential:
+      credential_type:
+        kind: registry
+        name: Container Registry
+        type: credential_type
+      name: Automation Hub Container Registry
+      organization: null
+      type: credential
+    description: ''
+    image: ah.node/ee-minimal-rhel8:latest
+    name: Automation Hub Minimal execution environment
+    natural_key:
+      name: Automation Hub Minimal execution environment
+      type: execution_environment
+    organization: null
+    pull: ''
+  inventory:
+  - description: ''
+    host_filter: null
+    kind: ''
+    name: Demo Inventory
+    natural_key:
+      name: Demo Inventory
+      organization:
+        name: Default
+        type: organization
+      type: inventory
+    organization:
+      name: Default
+      type: organization
+    related:
+      groups: []
+      hosts:
+      - description: ''
+        enabled: true
+        instance_id: ''
+        inventory:
+          name: Demo Inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: localhost
+        natural_key:
+          inventory:
+            name: Demo Inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: localhost
+          type: host
+        related:
+          groups: []
+        variables: 'ansible_connection: local
+
+          ansible_python_interpreter: ''{{ ansible_playbook_python }}'''
+    variables: ''
+  - description: inventory for localhost
+    host_filter: null
+    kind: ''
+    name: localhost
+    natural_key:
+      name: localhost
+      organization:
+        name: Satellite
+        type: organization
+      type: inventory
+    organization:
+      name: Satellite
+      type: organization
+    related:
+      groups: []
+      hosts:
+      - description: ''
+        enabled: true
+        instance_id: ''
+        inventory:
+          name: localhost
+          organization:
+            name: Satellite
+            type: organization
+          type: inventory
+        name: localhost
+        natural_key:
+          inventory:
+            name: localhost
+            organization:
+              name: Satellite
+              type: organization
+            type: inventory
+          name: localhost
+          type: host
+        related:
+          groups: []
+        variables: '{"some_var": "some_val", "ansible_connection": "local"}'
+    variables: ''
+  - description: created by Ansible Playbook - for RHVM-01
+    host_filter: null
+    kind: ''
+    name: RHVM-01
+    natural_key:
+      name: RHVM-01
+      organization:
+        name: Satellite
+        type: organization
+      type: inventory
+    organization:
+      name: Satellite
+      type: organization
+    related:
+      groups: []
+      hosts:
+      - description: imported
+        enabled: true
+        instance_id: ''
+        inventory:
+          name: RHVM-01
+          organization:
+            name: Satellite
+            type: organization
+          type: inventory
+        name: localhost
+        natural_key:
+          inventory:
+            name: RHVM-01
+            organization:
+              name: Satellite
+              type: organization
+            type: inventory
+          name: localhost
+          type: host
+        related:
+          groups: []
+        variables: '{}'
+    variables: '{"site_subnet": "{% if site == ''SITE-2'' %}10.200.{% else %}10.100.{%
+      endif%}", "remote_subnet": "{% if site == ''SITE-2'' %}10.100.{% else %}10.200.{%
+      endif%}"}'
+  - description: created by Ansible Playbook - for RHVM-02
+    host_filter: null
+    kind: ''
+    name: RHVM-02
+    natural_key:
+      name: RHVM-02
+      organization:
+        name: Satellite
+        type: organization
+      type: inventory
+    organization:
+      name: Satellite
+      type: organization
+    related:
+      groups: []
+      hosts: []
+    variables: ''
+  - description: Load inventory from satlab-admin hosts file
+    host_filter: null
+    kind: ''
+    name: satlab-admin-inventory
+    natural_key:
+      name: satlab-admin-inventory
+      organization:
+        name: Default
+        type: organization
+      type: inventory
+    organization:
+      name: Default
+      type: organization
+    related:
+      groups:
+      - description: ''
+        inventory:
+          name: satlab-admin-inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: group1
+        natural_key:
+          inventory:
+            name: satlab-admin-inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: group1
+          type: group
+        related:
+          children: []
+          hosts: []
+        variables: '{"some_var": "some_val", "ansible_connection": "local"}'
+      - description: ''
+        inventory:
+          name: satlab-admin-inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: group2
+        natural_key:
+          inventory:
+            name: satlab-admin-inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: group2
+          type: group
+        related:
+          children: []
+          hosts: []
+        variables: '{"some_var": "some_val", "ansible_connection": "local"}'
+      - description: ''
+        inventory:
+          name: satlab-admin-inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: group3
+        natural_key:
+          inventory:
+            name: satlab-admin-inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: group3
+          type: group
+        related:
+          children: []
+          hosts: []
+        variables: '{"some_var": "some_val", "ansible_connection": "local", "site_subnet":
+          "{% if site == ''SITE-2'' %}10.200.{% else %}10.100.{% endif%}", "remote_subnet":
+          "{% if site == ''SITE-2'' %}10.100.{% else %}10.200.{% endif%}"}'
+      - description: ''
+        inventory:
+          name: satlab-admin-inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: sat_lab_group
+        natural_key:
+          inventory:
+            name: satlab-admin-inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: sat_lab_group
+          type: group
+        related:
+          children:
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: group1
+            type: group
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: group2
+            type: group
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: group3
+            type: group
+          hosts:
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: PSQL1
+            type: host
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: PSQL2
+            type: host
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: PSQL3
+            type: host
+        variables: '{"some_var": "some_val", "ansible_connection": "local"}'
+      hosts:
+      - description: ''
+        enabled: true
+        instance_id: ''
+        inventory:
+          name: satlab-admin-inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: PSQL1
+        natural_key:
+          inventory:
+            name: satlab-admin-inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: PSQL1
+          type: host
+        related:
+          groups:
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: sat_lab_group
+            type: group
+        variables: '{"some_var": "some_val", "ansible_connection": "local"}'
+      - description: ''
+        enabled: true
+        instance_id: ''
+        inventory:
+          name: satlab-admin-inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: PSQL2
+        natural_key:
+          inventory:
+            name: satlab-admin-inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: PSQL2
+          type: host
+        related:
+          groups:
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: sat_lab_group
+            type: group
+        variables: '{"some_var": "some_val", "ansible_connection": "local", "site_subnet":
+          "{% if site == ''SITE-2'' %}10.200.{% else %}10.100.{% endif%}", "remote_subnet":
+          "{% if site == ''SITE-2'' %}10.100.{% else %}10.200.{% endif%}"}'
+      - description: ''
+        enabled: true
+        instance_id: ''
+        inventory:
+          name: satlab-admin-inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: PSQL3
+        natural_key:
+          inventory:
+            name: satlab-admin-inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: PSQL3
+          type: host
+        related:
+          groups:
+          - inventory:
+              name: satlab-admin-inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: sat_lab_group
+            type: group
+        variables: '{"some_var": "some_val", "ansible_connection": "local"}'
+    variables: ''
+  - description: created by Ansible Playbook
+    host_filter: name__icontains=localhost
+    kind: smart
+    name: Test Inventory - Smart
+    natural_key:
+      name: Test Inventory - Smart
+      organization:
+        name: Default
+        type: organization
+      type: inventory
+    organization:
+      name: Default
+      type: organization
+    related:
+      groups: []
+      hosts:
+      - description: ''
+        enabled: true
+        instance_id: ''
+        inventory:
+          name: Demo Inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: localhost
+        natural_key:
+          inventory:
+            name: Demo Inventory
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: localhost
+          type: host
+        related:
+          groups: []
+        variables: 'ansible_connection: local
+
+          ansible_python_interpreter: ''{{ ansible_playbook_python }}'''
+    variables: ''
+  inventory_sources:
+  - credential:
+      credential_type:
+        kind: cloud
+        name: Red Hat Virtualization
+        type: credential_type
+      name: admin@internal-RHVM-01
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    description: ''
+    enabled_value: ''
+    enabled_var: ''
+    execution_environment: null
+    host_filter: ''
+    inventory:
+      name: RHVM-01
+      organization:
+        name: Satellite
+        type: organization
+      type: inventory
+    name: RHVM-01
+    natural_key:
+      inventory:
+        name: RHVM-01
+        organization:
+          name: Satellite
+          type: organization
+        type: inventory
+      name: RHVM-01
+      type: inventory_source
+    overwrite: true
+    overwrite_vars: false
+    related:
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+    source: scm
+    source_path: phillips_hue/hosts
+    source_project:
+      name: Test Inventory source project
+      organization:
+        name: Satellite
+        type: organization
+      type: project
+    source_vars: ''
+    timeout: 0
+    update_cache_timeout: 0
+    update_on_launch: true
+    update_on_project_update: false
+    verbosity: 1
+  job_templates:
+  - allow_simultaneous: false
+    ask_credential_on_launch: false
+    ask_diff_mode_on_launch: false
+    ask_inventory_on_launch: false
+    ask_job_type_on_launch: false
+    ask_limit_on_launch: false
+    ask_scm_branch_on_launch: false
+    ask_skip_tags_on_launch: false
+    ask_tags_on_launch: false
+    ask_variables_on_launch: false
+    ask_verbosity_on_launch: false
+    become_enabled: false
+    description: ''
+    diff_mode: false
+    execution_environment: null
+    extra_vars: ''
+    force_handlers: false
+    forks: 0
+    host_config_key: ''
+    inventory:
+      name: localhost
+      organization:
+        name: Satellite
+        type: organization
+      type: inventory
+    job_slice_count: 1
+    job_tags: ''
+    job_type: run
+    limit: ''
+    name: Demo Job Template
+    natural_key:
+      name: Demo Job Template
+      organization:
+        name: Default
+        type: organization
+      type: job_template
+    playbook: helloworld.yml
+    project:
+      name: Test Project
+      organization:
+        name: Default
+        type: organization
+      type: project
+    related:
+      credentials:
+      - credential_type:
+          kind: ssh
+          name: Machine
+          type: credential_type
+        name: Demo Credential
+        organization: null
+        type: credential
+      labels: []
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules:
+      - description: Another demonstration
+        diff_mode: null
+        enabled: true
+        extra_data: {}
+        inventory:
+          name: localhost
+          organization:
+            name: Satellite
+            type: organization
+          type: inventory
+        job_tags: null
+        job_type: null
+        limit: null
+        name: Demo Schedule 2
+        natural_key:
+          name: Demo Schedule 2
+          type: schedule
+          unified_job_template:
+            name: Demo Job Template
+            organization:
+              name: Default
+              type: organization
+            type: job_template
+        related:
+          credentials: []
+        rrule: DTSTART:20200101T000000Z RRULE:FREQ=HOURLY;INTERVAL=3
+        scm_branch: null
+        skip_tags: null
+        unified_job_template:
+          name: Demo Job Template
+          organization:
+            name: Default
+            type: organization
+          type: job_template
+        verbosity: null
+      survey_spec: {}
+    scm_branch: ''
+    skip_tags: ''
+    start_at_task: ''
+    survey_enabled: false
+    timeout: 0
+    use_fact_cache: false
+    verbosity: 0
+    webhook_credential: null
+    webhook_service: ''
+  - allow_simultaneous: false
+    ask_credential_on_launch: false
+    ask_diff_mode_on_launch: false
+    ask_inventory_on_launch: false
+    ask_job_type_on_launch: false
+    ask_limit_on_launch: false
+    ask_scm_branch_on_launch: false
+    ask_skip_tags_on_launch: false
+    ask_tags_on_launch: false
+    ask_variables_on_launch: false
+    ask_verbosity_on_launch: false
+    become_enabled: false
+    description: created by Ansible Playbook
+    diff_mode: false
+    execution_environment: null
+    extra_vars: '{"target_hosts": "infra-ansible-tower-01.example.com"}'
+    force_handlers: false
+    forks: 0
+    host_config_key: ''
+    inventory:
+      name: RHVM-01
+      organization:
+        name: Satellite
+        type: organization
+      type: inventory
+    job_slice_count: 1
+    job_tags: ''
+    job_type: run
+    limit: ''
+    name: test-template-1
+    natural_key:
+      name: test-template-1
+      organization:
+        name: Default
+        type: organization
+      type: job_template
+    playbook: helloworld.yml
+    project:
+      name: Test Project
+      organization:
+        name: Default
+        type: organization
+      type: project
+    related:
+      credentials:
+      - credential_type:
+          kind: cloud
+          name: Red Hat Virtualization
+          type: credential_type
+        name: admin@internal-RHVM-01
+        organization:
+          name: Satellite
+          type: organization
+        type: credential
+      labels:
+      - name: Prod
+        natural_key:
+          name: Prod
+          organization:
+            name: Default
+            type: organization
+          type: label
+        organization:
+          name: Default
+          type: organization
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+      survey_spec: {}
+    scm_branch: ''
+    skip_tags: ''
+    start_at_task: ''
+    survey_enabled: false
+    timeout: 0
+    use_fact_cache: false
+    verbosity: 2
+    webhook_credential: null
+    webhook_service: ''
+  notification_templates:
+  - description: Send out emails for tower jobs
+    messages:
+      error: null
+      started: null
+      success: null
+      workflow_approval: null
+    name: Email notification
+    natural_key:
+      name: Email notification
+      organization:
+        name: Default
+        type: organization
+      type: notification_template
+    notification_configuration:
+      host: smtp.example.com
+      password: ''
+      port: 25
+      recipients:
+      - admin@example.com
+      sender: tower0@example.com
+      timeout: 30
+      use_ssl: false
+      use_tls: false
+      username: ''
+    notification_type: email
+    organization:
+      name: Default
+      type: organization
+  - description: Send out emails for tower jobs
+    messages:
+      error: null
+      started: null
+      success: null
+      workflow_approval: null
+    name: Email notification differential
+    natural_key:
+      name: Email notification differential
+      organization:
+        name: Default
+        type: organization
+      type: notification_template
+    notification_configuration:
+      host: smtp.example.com
+      password: ''
+      port: 25
+      recipients:
+      - admin@example.com
+      sender: tower0@example.com
+      timeout: 30
+      use_ssl: false
+      use_tls: false
+      username: ''
+    notification_type: email
+    organization:
+      name: Default
+      type: organization
+  - description: Notify us on job in IRC!
+    messages:
+      success:
+        body: '{"fields": {"project": {"id": "11111"},"summary": "Lab {{ job.status
+          }} Ansible Tower {{ job.name }}","description": "{{ job.status }} in {{
+          job.name }} {{ job.id }} {{url}}","issuetype": {"id": "1"}}}'
+    name: irc-satqe-chat-notification
+    natural_key:
+      name: irc-satqe-chat-notification
+      organization:
+        name: Satellite
+        type: organization
+      type: notification_template
+    notification_configuration:
+      nickname: Ansible-Tower-Stage-Bot-01
+      password: ''
+      port: 6667
+      server: irc.freenode.com
+      targets:
+      - '#my-channel'
+      use_ssl: false
+      use_tls: false
+    notification_type: irc
+    organization:
+      name: Satellite
+      type: organization
+  organizations:
+  - default_environment: null
+    description: ''
+    max_hosts: 0
+    name: Default
+    natural_key:
+      name: Default
+      type: organization
+    related:
+      execution_environments:
+      - name: asdf
+        type: execution_environment
+      galaxy_credentials:
+      - credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Ansible Galaxy
+        organization: null
+        type: credential
+      notification_templates:
+      - name: Email notification
+        organization:
+          name: Default
+          type: organization
+        type: notification_template
+      - name: Email notification differential
+        organization:
+          name: Default
+          type: organization
+        type: notification_template
+      notification_templates_approvals: []
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+  - default_environment: null
+    description: Engineering group
+    max_hosts: 0
+    name: Engineering
+    natural_key:
+      name: Engineering
+      type: organization
+    related:
+      execution_environments: []
+      galaxy_credentials:
+      - credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Ansible Galaxy
+        organization: null
+        type: credential
+      - credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Automation Hub Published Repository
+        organization: null
+        type: credential
+      - credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Automation Hub RH Certified Repository
+        organization: null
+        type: credential
+      - credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Automation Hub Community Repository
+        organization: null
+        type: credential
+      notification_templates: []
+      notification_templates_approvals: []
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+  - default_environment: null
+    description: ''
+    max_hosts: 0
+    name: evil_corp
+    natural_key:
+      name: evil_corp
+      type: organization
+    related:
+      execution_environments: []
+      galaxy_credentials: []
+      notification_templates: []
+      notification_templates_approvals: []
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+  - default_environment: null
+    description: ''
+    max_hosts: 0
+    name: Satellite
+    natural_key:
+      name: Satellite
+      type: organization
+    related:
+      execution_environments: []
+      galaxy_credentials:
+      - credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Ansible Galaxy
+        organization: null
+        type: credential
+      notification_templates:
+      - name: irc-satqe-chat-notification
+        organization:
+          name: Satellite
+          type: organization
+        type: notification_template
+      notification_templates_approvals: []
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+  projects:
+  - allow_override: false
+    credential: null
+    default_environment: null
+    description: Test Project 1
+    local_path: _12__test_project
+    name: Test Project
+    natural_key:
+      name: Test Project
+      organization:
+        name: Default
+        type: organization
+      type: project
+    organization:
+      name: Default
+      type: organization
+    related:
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+    scm_branch: master
+    scm_clean: true
+    scm_delete_on_update: false
+    scm_refspec: ''
+    scm_track_submodules: false
+    scm_type: git
+    scm_update_cache_timeout: 0
+    scm_update_on_launch: false
+    scm_url: https://github.com/ansible/tower-example.git
+    timeout: 0
+  - allow_override: false
+    credential: null
+    default_environment: null
+    description: Test Project 2
+    local_path: _13__test_project_2
+    name: Test Project 2
+    natural_key:
+      name: Test Project 2
+      organization:
+        name: Default
+        type: organization
+      type: project
+    organization:
+      name: Default
+      type: organization
+    related:
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+    scm_branch: ''
+    scm_clean: false
+    scm_delete_on_update: false
+    scm_refspec: ''
+    scm_track_submodules: false
+    scm_type: git
+    scm_update_cache_timeout: 0
+    scm_update_on_launch: false
+    scm_url: https://github.com/ansible/tower-example.git
+    timeout: 0
+  - allow_override: false
+    credential: null
+    default_environment: null
+    description: ansible-examples
+    local_path: _14__test_inventory_source_project
+    name: Test Inventory source project
+    natural_key:
+      name: Test Inventory source project
+      organization:
+        name: Satellite
+        type: organization
+      type: project
+    organization:
+      name: Satellite
+      type: organization
+    related:
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+    scm_branch: ''
+    scm_clean: false
+    scm_delete_on_update: false
+    scm_refspec: ''
+    scm_track_submodules: false
+    scm_type: git
+    scm_update_cache_timeout: 0
+    scm_update_on_launch: false
+    scm_url: https://github.com/ansible/ansible-examples.git
+    timeout: 0
+  - allow_override: false
+    credential:
+      credential_type:
+        kind: scm
+        name: Source Control
+        type: credential_type
+      name: gitlab-personal-access-token for satqe_auto_droid
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    default_environment: null
+    description: ansible-examples
+    local_path: _15__test_inventory_source_project_with_credential
+    name: Test Inventory source project with credential
+    natural_key:
+      name: Test Inventory source project with credential
+      organization:
+        name: Satellite
+        type: organization
+      type: project
+    organization:
+      name: Satellite
+      type: organization
+    related:
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+    scm_branch: ''
+    scm_clean: false
+    scm_delete_on_update: false
+    scm_refspec: ''
+    scm_track_submodules: false
+    scm_type: git
+    scm_update_cache_timeout: 0
+    scm_update_on_launch: false
+    scm_url: https://github.com/ansible/ansible-examples.git
+    timeout: 0
+  - allow_override: false
+    credential: null
+    default_environment: null
+    description: ansible-examples
+    local_path: _22__test_inventory_source_project
+    name: Test Inventory source project
+    natural_key:
+      name: Test Inventory source project
+      organization:
+        name: Default
+        type: organization
+      type: project
+    organization:
+      name: Default
+      type: organization
+    related:
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+    scm_branch: ''
+    scm_clean: false
+    scm_delete_on_update: false
+    scm_refspec: ''
+    scm_track_submodules: false
+    scm_type: git
+    scm_update_cache_timeout: 0
+    scm_update_on_launch: false
+    scm_url: https://github.com/ansible/ansible-examples.git
+    timeout: 0
+  - allow_override: false
+    credential:
+      credential_type:
+        kind: scm
+        name: Source Control
+        type: credential_type
+      name: gitlab-personal-access-token for satqe_auto_droid
+      organization:
+        name: Satellite
+        type: organization
+      type: credential
+    default_environment: null
+    description: ansible-examples
+    local_path: _23__test_inventory_source_project_with_credential
+    name: Test Inventory source project with credential
+    natural_key:
+      name: Test Inventory source project with credential
+      organization:
+        name: Default
+        type: organization
+      type: project
+    organization:
+      name: Default
+      type: organization
+    related:
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+    scm_branch: ''
+    scm_clean: false
+    scm_delete_on_update: false
+    scm_refspec: ''
+    scm_track_submodules: false
+    scm_type: git
+    scm_update_cache_timeout: 0
+    scm_update_on_launch: false
+    scm_url: https://github.com/ansible/ansible-examples.git
+    timeout: 0
+  teams:
+  - description: ''
+    name: differential-1
+    natural_key:
+      name: differential-1
+      organization:
+        name: Default
+        type: organization
+      type: team
+    organization:
+      name: Default
+      type: organization
+    related:
+      roles: []
+  - description: ''
+    name: differential-2
+    natural_key:
+      name: differential-2
+      organization:
+        name: Default
+        type: organization
+      type: team
+    organization:
+      name: Default
+      type: organization
+    related:
+      roles: []
+  - description: ''
+    name: satellite-qe
+    natural_key:
+      name: satellite-qe
+      organization:
+        name: Satellite
+        type: organization
+      type: team
+    organization:
+      name: Satellite
+      type: organization
+    related:
+      roles: []
+  - description: ''
+    name: satlab-admin
+    natural_key:
+      name: satlab-admin
+      organization:
+        name: Satellite
+        type: organization
+      type: team
+    organization:
+      name: Satellite
+      type: organization
+    related:
+      roles: []
+  users:
+  - email: admin@example.com
+    first_name: ''
+    is_superuser: true
+    is_system_auditor: false
+    last_name: ''
+    natural_key:
+      type: user
+      username: admin
+    related:
+      roles:
+      - content_object:
+          name: test-template-1
+          organization:
+            name: Default
+            type: organization
+          type: job_template
+        name: Admin
+        type: role
+      - content_object:
+          credential_type:
+            kind: ssh
+            name: Machine
+            type: credential_type
+          name: Demo Credential
+          organization: null
+          type: credential
+        name: Admin
+        type: role
+      - content_object:
+          credential_type:
+            kind: vault
+            name: Vault
+            type: credential_type
+          name: asdf
+          organization: null
+          type: credential
+        name: Admin
+        type: role
+      - content_object:
+          credential_type:
+            kind: vault
+            name: Vault
+            type: credential_type
+          name: asdf
+          organization: null
+          type: credential
+        name: Admin
+        type: role
+      - content_object:
+          credential_type:
+            kind: ssh
+            name: Machine
+            type: credential_type
+          name: machine-creds-with-jenkins-pvt-key @ 10:28 AM
+          organization:
+            name: Satellite
+            type: organization
+          type: credential
+        name: Admin
+        type: role
+      - name: System Administrator
+        type: role
+    username: admin
+  - email: ansible_admin@gmail.com
+    first_name: ansible
+    is_superuser: false
+    is_system_auditor: false
+    last_name: _admin
+    natural_key:
+      type: user
+      username: ansible_admin
+    related:
+      roles: []
+    username: ansible_admin
+  - email: ''
+    first_name: ''
+    is_superuser: false
+    is_system_auditor: false
+    last_name: ''
+    natural_key:
+      type: user
+      username: controller_user
+    related:
+      roles: []
+    username: controller_user
+  - email: ctodea@redhat.com
+    first_name: ''
+    is_superuser: false
+    is_system_auditor: false
+    last_name: ''
+    natural_key:
+      type: user
+      username: ctodea
+    related:
+      roles: []
+    username: ctodea
+  - email: joe_123@example.org
+    first_name: ''
+    is_superuser: false
+    is_system_auditor: false
+    last_name: ''
+    natural_key:
+      type: user
+      username: joe_123
+    related:
+      roles:
+      - content_object:
+          credential_type:
+            kind: vault
+            name: Vault
+            type: credential_type
+          name: joe_123
+          organization: null
+          type: credential
+        name: Admin
+        type: role
+    username: joe_123
+  - email: joe@example.org
+    first_name: Joe
+    is_superuser: false
+    is_system_auditor: false
+    last_name: User
+    natural_key:
+      type: user
+      username: joe123
+    related:
+      roles:
+      - content_object:
+          name: Demo Job Template
+          organization:
+            name: Default
+            type: organization
+          type: job_template
+        name: Admin
+        type: role
+      - content_object:
+          name: Demo Job Template
+          organization:
+            name: Default
+            type: organization
+          type: job_template
+        name: Execute
+        type: role
+      - content_object:
+          name: Demo Inventory
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: Admin
+        type: role
+      - content_object:
+          name: Default
+          type: organization
+        name: Member
+        type: role
+      - content_object:
+          name: Satellite
+          type: organization
+        name: Member
+        type: role
+    username: joe123
+  workflow_job_templates:
+  - allow_simultaneous: false
+    ask_inventory_on_launch: false
+    ask_limit_on_launch: false
+    ask_scm_branch_on_launch: false
+    ask_variables_on_launch: false
+    description: a basic workflow
+    extra_vars: ''
+    inventory: null
+    limit: null
+    name: Simple workflow schema
+    natural_key:
+      name: Simple workflow schema
+      organization:
+        name: Default
+        type: organization
+      type: workflow_job_template
+    organization:
+      name: Default
+      type: organization
+    related:
+      labels:
+      - name: Prod
+        natural_key:
+          name: Prod
+          organization:
+            name: Default
+            type: organization
+          type: label
+        organization:
+          name: Default
+          type: organization
+      notification_templates_approvals: []
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+      survey_spec: {}
+      workflow_nodes:
+      - all_parents_must_converge: false
+        diff_mode: null
+        extra_data: {}
+        identifier: node101
+        inventory: null
+        job_tags: null
+        job_type: null
+        limit: null
+        natural_key:
+          identifier: node101
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Simple workflow schema
+            organization:
+              name: Default
+              type: organization
+            type: workflow_job_template
+        related:
+          always_nodes: []
+          credentials: []
+          failure_nodes: []
+          success_nodes:
+          - identifier: node201
+            type: workflow_job_template_node
+            workflow_job_template:
+              name: Simple workflow schema
+              organization:
+                name: Default
+                type: organization
+              type: workflow_job_template
+        scm_branch: null
+        skip_tags: null
+        unified_job_template:
+          inventory:
+            name: RHVM-01
+            organization:
+              name: Satellite
+              type: organization
+            type: inventory
+          name: RHVM-01
+          type: inventory_source
+        verbosity: null
+        workflow_job_template:
+          name: Simple workflow schema
+          organization:
+            name: Default
+            type: organization
+          type: workflow_job_template
+      - all_parents_must_converge: false
+        diff_mode: null
+        extra_data: {}
+        identifier: node201
+        inventory: null
+        job_tags: null
+        job_type: null
+        limit: null
+        natural_key:
+          identifier: node201
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Simple workflow schema
+            organization:
+              name: Default
+              type: organization
+            type: workflow_job_template
+        related:
+          always_nodes: []
+          credentials: []
+          failure_nodes: []
+          success_nodes: []
+        scm_branch: null
+        skip_tags: null
+        unified_job_template:
+          name: test-template-1
+          organization:
+            name: Default
+            type: organization
+          type: job_template
+        verbosity: null
+        workflow_job_template:
+          name: Simple workflow schema
+          organization:
+            name: Default
+            type: organization
+          type: workflow_job_template
+    scm_branch: null
+    survey_enabled: false
+    webhook_credential: null
+    webhook_service: ''
+  - allow_simultaneous: false
+    ask_inventory_on_launch: false
+    ask_limit_on_launch: false
+    ask_scm_branch_on_launch: false
+    ask_variables_on_launch: false
+    description: a basic workflow
+    extra_vars: ''
+    inventory: null
+    limit: null
+    name: Simple workflow schema2
+    natural_key:
+      name: Simple workflow schema2
+      organization:
+        name: Default
+        type: organization
+      type: workflow_job_template
+    organization:
+      name: Default
+      type: organization
+    related:
+      labels:
+      - name: Prod
+        natural_key:
+          name: Prod
+          organization:
+            name: Default
+            type: organization
+          type: label
+        organization:
+          name: Default
+          type: organization
+      notification_templates_approvals: []
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+      survey_spec: {}
+      workflow_nodes:
+      - all_parents_must_converge: false
+        diff_mode: null
+        extra_data: {}
+        identifier: node101
+        inventory: null
+        job_tags: null
+        job_type: null
+        limit: null
+        natural_key:
+          identifier: node101
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Simple workflow schema2
+            organization:
+              name: Default
+              type: organization
+            type: workflow_job_template
+        related:
+          always_nodes: []
+          credentials: []
+          failure_nodes: []
+          success_nodes:
+          - identifier: node201
+            type: workflow_job_template_node
+            workflow_job_template:
+              name: Simple workflow schema2
+              organization:
+                name: Default
+                type: organization
+              type: workflow_job_template
+        scm_branch: null
+        skip_tags: null
+        unified_job_template:
+          inventory:
+            name: RHVM-01
+            organization:
+              name: Satellite
+              type: organization
+            type: inventory
+          name: RHVM-01
+          type: inventory_source
+        verbosity: null
+        workflow_job_template:
+          name: Simple workflow schema2
+          organization:
+            name: Default
+            type: organization
+          type: workflow_job_template
+      - all_parents_must_converge: false
+        diff_mode: null
+        extra_data: {}
+        identifier: node201
+        inventory: null
+        job_tags: null
+        job_type: null
+        limit: null
+        natural_key:
+          identifier: node201
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: Simple workflow schema2
+            organization:
+              name: Default
+              type: organization
+            type: workflow_job_template
+        related:
+          always_nodes: []
+          credentials: []
+          failure_nodes: []
+          success_nodes: []
+        scm_branch: null
+        skip_tags: null
+        unified_job_template:
+          name: test-template-1
+          organization:
+            name: Default
+            type: organization
+          type: job_template
+        verbosity: null
+        workflow_job_template:
+          name: Simple workflow schema2
+          organization:
+            name: Default
+            type: organization
+          type: workflow_job_template
+    scm_branch: null
+    survey_enabled: false
+    webhook_credential: null
+    webhook_service: ''
+  - allow_simultaneous: false
+    ask_inventory_on_launch: false
+    ask_limit_on_launch: false
+    ask_scm_branch_on_launch: false
+    ask_variables_on_launch: false
+    description: ''
+    extra_vars: ''
+    inventory: null
+    limit: null
+    name: test-role-workflow
+    natural_key:
+      name: test-role-workflow
+      organization:
+        name: Default
+        type: organization
+      type: workflow_job_template
+    organization:
+      name: Default
+      type: organization
+    related:
+      labels: []
+      notification_templates_approvals: []
+      notification_templates_error: []
+      notification_templates_started: []
+      notification_templates_success: []
+      schedules: []
+      survey_spec: {}
+      workflow_nodes: []
+    scm_branch: null
+    survey_enabled: false
+    webhook_credential: null
+    webhook_service: ''
+changed: false
+failed: false

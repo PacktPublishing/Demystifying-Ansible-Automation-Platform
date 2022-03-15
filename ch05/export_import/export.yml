@@ -1,0 +1,27 @@
+---
+- name: Export Controller Objects
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  environment:
+     CONTROLLER_HOST: https://controller.node
+     CONTROLLER_USERNAME: admin
+     CONTROLLER_PASSWORD: secret123
+     CONTROLLER_VERIFY_SSL: False
+
+  tasks:
+    - name: Export controller objects
+      awx.awx.export:
+        all: True
+      register: export_results
+
+    - debug:
+        var: export_results
+
+    - name: Export to file
+      copy:
+        content: "{{ export_results | to_nice_yaml(indent=2) }}"
+        dest: configs/controller.yaml
+...
