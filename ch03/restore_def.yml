@@ -1,0 +1,10 @@
+---
+apiVersion: automationhub.ansible.com/v1beta1
+kind: AutomationHubRestore
+metadata:
+ namespace: ansible-automation-platform
+ name: restore
+spec:
+ backup_name: backup
+ backup_source: CR
+...

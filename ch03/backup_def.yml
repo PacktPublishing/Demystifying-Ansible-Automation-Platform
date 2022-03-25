@@ -1,0 +1,9 @@
+---
+apiVersion: automationhub.ansible.com/v1beta1
+kind: AutomationHubBackup
+metadata:
+ name: example
+ namespace: ansible-automation-platform
+spec:
+ deployment_name: crc-hub
+...
