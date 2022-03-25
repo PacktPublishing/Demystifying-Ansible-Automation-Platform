@@ -13,18 +13,18 @@ spec:
         - weight: 1
   file_storage_size: 100Gi
   image_pull_policy: IfNotPresent
-web:
-  log_level: INFO
-  replicas: 1
-  resource_requirements:
-    limits:
-      cpu: cpu
-      memory: memory
-      ephemeral-storage: storage
-    requests:
-      cpu: cpu
-      memory: memory
-      ephemeral-storage: storage
+  web:
+    log_level: INFO
+    replicas: 1
+    resource_requirements:
+      limits:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
+      requests:
+        cpu: cpu
+        memory: memory
+        ephemeral-storage: storage
   file_storage_access_mode: ReadWriteMany
   content:
     log_level: INFO
