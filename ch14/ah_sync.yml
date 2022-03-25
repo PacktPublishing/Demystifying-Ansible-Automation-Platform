@@ -7,10 +7,10 @@
     - redhat_cop.ah_configuration
   tasks:
     - name: Configure rh-certified repo
-      ah_repository:
+      redhat_cop.ah_configuration.ah_repository:
         name: rh-certified
         url: https://cloud.redhat.com/api/automation-hub/
-        token: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhZDUyMjdhMy1iY2ZkLTRjZjAtYTdiNi0zOTk4MzVhMDg1NjYifQ.eyJpYXQiOjE2NDQ3NjY1ODksImp0aSI6IjdlNGJhYzEwLTczOTktNDNmYi1hZWE4LTQ1N2UxMGRjMDk1NyIsImlzcyI6Imh0dHBzOi8vc3NvLnJlZGhhdC5jb20vYXV0aC9yZWFsbXMvcmVkaGF0LWV4dGVybmFsIiwiYXVkIjoiaHR0cHM6Ly9zc28ucmVkaGF0LmNvbS9hdXRoL3JlYWxtcy9yZWRoYXQtZXh0ZXJuYWwiLCJzdWIiOiJmOjUyOGQ3NmZmLWY3MDgtNDNlZC04Y2Q1LWZlMTZmNGZlMGNlNjpleGNhbGliNDJAZ21haWwuY29tIiwidHlwIjoiT2ZmbGluZSIsImF6cCI6ImNsb3VkLXNlcnZpY2VzIiwibm9uY2UiOiJjOGU3YTQ5My1mMDhlLTQ3MTEtYmE1MC0xMDcyMjUzMjJmODAiLCJzZXNzaW9uX3N0YXRlIjoiMGQ1MWE1ZjAtNDA5Mi00Y2NiLWI3NDUtNGNlYzBiYTUxOTZjIiwic2NvcGUiOiJvcGVuaWQgb2ZmbGluZV9hY2Nlc3MiLCJzaWQiOiIwZDUxYTVmMC00MDkyLTRjY2ItYjc0NS00Y2VjMGJhNTE5NmMifQ.LJhEAjTE2luPXBeNRJTFQjniQ2Ejr6il0zRWhQdl0fs
+        token: token
         auth_url: https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
         ah_host: https://ah.node
         ah_username: admin
