@@ -9,10 +9,6 @@
     - name: Include vars from configs directory
       include_vars:
         dir: ./configs
-        ignore_files: [controller_config.yml.template]
-        extensions: ["yml"]
-      tags:
-        - always
   roles:
     - redhat_cop.controller_configuration.license
     - redhat_cop.controller_configuration.settings

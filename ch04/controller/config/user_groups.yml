@@ -1,0 +1,13 @@
+---
+controller_user_accounts:
+  - user: joe_123
+    is_superuser: false
+    password: password123
+controller_teams:
+  - name: Joes
+    organization: Default
+controller_roles:
+  - user:  joe_123
+    team: Joes
+    role: member
+...

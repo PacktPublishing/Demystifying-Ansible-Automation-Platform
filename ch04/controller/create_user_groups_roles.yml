@@ -3,22 +3,10 @@
   hosts: localhost
   connection: local
   gather_facts: false
-  vars:
-    controller_hostname: https://controller.node
-    controller_username: admin
-    controller_password: secret123
-    controller_validate_certs: false
-    controller_user_accounts:
-      - user: joe_123
-        is_superuser: false
-        password: password123
-    controller_teams:
-      - name: Joes
-        organization: Default
-    controller_roles:
-      - user:  joe_123
-        team: Joes
-        role: member
+  pre_tasks:
+    - name: Include vars from configs directory
+      include_vars:
+        dir: ./configs
   collections:
     - awx.awx
     - redhat_cop.controller_configuration

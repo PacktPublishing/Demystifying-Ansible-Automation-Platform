@@ -1,0 +1,13 @@
+---
+ah_groups:
+  - name: Joes
+    perms:
+      - change_collectionremote
+      - view_collectionremote
+ah_users:
+  - username: joe123
+    password: 123456789
+    groups:
+      - Joes
+    is_superuser: true
+...
