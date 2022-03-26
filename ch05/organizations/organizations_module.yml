@@ -6,7 +6,7 @@
   collections:
     - ansible.controller
   tasks:
-    - name: Create Organizations
+    - name: Create Organization
       ansible.controller.organization:
         name: Engineering
         galaxy_credentials:
