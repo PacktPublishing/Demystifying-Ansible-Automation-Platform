@@ -1,0 +1,5 @@
+---
+plugin: publicapis
+validate_certs: False
+publicapi_url: 'https://api.publicapis.org/entries'
+...

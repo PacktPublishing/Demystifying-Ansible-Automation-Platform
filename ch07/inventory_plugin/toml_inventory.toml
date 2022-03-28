@@ -1,0 +1,17 @@
+[all.vars]
+some_var = false
+
+[api]
+children = [
+    "database"
+]
+vars = { db_port = 8888, other_var = 'string' }
+
+[api.hosts]
+host1 = {}
+
+[database.hosts]
+db1 = {}
+
+[database.vars]
+some_var = true

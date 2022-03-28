@@ -1,0 +1,41 @@
+---
+controller_credential_types:  
+  - name: ServiceNow
+    description: ServiceNow Credentials
+    kind: cloud
+    inputs:
+      fields:
+        - id: sn_host
+          type: string
+          label: Service Now Host
+          help_text: Exclusive with Service Now Instance.
+        - id: sn_instance
+          type: string
+          label: Service Now Instance
+          help_text: Exclusive with Service Now Host.
+        - id: sn_username
+          type: string
+          label: Service Now Username
+        - id: sn_password
+          type: string
+          label: Service Now Password
+          secret: true
+      required:
+        - netbox_api_endpoint
+        - netbox_token
+    injectors:
+      env:
+        SN_INSTANCE: "{% raw %}{  { sn_instance }}{% endraw %}"
+        SN_HOST: "{% raw %}{  { sn_host }}{% endraw %}"
+        SN_USERNAME: "{% raw %}{  { sn_username }}{% endraw %}"
+        SN_PASSWORD: "{% raw %}{  { sn_password }}{% endraw %}"
+
+controller_credentials:
+  - name: ServiceNow Credentials
+    description: Credentials for ServiceNow
+    organization: Default
+    credential_type: ServiceNow
+    inputs:
+      sn_host: servicenow.mydomain.com
+      sn_username: admin
+      sn_password: password

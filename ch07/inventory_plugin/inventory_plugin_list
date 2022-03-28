@@ -1,0 +1,30 @@
+ansible-doc -t inventory -l
+
+
+host_list                     Parses a 'host list' string 'host1.example.com, host2'
+advanced_host_list            Parses a 'host list' with ranges 'host[1:10],'
+
+
+ini                           Uses an Ansible INI file as inventory source
+toml                          Uses a specific TOML file as an inventory source
+yaml                          Uses a specific YAML file as an inventory source
+
+auto                          Loads and executes an inventory plugin specified in a YAML config
+constructed                   Uses Jinja2 to construct vars and groups based on existing inventory
+generator                     Uses Jinja2 to construct hosts and groups from patterns
+script                        Executes an inventory script that returns JSON
+
+
+Further reading
+constructed                   Uses Jinja2 to construct vars and groups based on existing inventory
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/constructed_inventory.html
+generator                     Uses Jinja2 to construct hosts and groups from patterns
+http://willthames.github.io/2017/11/01/generating-inventory.html
+script                        Executes an inventory script that returns JSON
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/script_inventory.html
+ini
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/ini_inventory.html
+toml                          Uses a specific TOML file as an inventory source
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/toml_inventory.html
+yaml
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/yaml_inventory.html

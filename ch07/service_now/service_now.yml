@@ -1,0 +1,18 @@
+---
+plugin: servicenow.servicenow.now
+host: servicenow.mydomain.com
+username: admin
+password: password
+fields:
+  - name
+  - sys_tags
+compose:
+  sn_tags: sn_sys_tags.replace(" ", "").split(',')
+  ansible_host: sn_ip_address
+keyed_groups:
+  - key: sn_classification | lower
+    prefix: 'env'
+  - key: sn_vendor | lower
+    prefix: ''
+    separator: ''
+...

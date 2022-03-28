@@ -1,0 +1,44 @@
+---
+- name: Create Inventory once piece at a time
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Add inventory
+      ansible.controller.inventory:
+        name: Basic Inventory
+        description: Create Inventory once piece at a time
+        organization: Default
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+
+    - name: Add host
+      ansible.controller.host:
+        name: basic_host
+        description: "Local Host Group"
+        inventory: Basic Inventory
+        variables:
+          hosts_var: some_val
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+
+    - name: Add group
+      ansible.controller.group:
+        name: Cities
+        inventory: Basic Inventory
+        hosts:
+          - basic_host
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+...

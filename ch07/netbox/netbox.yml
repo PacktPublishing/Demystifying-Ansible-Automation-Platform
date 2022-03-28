@@ -1,0 +1,18 @@
+---
+plugin: netbox.netbox.nb_inventory
+validate_certs: False
+config_context: True
+services: False
+interfaces: True
+fetch_all: False
+group_by:
+  - device_roles
+  - racks
+query_filters:
+  - cf_foo: bar
+  - status: active
+  - tag: tag_name
+compose:
+  foo: last_updated
+  bar: display_name
+...

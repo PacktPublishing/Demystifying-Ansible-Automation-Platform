@@ -1,0 +1,30 @@
+---
+controller_credential_types:  
+  - name: Netbox
+    description: Netbox API Token
+    kind: cloud
+    inputs:
+      fields:
+        - id: netbox_api_endpoint
+          type: string
+          label: Netbox API Endpoint
+        - id: netbox_token
+          type: string
+          label: Netbox API TOKEN
+          secret: true
+      required:
+        - netbox_api_endpoint
+        - netbox_token
+    injectors:
+      env:
+        NETBOX_API: "{% raw %}{  { netbox_api_endpoint }}{% endraw %}"
+        NETBOX_TOKEN: "{% raw %}{  { netbox_token }}{% endraw %}"
+
+controller_credentials:
+  - name: Netbox API Token
+    description: Credentials for Netbox API
+    organization: Default
+    credential_type: Netbox
+    inputs:
+      netbox_api_endpoint: https://netbox.node
+      netbox_token: token

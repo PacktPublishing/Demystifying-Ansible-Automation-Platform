@@ -1,0 +1,22 @@
+# fmt: ini
+# Example 1
+[automationcontroller]
+localhost ansible_connection=local
+
+[automationcontroller:vars]
+peers=execution_nodes
+
+[automationcontroller:children]
+sso
+
+[sso]
+random_host_1
+
+[all:vars]
+admin_password=''
+
+# Example 2
+ungrouped_host # Ungrouped host
+
+[grouped_host]
+grouped_host1

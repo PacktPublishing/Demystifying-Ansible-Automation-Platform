@@ -1,0 +1,22 @@
+---
+- name: Example host list
+  hosts: 'host1.example.com, host2'
+  tasks:
+    - name: task name
+      debug:
+        msg: "task_name"
+
+- name: Example host list
+  hosts: 'host[1:10],'
+  tasks:
+    - name: task name
+      debug:
+        msg: "task_name"
+
+- name: Example host list
+  hosts: '{{ group_names }}, {{host_name}}'
+  tasks:
+    - name: task name
+      debug:
+        msg: "task_name"
+...
