@@ -10,7 +10,7 @@
       include_vars:
         dir: ./config
   roles:
+    - redhat_cop.controller_configuration.projects
     - redhat_cop.controller_configuration.inventories
-    - redhat_cop.controller_configuration.hosts
-    - redhat_cop.controller_configuration.groups
+    - redhat_cop.controller_configuration.inventory_sources
 ...

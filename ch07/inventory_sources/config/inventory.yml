@@ -5,22 +5,25 @@ controller_inventories:
     organization: Default
     variables:
       inventory_var: inventory_value
-controller_hosts:
-  - name: basic_host
+controller_projects:
+  - name: Inventory example
+    scm_type: git
+    scm_url: https://github.com/sean-m-sullivan/inventory_example.git
+    scm_branch: main
+    scm_clean: true
+    description: Inventory Example
+    organization: Default
+    wait: true
+    update: true
+controller_inventory_sources:
+  - name: Public APIs
+    source: scm
+    source_project: Inventory example
+    source_path: inventories/plugin.yml
     inventory: Basic Inventory
-    variables:
-      hosts_var: some_val
-controller_groups:
-  - name: Basic Group2
-    inventory: Basic Inventory
-  - name: Basic Group
-    inventory: Basic Inventory
-    variables:
-      groups_variable: group_val
-    hosts:
-      - basic_host
-    children:
-      - Basic Group2
-    preserve_existing_hosts: True
-    preserve_existing_children: True
+    organization: Default
+    overwrite: true
+    update_on_launch: true
+    update_cache_timeout: 0
+    wait: true
 ...

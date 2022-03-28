@@ -17,21 +17,8 @@
         controller_password: secret123
         validate_certs: false
 
-    - name: Add host
-      ansible.controller.host:
-        name: basic_host
-        description: "Local Host Group"
-        inventory: Basic Inventory
-        variables:
-          hosts_var: some_val
-        state: present
-        controller_host: https://controller.node
-        controller_username: admin
-        controller_password: secret123
-        validate_certs: false
-
-    - name: Add group
-      ansible.controller.group:
+    - name: Add inventory source
+      ansible.controller.inventory_source:
         name: Cities
         inventory: Basic Inventory
         hosts:
