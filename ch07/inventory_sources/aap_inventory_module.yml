@@ -1,13 +1,27 @@
 ---
-- name: Create Inventory once piece at a time
+- name: Create Inventory source
   hosts: localhost
   connection: local
   gather_facts: false
   collections:
-    - ansible.controller
+    - awx.awx.
   tasks:
+    - name: Add project
+      awx.awx.project:
+        name: Inventory example
+        scm_type: git
+        scm_url: https://github.com/sean-m-sullivan/inventory_example.git
+        scm_branch: main
+        description: Inventory Example
+        organization: Default
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+
     - name: Add inventory
-      ansible.controller.inventory:
+      awx.awx..inventory:
         name: Basic Inventory
         description: Create Inventory once piece at a time
         organization: Default
@@ -18,14 +32,26 @@
         validate_certs: false
 
     - name: Add inventory source
-      ansible.controller.inventory_source:
-        name: Cities
+      awx.awx.inventory_source:
+        name: Public APIs
+        source: scm
+        source_project: Inventory example
+        source_path: inventories/plugin.yml
         inventory: Basic Inventory
-        hosts:
-          - basic_host
+        organization: Default
+        overwrite: true
+        update_on_launch: true
+        update_cache_timeout: 0
+        wait: true
         state: present
         controller_host: https://controller.node
         controller_username: admin
         controller_password: secret123
         validate_certs: false
+
+    - name: Update a single inventory source
+      awx.awx.inventory_source_update:
+        name: Public APIs
+        inventory: Basic Inventory
+        organization: Default
 ...
