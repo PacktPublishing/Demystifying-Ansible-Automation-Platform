@@ -6,7 +6,7 @@
   collections:
     - ansible.controller
   tasks:
-    - name: Create Organization
+    - name: Set user to admin over inventory
       ansible.controller.role:
         user: joe123
         role: admin

@@ -1,0 +1,8 @@
+---
+roles:
+  - name: geerlingguy.java
+    version: 1.9.6
+
+collections:
+  - name: redhat_cop.ah_configuration
+  - name: redhat_cop.controller_configuration
