@@ -1,0 +1,30 @@
+---
+- name: Playbook to create custom EE
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - redhat_cop.ee_utilities
+  vars:
+    builder_dir: /tmp/builder_base
+    ee_registry_dest: ah.node/
+    ee_registry_username: admin
+    ee_registry_password: secret123
+    ee_name: custom_ee
+    ee_bindep:
+      - python38-requests [platform:centos-8 platform:rhel-8]
+      - python38-pyyaml [platform:centos-8 platform:rhel-8]
+    ee_python:
+      - pytz  # for schedule_rrule lookup plugin
+      - python-dateutil>=2.7.0  # schedule_rrule
+      - awxkit  # For import and export modules
+    ee_collections:
+      - name: awx.awx
+      - name: redhat_cop.controller_configuration
+      - name: redhat_cop.ah_configuration
+    ee_prepend:
+      - RUN whoami
+      - RUN cat /etc/os-release
+    ee_append:
+      - RUN echo This is a post-install command!
+  roles:
+    - redhat_cop.ee_utilities.ee_builder
