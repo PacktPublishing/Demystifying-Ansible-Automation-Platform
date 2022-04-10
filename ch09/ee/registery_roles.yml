@@ -1,0 +1,22 @@
+---
+- name: Updating Automation remote registeries
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    ah_host: https://ah.node
+    ah_username: admin
+    ah_password: secret123
+    ah_path_prefix: galaxy
+    ah_validate_certs: false
+    ah_ee_registries:
+      - name: quay
+        url: https://quay.io/
+      - name: rh-registry
+        url: registry.redhat.io
+  collections:
+    - redhat_cop.ah_configuration
+  roles:
+    - redhat_cop.ah_configuration.ee_registries 
+    - redhat_cop.ah_configuration.ee_registries_sync
+...

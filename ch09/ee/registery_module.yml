@@ -1,0 +1,40 @@
+---
+- name: Updating Automation remote registeries
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - redhat_cop.ah_configuration
+
+  tasks:
+
+    - name: Configure quay registry
+      redhat_cop.ah_configuration.ah_ee_registry:
+        name: quay
+        url: https://quay.io/
+        ah_host: https://ah.node/
+        ah_username: admin
+        ah_password: secret123
+        ah_path_prefix: galaxy
+        validate_certs: false
+
+    - name: Configure Red Hat registry
+      redhat_cop.ah_configuration.ah_ee_registry:
+        name: rh-registry
+        url: registry.redhat.io
+        ah_host: https://ah.node/
+        ah_username: admin
+        ah_password: secret123
+        ah_path_prefix: galaxy
+        validate_certs: false
+
+    - name: Sync rh-registry without waiting
+      ah_ee_registry_sync:
+        name: rh-registry
+        wait: false
+        ah_host: https://ah.node/
+        ah_username: admin
+        ah_password: secret123
+        ah_path_prefix: galaxy
+        validate_certs: false
+...
