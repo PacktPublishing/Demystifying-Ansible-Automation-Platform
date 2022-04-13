@@ -54,7 +54,7 @@
         ah_path_prefix: galaxy
         validate_certs: false
 
-    - name: Sync community repo
+    - name: Sync rh-certified repo
       redhat_cop.ah_configuration.ah_repository_sync:
         name: rh-certified
         wait: true
