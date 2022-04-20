@@ -1,0 +1,6 @@
+---
+roles:
+  - name: geerlingguy.java
+    version: 1.9.6
+
+...

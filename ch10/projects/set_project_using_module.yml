@@ -1,0 +1,24 @@
+---
+- name: Using module to create project
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Create the Hello world tower project
+      ansible.controller.project:
+        name: Tower Test Project
+        scm_type: git
+        scm_url: https://github.com/ansible/tower-example.git
+        scm_branch: master
+        scm_clean: true
+        description: Tower Hello World
+        organization: Default
+        wait: true
+        update: true
+        controller_host: https://10.0.0.1
+        controller_username: admin
+        controller_password: password
+        validate_certs: false
+...

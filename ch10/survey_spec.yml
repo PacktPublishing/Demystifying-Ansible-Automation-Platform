@@ -1,0 +1,95 @@
+name: Survey Example template
+description: Description goes here
+spec:
+  - question_name: text
+    question_description: >-
+      target host is required for playbook to work, this host needs to exist in
+      the inventory
+    required: true
+    type: text
+    variable: text
+    min: 0
+    max: 1034
+    default: infra-ansible-tower-testing.infra.sat.rdu2.redhat.com
+    choices: ''
+    formattedChoices:
+      - choice: ''
+        isDefault: false
+        id: 0
+  - question_name: textarea
+    question_description: ''
+    required: true
+    type: textarea
+    variable: textarea
+    min: 0
+    max: 1024
+    default: ''
+    choices: ''
+  - question_name: password
+    question_description: ''
+    required: true
+    type: password
+    variable: password
+    min: 0
+    max: 1024
+    default: ''
+    choices: ''
+  - question_name: multiple_single
+    question_description: ''
+    required: true
+    type: multiplechoice
+    variable: multiple_single
+    min: 0
+    max: 1024
+    formattedChoices:
+      - choice: asdf
+        isDefault: true
+        id: 0
+      - choice: fsad
+        isDefault: false
+        id: 1
+      - choice: sad
+        isDefault: false
+        id: 2
+      - choice: dad
+        isDefault: false
+        id: 3
+    default: asdf
+    choices: |-
+      asdf
+      fsad
+      sad
+      dad
+  - question_name: multiple_select
+    question_description: ''
+    required: true
+    type: multiselect
+    variable: multiple_select
+    min: 0
+    max: 1024
+    default: |-
+      asdf
+      fdas
+    choices: |-
+      asdf
+      fdas
+      sad
+      dad
+  - question_name: integer
+    question_description: ''
+    required: true
+    type: integer
+    variable: integer
+    min: 0
+    max: 3
+    default: 2
+    choices: ''
+  - question_name: float
+    question_description: ''
+    required: true
+    type: float
+    variable: float
+    min: 0
+    max: 1024
+    default: 2.5
+    choices: ''

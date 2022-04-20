@@ -1,0 +1,15 @@
+---
+- name: Playbook to add EE to controller
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  pre_tasks:
+    - name: Include vars from configs directory
+      include_vars:
+        dir: ./configs
+  collections:
+    - awx.awx
+    - redhat_cop.controller_configuration
+  roles:
+    - redhat_cop.controller_configuration.execution_environments
+...

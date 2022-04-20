@@ -1,0 +1,18 @@
+---
+- name: Add EE to controller
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Create EE
+      ansible.controller.execution_environment:
+        name: "My EE"
+        image: quay.io/ansible/awx-ee
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+...

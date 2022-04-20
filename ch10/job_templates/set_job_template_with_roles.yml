@@ -1,0 +1,70 @@
+---
+- name: Using role create job template
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    controller_hostname: https://controller.node
+    controller_username: admin
+    controller_password: secret123
+    controller_validate_certs: false
+    controller_configuration_credentials_secure_logging: false
+    controller_projects:
+      - name: Test Project
+        scm_type: git
+        scm_url: https://github.com/ansible/tower-example.git
+        scm_branch: master
+        scm_clean: true
+        description: Test Project 1
+        organization: Default
+        wait: true
+        update: true
+    controller_inventories:
+      - name: RHVM-01
+        organization: Default
+        description: created by Ansible Playbook - for RHVM-01
+    controller_credentials:
+      - credential_type: Red Hat Virtualization
+        name: RHVM
+        organization: Default
+        description: infra-rhvm-01 creds for inventory sources.
+        inputs:
+          host: "https://example.com/ovirt-engine/api"
+          username: user
+          password: password
+    controller_templates:
+      - name: test-template-1
+        description: created by Ansible Playbook
+        job_type: run
+        inventory: RHVM-01
+        credentials:
+          - RHVM
+        project: Test Project
+        playbook: helloworld.yml
+        verbosity: 2
+        extra_vars:
+          target_hosts: infra-ansible-tower-01.example.com
+        survey_spec:
+          name: Survey Example template
+          description: Description goes here
+          spec:
+            - question_name: Target Host
+              question_description: target host is required for playbook to work, this host
+                needs to exist in the inventory
+              required: true
+              type: text
+              variable: target_hosts
+              min: 0
+              max: 1024
+              default: infra-ansible-tower-testing.infra.sat.rdu2.redhat.com
+              choices: ''
+              new_question: true
+  collections:
+    - ansible.controller
+    - redhat_cop.controller_configuration
+  roles:
+    - redhat_cop.controller_configuration.credentials
+    - redhat_cop.controller_configuration.inventories
+    - redhat_cop.controller_configuration.projects
+    - redhat_cop.controller_configuration.job_templates
+...
