@@ -1,0 +1,136 @@
+---
+- name: Using role create job template
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    controller_hostname: https://controller.node
+    controller_username: admin
+    controller_password: secret123
+    controller_validate_certs: false
+    controller_configuration_credentials_secure_logging: false
+    controller_projects:
+      - name: Test Project
+        scm_type: git
+        scm_url: https://github.com/ansible/tower-example.git
+        scm_branch: master
+        scm_clean: true
+        description: Test Project 1
+        organization: Default
+        wait: true
+        update: true
+    controller_inventories:
+      - name: RHVM-01
+        organization: Default
+        description: created by Ansible Playbook - for RHVM-01
+    controller_inventory_sources:
+      - name: RHVM-01
+        source: scm
+        source_project: Test Project
+        source_path: phillips_hue/hosts
+        inventory: RHVM-01
+        organization: Default
+        overwrite: true
+        update_on_launch: true
+        update_cache_timeout: 0
+        wait: true
+    controller_credentials:
+      - credential_type: Red Hat Virtualization
+        name: RHVM
+        organization: Default
+        description: infra-rhvm-01 creds for inventory sources.
+        inputs:
+          host: "https://example.com/ovirt-engine/api"
+          username: user
+          password: password
+    controller_templates:
+      - name: test-template-1
+        description: created by Ansible Playbook
+        job_type: run
+        inventory: RHVM-01
+        credentials:
+          - RHVM
+        project: Test Project
+        playbook: helloworld.yml
+        verbosity: 2
+        extra_vars:
+          target_hosts: infra-ansible-tower-01.example.com
+        survey_spec:
+          name: Survey Example template
+          description: Description goes here
+          spec:
+            - question_name: Target Host
+              question_description: target host is required for playbook to work, this host
+                needs to exist in the inventory
+              required: true
+              type: text
+              variable: target_hosts
+              min: 0
+              max: 1024
+              default: infra-ansible-tower-testing.infra.sat.rdu2.redhat.com
+              choices: ''
+              new_question: true
+    controller_workflows:
+      -   name: Complicated workflow schema
+          destroy_current_schema: true
+          related:
+            workflow_nodes:
+              -   identifier: Inventory Update
+                  related:
+                      success_nodes:
+                      -   identifier: Template 1
+                  unified_job_template:
+                      inventory:
+                          organization:
+                              name: Default
+                      name: RHVM-01
+                      type: inventory_source
+              -   identifier: Project Update
+                  related:
+                      success_nodes:
+                      -   identifier: Template 1
+                  unified_job_template:
+                      name: Test Project
+                      organization:
+                        name: Default
+                      type: project
+              -   identifier: Template 1
+                  all_parents_must_converge: True
+                  related:
+                      success_nodes:
+                      -   identifier: Template 2
+                      failure_nodes:
+                      -   identifier: Approval Node
+                  unified_job_template:
+                      name: test-template-1
+                      organization:
+                          name: Default
+                      type: job_template
+              -   identifier: Approval Node
+                  related:
+                      success_nodes:
+                      -   identifier: Template 2
+                  unified_job_template:
+                      description: Approval node for example
+                      timeout: 900
+                      type: workflow_approval
+                      name: Approval to continue
+              -   identifier: Template 2
+                  unified_job_template:
+                      name: test-template-1
+                      organization:
+                          name: Default
+                      type: job_template
+
+
+  collections:
+    - ansible.controller
+    - redhat_cop.controller_configuration
+  roles:
+    - redhat_cop.controller_configuration.credentials
+    - redhat_cop.controller_configuration.inventories
+    - redhat_cop.controller_configuration.inventory_sources
+    - redhat_cop.controller_configuration.projects
+    - redhat_cop.controller_configuration.job_templates
+    - redhat_cop.controller_configuration.workflow_job_templates
+...
