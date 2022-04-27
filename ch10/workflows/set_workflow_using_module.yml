@@ -149,7 +149,4 @@
         controller_username: admin
         controller_password: secret123
         validate_certs: false
-      loop: "{{ workflow_job_templates }}"
-      loop_control:
-        loop_var: __workflow_loop_item
 ...
