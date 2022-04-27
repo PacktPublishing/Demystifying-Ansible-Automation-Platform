@@ -71,57 +71,56 @@
               choices: ''
               new_question: true
     controller_workflows:
-      -   name: Complicated workflow schema
-          destroy_current_schema: true
-          related:
-            workflow_nodes:
-              -   identifier: Inventory Update
-                  related:
-                      success_nodes:
-                      -   identifier: Template 1
-                  unified_job_template:
-                      inventory:
-                          organization:
-                              name: Default
-                      name: RHVM-01
-                      type: inventory_source
-              -   identifier: Project Update
-                  related:
-                      success_nodes:
-                      -   identifier: Template 1
-                  unified_job_template:
-                      name: Test Project
-                      organization:
-                        name: Default
-                      type: project
-              -   identifier: Template 1
-                  all_parents_must_converge: True
-                  related:
-                      success_nodes:
-                      -   identifier: Template 2
-                      failure_nodes:
-                      -   identifier: Approval Node
-                  unified_job_template:
-                      name: test-template-1
-                      organization:
-                          name: Default
-                      type: job_template
-              -   identifier: Approval Node
-                  related:
-                      success_nodes:
-                      -   identifier: Template 2
-                  unified_job_template:
-                      description: Approval node for example
-                      timeout: 900
-                      type: workflow_approval
-                      name: Approval to continue
-              -   identifier: Template 2
-                  unified_job_template:
-                      name: test-template-1
-                      organization:
-                          name: Default
-                      type: job_template
-
+      - name: Complicated workflow schema
+        destroy_current_schema: true
+        related:
+          workflow_nodes:
+            - identifier: Inventory Update
+              related:
+                success_nodes:
+                  - identifier: Template 1
+              unified_job_template:
+                inventory:
+                  organization:
+                    name: Default
+                name: RHVM-01
+                type: inventory_source
+            - identifier: Project Update
+              related:
+                success_nodes:
+                  - identifier: Template 1
+              unified_job_template:
+                name: Test Project
+                organization:
+                  name: Default
+                type: project
+            - identifier: Template 1
+              all_parents_must_converge: true
+              related:
+                success_nodes:
+                  - identifier: Template 2
+                failure_nodes:
+                  - identifier: Approval Node
+              unified_job_template:
+                name: test-template-1
+                organization:
+                  name: Default
+                type: job_template
+            - identifier: Approval Node
+              related:
+                success_nodes:
+                  - identifier: Template 2
+              unified_job_template:
+                description: Approval node for example
+                timeout: 900
+                type: workflow_approval
+                name: Approval to continue
+            - identifier: Template 2
+              unified_job_template:
+                name: test-template-1
+                organization:
+                  name: Default
+                type: job_template
 
   collections:
     - ansible.controller

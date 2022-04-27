@@ -1,0 +1,51 @@
+workflow_nodes:
+  - identifier: Inventory Update
+    related:
+      always_nodes: []
+      credentials: []
+      failure_nodes: []
+      success_nodes:
+        - identifier: Template 1
+    unified_job_template:
+      name: RHVM-01
+      inventory:
+        organization:
+          name: Default
+      type: inventory_source
+    all_parents_must_converge: false
+    extra_data: {}
+  - identifier: Project Update
+    unified_job_template:
+      name: Test Project
+      type: project
+      organization:
+        name: Default
+    related:
+      success_nodes:
+        - identifier: Template 1
+  - identifier: Template 1
+    unified_job_template:
+      name: test-template-1
+      type: job_template
+      organization:
+        name: Default
+    related:
+      success_nodes:
+        - identifier: Template 2
+      failure_nodes:
+        - identifier: Approval Node
+  - identifier: Approval Node
+    unified_job_template:
+      description: Approval node for example
+      timeout: 900
+      type: workflow_approval
+      name: Approval to continue
+    related:
+      success_nodes:
+        - identifier: Template 2
+  - identifier: Template 2
+    unified_job_template:
+      name: test-template-1
+      organization:
+        name: Default
+      type: job_template

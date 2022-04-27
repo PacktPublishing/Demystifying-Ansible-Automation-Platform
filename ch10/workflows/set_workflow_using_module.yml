@@ -95,51 +95,56 @@
       workflow_job_template:
         name: Complicated workflow schema
         schema:
-          -   identifier: node101
-              related:
-                  success_nodes:
-                  -   identifier: node201
-              unified_job_template:
-                  inventory:
-                      organization:
-                          name: Default
-                  name: RHVM-01
-                  type: inventory_source
-          -   identifier: node102
-              related:
-                  success_nodes:
-                  -   identifier: node201
-              unified_job_template:
-                  name: Demo Project
-                  organization:
-                    name: Default
-                  type: project
-          -   identifier: node201
-              related:
-                  success_nodes:
-                  -   identifier: node401
-                  failure_nodes:
-                  -   identifier: node301
-              unified_job_template:
-                  name: test-template-1
-                  organization:
-                      name: Default
-                  type: job_template
-          -   identifier: node301
-              related:
-                  success_nodes:
-                  -   identifier: node401
-              unified_job_template:
-                  description: Approval node for example
-                  timeout: 900
-                  type: workflow_approval
-                  name: Approval to continue
-          -   identifier: node401
-              unified_job_template:
-                  name: Demo Job Template
-                  organization:
-                      name: Default
-                  type: job_template
+          - identifier: Inventory Update
+            related:
+              always_nodes: []
+              credentials: []
+              failure_nodes: []
+              success_nodes:
+                - identifier: Template 1
+            unified_job_template:
+              name: RHVM-01
+              inventory:
+                organization:
+                  name: Default
+              type: inventory_source
+            all_parents_must_converge: false
+            extra_data: {}
+          - identifier: Project Update
+            unified_job_template:
+              name: Test Project
+              type: project
+              organization:
+                name: Default
+            related:
+              success_nodes:
+                - identifier: Template 1
+          - identifier: Template 1
+            unified_job_template:
+              name: test-template-1
+              type: job_template
+              organization:
+                name: Default
+            related:
+              success_nodes:
+                - identifier: Template 2
+              failure_nodes:
+                - identifier: Approval Node
+          - identifier: Approval Node
+            unified_job_template:
+              description: Approval node for example
+              timeout: 900
+              type: workflow_approval
+              name: Approval to continue
+            related:
+              success_nodes:
+                - identifier: Template 2
+          - identifier: Template 2
+            unified_job_template:
+              name: test-template-1
+              organization:
+                name: Default
+              type: job_template
         controller_host: https://controller.node
         controller_username: admin
         controller_password: secret123
