@@ -1,0 +1,20 @@
+    workflow_nodes:
+      - identifier: node101
+        unified_job_template:
+          name: Netbox Inventory Source
+          inventory:
+            organization:
+              name: IaaS Network Automation
+          type: inventory_source
+        related:
+          success_nodes:
+            - identifier: node201
+      - identifier: node201
+        unified_job_template:
+          name: Base Config on Tors
+          type: job_template
+          organization:
+            name: IaaS Network Automation
+        related:
+          success_nodes:
+            - identifier: node301
