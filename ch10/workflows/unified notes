@@ -1,0 +1,32 @@
+    unified_job_template:
+      name: RHVM-01
+      type: inventory_source
+      inventory:
+        organization:
+          name: Default
+
+    unified_job_template:
+      name: Approval to continue
+      type: workflow_approval
+      description: Approval node for example
+      timeout: 900
+
+    unified_job_template:
+      name: Test Project
+      type: project
+      organization:
+        name: Default
+
+    unified_job_template:
+      name: test-template-1
+      type: job_template
+      organization:
+        name: Default
+
+    unified_job_template:
+      name: demo
+      type: workflow_job_template
+
+    unified_job_template:
+      name: Cleanup Activity Stream
+      type: system_job

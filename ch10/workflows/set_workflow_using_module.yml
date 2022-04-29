@@ -4,7 +4,7 @@
   connection: local
   gather_facts: false
   collections:
-    - ansible.controller
+    - awx.awx
   tasks:
     - name: Add inventory
       ansible.controller.inventory:
@@ -92,7 +92,7 @@
         validate_certs: false
 
     - name: Push workflows to controller
-      workflow_job_template:
+      awx.awx.workflow_job_template:
         name: Complicated workflow schema
         schema:
           - identifier: Inventory Update
@@ -145,6 +145,16 @@
               organization:
                 name: Default
               type: job_template
+          - identifier: Workflow demo
+            unified_job_template:
+              name: demo
+              organization:
+                  name: Default
+              type: workflow_job_template
+          - identifier: Cleanup Job
+            unified_job_template:
+              name: Cleanup Activity Stream
+              type: system_job
         controller_host: https://controller.node
         controller_username: admin
         controller_password: secret123
