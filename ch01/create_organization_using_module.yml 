@@ -9,8 +9,8 @@
     - name: Create Organization
       ansible.controller.organization:
         name: Satellite
-        controller_host: https://10.0.0.1
+        controller_host: https://controller.node/
         controller_username: admin
-        controller_password: password
+        controller_password: secret123
         validate_certs: false
 ...

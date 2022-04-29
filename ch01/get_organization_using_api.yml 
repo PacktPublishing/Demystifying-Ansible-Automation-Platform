@@ -6,11 +6,11 @@
   collections:
     - ansible.controller
   tasks:
-    - name: Get list of applications
+    - name: Get list of organizations
       uri:
-        url: https://192.168.122.22/api/v2/organizations/
+        url: https://controller.node/api/v2/organizations/
         user: admin
-        password: password
+        password: secret123
         method: GET
         validate_certs: false
         force_basic_auth: yes
