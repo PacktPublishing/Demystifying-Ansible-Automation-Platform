@@ -1,15 +1,16 @@
 ---
 - name: Playbook to push objects to controller
   hosts: localhost
+  gather_facts: false
   connection: local
   collections:
     - awx.awx
     - redhat_cop.controller_configuration
   pre_tasks:
-    - name: Include vars from configs directory 
-      include_vars: 
-        dir: ./configs 
-        extensions: ["yml"]
+    - name: Include vars from configs directory
+      include_vars:
+        dir: ./configs
+        extensions: ["yml", "yaml"]
   roles:
     - redhat_cop.controller_configuration.organizations
     - redhat_cop.controller_configuration.projects

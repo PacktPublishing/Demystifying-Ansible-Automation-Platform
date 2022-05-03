@@ -15,7 +15,7 @@
         requirements:
           - name: redhat_cop.ah_configuration
           - name: redhat_cop.tower_configuration
-        ah_host: https://ah.node/
+        ah_host: https://ahnosso.node/
         ah_username: admin
         ah_password: secret123
         ah_path_prefix: galaxy
@@ -26,7 +26,7 @@
         name: community
         url: https://galaxy.ansible.com/api/
         requirements_file: req.yml
-        ah_host: https://ah.node/
+        ah_host: https://ahnosso.node/
         ah_username: admin
         ah_password: secret123
         ah_path_prefix: galaxy
@@ -36,7 +36,7 @@
       redhat_cop.ah_configuration.ah_repository_sync:
         name: community
         wait: true
-        ah_host: https://ah.node/
+        ah_host: https://ahnosso.node/
         ah_username: admin
         ah_password: secret123
         ah_path_prefix: galaxy
@@ -48,19 +48,20 @@
         url: https://cloud.redhat.com/api/automation-hub/
         auth_url: https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
         token: aabbcc
-        ah_host: https://ah.node/
+        ah_host: https://ahnosso.node/
         ah_username: admin
         ah_password: secret123
         ah_path_prefix: galaxy
         validate_certs: false
 
-    - name: Sync community repo
+    - name: Sync certified repo
       redhat_cop.ah_configuration.ah_repository_sync:
         name: rh-certified
         wait: true
-        ah_host: https://ah.node/
+        ah_host: https://ahnosso.node/
         ah_username: admin
         ah_password: secret123
         ah_path_prefix: galaxy
         validate_certs: false
+      ignore_errors: true # Above token is fake so this will fail.
 ...

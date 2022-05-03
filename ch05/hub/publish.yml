@@ -11,6 +11,9 @@
     ah_password: secret123
     ah_path_prefix: galaxy
     ah_validate_certs: false
+    ah_collections:
+      - collection_name: collection_test
+        git_url: https://github.com/sean-m-sullivan/collection_test
   tasks:
     - name: Create namespace
       include_role:

@@ -10,10 +10,10 @@
       redhat_cop.ah_configuration.ah_group:
         name: Joes
         state: present
-        ah_host: http://10.242.42.11:8002
+        ah_host: https://ahnosso.node/
         ah_username: admin
-        ah_password: admin
-        ah_path_prefix: automation-hub
+        ah_password: secret123
+        ah_path_prefix: galaxy
         validate_certs: false
 
     - name: Add group permisions
@@ -23,23 +23,24 @@
           - change_collectionremote
           - view_collectionremote
         state: present
-        ah_host: http://10.242.42.11:8002
+        ah_host: https://ahnosso.node/
         ah_username: admin
-        ah_password: admin
-        ah_path_prefix: automation-hub
+        ah_password: secret123
+        ah_path_prefix: galaxy
         validate_certs: false
 
     - name: Create User
-      ah_user:
+      redhat_cop.ah_configuration.ah_user:
         username: joe123
         password: 123456789
         groups:
           - Joes
         state: present
-        ah_host: http://10.242.42.11:8002
+        ah_host: https://ahnosso.node/
         ah_username: admin
-        ah_password: admin
-        ah_path_prefix: automation-hub
+        ah_password: secret123
+        ah_path_prefix: galaxy
         validate_certs: false
+
 
 ...

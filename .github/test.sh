@@ -1,127 +1,57 @@
 #!/usr/bin/env bash
+set -e
 
+# keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+# echo an error message before exiting
+trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
 
-../ch01/create_objects_using_role_include_files.yaml 
-../ch01/create_organization_using_module.yml 
-../ch01/create_organization_using_role.yml 
-../ch01/demo.yml
-../ch01/get_organization_using_api.yml 
-
-../ch04/controller/create_user_groups_api.yml
-../ch04/controller/create_user_groups_module.yml
-../ch04/controller/create_user_groups_roles.yml
-
-../ch04/hub/create_user_groups_api.yml
-../ch04/hub/create_user_groups_module.yml
-../ch04/hub/create_user_groups_roles.yml
-
-
-../ch04/settings/aap_settings_api.yml
-../ch04/settings/aap_settings_module.yml
-../ch04/settings/aap_settings_role.yml
-
-../ch05/credentials/credential_type_api.yml
-../ch05/credentials/credentials_api.yml
-
-../ch05/credentials/credentials_module.yml
-../ch05/credentials/credentials_role.yml
-../ch05/credentials/export_credential_types.yml
-../ch05/organizations/organizations_api.yml
-../ch05/organizations/organizations_module.yml
-../ch05/organizations/organizations_role.yml
-../ch05/organizations/organizations.yml
-../ch05/export_import/nodes.yaml
-../ch05/export_import/export.yml
-../ch05/export_import/import_module.yml
-../ch05/export_import/import_role.yml
-../ch05/export_import/configs/controller.yaml
-../ch05/hub/repos.yml
-../ch05/hub/requirements.yml
-../ch05/hub/req.yml
-../ch05/hub/publish.yml
-../ch05/hub/collection_list.yml
-../ch05/hub/namespace.yml
-../ch06/hub/create_groups_api.yml
-../ch06/hub/create_groups_module.yml
-../ch06/hub/create_groups_roles.yml
-../ch06/roles/set_role_api.yml
-../ch06/roles/set_role_using_module.yml
-../ch06/roles/set_role_with_roles.yml
-../ch14/Untitled-3.yml
-../ch14/ah_manage_collection.yml
-../ch14/ah_namespace_delete.yml
-../ch14/credential_types.yaml
-../ch14/publish_collection.yml
-../ch14/python.py
-../ch14/requirements.yml
-../ch14/ah_manage_collection copy.yml
-../ch14/ah_sync.yml
-../ch07/inventory_creation/config/controller_auth.yml
-../ch07/inventory_creation/config/inventory.yml
-../ch07/inventory_creation/aap_inventory_module.yml
-../ch07/inventory_creation/aap_inventory_role.yml
-../ch07/inventory_plugin_creation/readme.md
-../ch07/inventory_plugin_creation/ansible.cfg
-../ch07/inventory_plugin_creation/inventory_plugins/publicapis.py
-../ch07/inventory_plugin_creation/inventories/plugin.yml
-../ch07/inventory_plugin/inventory_plugin_list
-../ch07/inventory_plugin/inventory_host_list_examples.yml
-../ch07/inventory_plugin/ini_inventory
-../ch07/inventory_plugin/yaml_inventory.yml
-../ch07/inventory_plugin/toml_inventory.toml
-../ch07/inventory_sources/config/controller_auth.yml
-../ch07/inventory_sources/config/inventory.yml
-../ch07/inventory_sources/aap_inventory_module.yml
-../ch07/inventory_sources/aap_inventory_role.yml
-../ch07/netbox/collections/requirements.yml
-../ch07/netbox/netbox.yml
-../ch07/netbox/netbox_creds.yml
-../ch07/service_now/collections/requirements.yml
-../ch07/service_now/service_now.yml
-../ch07/service_now/service_now_creds.yml
-../ch03/automation_hub_base.yml
-../ch03/backup_def.yml
-../ch03/controller_base.yml
-../ch03/restore_def.yml
-../ch03/operator_files/automation_hub_all.yml
-../ch03/operator_files/controller_all.yml
-../ch08/execution_environment.yml
-../ch08/ansible.cfg
-../ch08/base/base_execution_enviroment.yml
-../ch08/base/bindep
-../ch08/base/requirements.yml
-../ch08/base/requirements.txt
-../ch08/roles/ee_builder_base.yml
-../ch08/roles/ee_venv_migrate.yml
-../ch08/roles/inventory.ini
-../ch08/roles/venv_migrate_ee_python_list.yaml
-../ch08/roles/create_ee.yml
-../ch09/collection/collection_list.yml
-../ch09/collection/namespace.yml
-../ch09/collection/publish.yml
-../ch09/collection/req.yml
-../ch09/collection/requirements.yml
-../ch09/collection/repos.yml
-../ch09/ee/registery_module.yml
-../ch09/ee/registery_roles.yml
-../ch09/controller/configs/controller_auth.yml
-../ch09/controller/configs/execution_enviroments.yml
-../ch09/controller/controller_ee_modules.yml
-../ch09/controller/controller_ee_roles.yml
-../ch10/projects/playbook_dir/collections/requirements.yml
-../ch10/projects/playbook_dir/roles/requirements.yml
-../ch10/projects/playbook_dir/tasks/tasks.yml
-../ch10/projects/playbook_dir/playbook.yml
-../ch10/projects/playbook_dir/ansible.cfg
-../ch10/projects/playbook_dir_struct.yml
-../ch10/projects/set_project_using_module.yml
-../ch10/projects/set_project_with_roles.yml
-../ch10/job_templates/set_job_template_using_module.yml
-../ch10/job_templates/set_job_template_with_roles.yml
-../ch10/workflows/set_workflow_using_module.yml
-../ch10/workflows/set_workflow_with_roles.yml
-../ch10/workflows/workflow_nodes_example.yaml
-../ch10/workflows/export.yml
-../ch10/workflows/unified notes
-../ch10/workflows/workflow.yaml
-../ch10/survey_spec.yml
+ansible-playbook ../ch01/create_objects_using_role_include_files.yaml
+ansible-playbook ../ch01/create_organization_using_module.yml
+ansible-playbook ../ch01/create_organization_using_role.yml
+ansible-playbook ../ch01/demo.yml
+ansible-playbook ../ch01/get_organization_using_api.yml
+# ansible-playbook ../ch04/controller/create_user_groups_api.yml
+ansible-playbook ../ch04/controller/create_user_groups_module.yml
+ansible-playbook ../ch04/controller/create_user_groups_roles.yml
+# ansible-playbook ../ch04/hub/create_user_groups_api.yml
+# ansible-playbook ../ch04/hub/create_user_groups_module.yml
+# ansible-playbook ../ch04/hub/create_user_groups_roles.yml
+ansible-playbook ../ch04/settings/aap_settings_api.yml
+ansible-playbook ../ch04/settings/aap_settings_module.yml
+# ansible-playbook ../ch04/settings/aap_settings_role.yml
+# ansible-playbook ../ch05/credentials/credential_type_api.yml
+# ansible-playbook ../ch05/credentials/credentials_api.yml
+ansible-playbook ../ch05/credentials/credentials_module.yml
+ansible-playbook ../ch05/credentials/credentials_role.yml
+ansible-playbook ../ch05/credentials/export_credential_types.yml
+# ansible-playbook ../ch05/organizations/organizations_api.yml
+ansible-playbook ../ch05/organizations/organizations_module.yml
+ansible-playbook ../ch05/organizations/organizations_role.yml
+ansible-playbook ../ch05/export_import/export.yml
+ansible-playbook ../ch05/hub/repos.yml
+ansible-playbook ../ch05/hub/publish.yml
+# ansible-playbook ../ch06/hub/create_groups_api.yml
+ansible-playbook ../ch06/hub/create_groups_module.yml
+ansible-playbook ../ch06/hub/create_groups_roles.yml
+# ansible-playbook ../ch06/roles/set_role_api.yml
+ansible-playbook ../ch06/roles/set_role_using_module.yml
+ansible-playbook ../ch06/roles/set_role_with_roles.yml
+ansible-playbook ../ch07/inventory_creation/aap_inventory_module.yml
+ansible-playbook ../ch07/inventory_creation/aap_inventory_role.yml
+ansible-playbook ../ch07/inventory_sources/aap_inventory_module.yml
+ansible-playbook ../ch07/inventory_sources/aap_inventory_role.yml
+ansible-playbook ../ch08/roles/ee_builder_base.yml
+ansible-playbook ../ch09/collection/publish.yml
+ansible-playbook ../ch09/collection/repos.yml
+ansible-playbook ../ch09/ee/registery_module.yml
+ansible-playbook ../ch09/ee/registery_roles.yml
+ansible-playbook ../ch09/controller/controller_ee_modules.yml
+ansible-playbook ../ch09/controller/controller_ee_roles.yml
+ansible-playbook ../ch10/projects/set_project_using_module.yml
+ansible-playbook ../ch10/projects/set_project_with_roles.yml
+ansible-playbook ../ch10/job_templates/set_job_template_using_module.yml
+ansible-playbook ../ch10/job_templates/set_job_template_with_roles.yml
+ansible-playbook ../ch10/workflows/set_workflow_using_module.yml
+ansible-playbook ../ch10/workflows/set_workflow_with_roles.yml
+ansible-playbook ../ch10/workflows/export.yml

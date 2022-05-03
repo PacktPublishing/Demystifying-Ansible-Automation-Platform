@@ -1,9 +1,10 @@
 ---
 - name: Playbook to push organizations to controller
   hosts: localhost
+  gather_facts: false
   connection: local
   vars:
-    controller_host: controller.node/
+    controller_hostname: controller.node/
     controller_username: admin
     controller_password: secret123
     controller_validate_certs: false

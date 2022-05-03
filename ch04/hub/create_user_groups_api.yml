@@ -6,56 +6,93 @@
   tasks:
     - name: Create the group
       uri:
-        url: https://ah.node/api/galaxy/_ui/v1/groups/
-        headers:
-          Authorization: Token asdf
+        url: https://ahnosso.node/api/galaxy/_ui/v1/groups/
+        user: admin
+        password: secret123
         method: POST
         validate_certs: false
+        force_basic_auth: yes
         status_code: 201
         body_format: json
         body: 
           name: Joes123
       register: group_data
+      ignore_errors: true
 
     - name: Show Result
       debug:
         var: group_data.json.id
 
+    - assert:
+        that:
+          - "group_data.json.errors[0].detail == 'A group named Joes123 already exists.'"
+      when: "group_data is failed"
+
+    - name: Find the data to get group id
+      uri:
+        url: https://ahnosso.node/api/galaxy/_ui/v1/groups/?name=Joes123
+        user: admin
+        password: secret123
+        method: GET
+        validate_certs: false
+        force_basic_auth: yes
+        status_code: 200
+        body_format: json
+      register: group_data
+
+    - name: Show Result
+      debug:
+        var: group_data.json.data[0].id
+
     - name: Create the group permisions
       uri:
-        url: "https://ah.node/api/galaxy/_ui/v1/groups/5/model-permissions/"
-        headers:
-          Authorization: Token asdf
+        url: "https://ahnosso.node/api/galaxy/_ui/v1/groups/{{group_data.json.data[0].id}}/model-permissions/"
+        user: admin
+        password: secret123
         method: POST
         validate_certs: false
+        force_basic_auth: yes
         status_code: 201
         body_format: json
         body: 
           permission: ansible.change_collectionremote
       register: group_perm_data
+      ignore_errors: true
 
     - name: Show Result
       debug:
         var: group_perm_data.json.id
 
+    - assert:
+        that:
+          - "group_perm_data.json.errors[0].detail == 'A group named Joes123 already exists.'"
+      when: "group_perm_data is failed"
+
     - name: Create the user
       uri:
-        url: "https://ah.node/api/galaxy/_ui/v1/users/"
-        headers:
-          Authorization: Token asdf
+        url: "https://ahnosso.node/api/galaxy/_ui/v1/users/"
+        user: admin
+        password: secret123
         method: POST
         validate_certs: false
+        force_basic_auth: yes
         status_code: 201
         body_format: json
         body: 
           username: asdf1234
-          password: 123456789
+          password: diff$$pass
           groups:
             - Joes
           is_superuser: true
       register: user_data
+      ignore_errors: true
 
     - name: Show Result
       debug:
         var: user_data.json.id
+
+    - assert:
+        that:
+          - "user_data.json.errors[0].detail == 'A user with that username already exists.'"
+      when: "user_data is failed"
 ...

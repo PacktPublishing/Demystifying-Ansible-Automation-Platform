@@ -35,6 +35,7 @@
           password: password123
           organization: "{{ organization_data.json.results[0].id }}"
       register: user_data
+      ignore_errors: true
 
     - name: Show Result
       debug:
@@ -54,6 +55,7 @@
           name: joes
           organization: "{{ organization_data.json.results[0].id }}"
       register: team_data
+      ignore_errors: true
 
     - name: Show Result
       debug:

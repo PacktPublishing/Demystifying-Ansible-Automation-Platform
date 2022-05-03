@@ -41,8 +41,9 @@ aap_setup_prep_inv_vars:
     automationhub_pg_password: 'secret123'
     automationhub_pg_sslmode: 'prefer'
 
-    automationhub_main_url : 'https://ah.node'
-    automationhub_require_content_approval : False
+    automationhub_main_url: 'https://ah.node'
+    automationhub_require_content_approval: False
+    automationhub_enable_unauthenticated_collection_access: True
 
     automationhub_ssl_validate_certs: False
 

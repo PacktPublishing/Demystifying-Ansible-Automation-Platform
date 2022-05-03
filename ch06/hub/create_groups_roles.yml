@@ -4,7 +4,7 @@
   connection: local
   gather_facts: false
   vars:
-    ah_host: https://ah.node
+    ah_host: https://ahnosso.node
     ah_username: admin
     ah_password: secret123
     ah_path_prefix: galaxy
