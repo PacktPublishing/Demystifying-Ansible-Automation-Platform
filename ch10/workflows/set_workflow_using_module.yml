@@ -93,8 +93,8 @@
 
     - name: Push workflows to controller
       awx.awx.workflow_job_template:
-        name: Complicated workflow schema
-        schema:
+        name: Complicated workflow nodes
+        workflow_nodes:
           - identifier: Inventory Update
             related:
               always_nodes: []
