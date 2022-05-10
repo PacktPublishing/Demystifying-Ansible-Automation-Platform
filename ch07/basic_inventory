@@ -1,0 +1,9 @@
+# fmt: ini
+[local_servers]
+localhost ansible_connection=local
+
+[local_servers:vars]
+things=stuff
+
+[all:vars]
+admin_password=''

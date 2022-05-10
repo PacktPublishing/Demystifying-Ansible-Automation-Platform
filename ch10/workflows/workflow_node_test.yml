@@ -1,0 +1,20 @@
+---
+- name: Using module to create job template
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - awx.awx
+  tasks:
+    - name: Add inventory
+      awx.awx.workflow_node_wait:
+        workflow_job_id: 48
+        name: Demo Job Template
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+      register: nodes
+
+    - debug:
+        var: nodes
