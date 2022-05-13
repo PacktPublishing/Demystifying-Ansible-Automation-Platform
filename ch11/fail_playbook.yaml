@@ -1,0 +1,8 @@
+---
+- name: "Fail Playbook"
+  gather_facts: no
+  hosts: localhost
+  tasks:
+    - name: "Mark workflow/template as Failed"
+      fail:
+        msg: "Set Status to Fail because an error occurred in the workflow/template."

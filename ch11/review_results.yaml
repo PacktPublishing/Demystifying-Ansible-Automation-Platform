@@ -1,0 +1,23 @@
+---
+- name: "Allow user to easily view results"
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: "Fail playbook and stop workflow if required vars are not defined."
+      assert:
+        that:
+          - specific_task_succeed == True
+          - list_to_pass is defined
+          - host_groups is defined
+        fail_msg: "Seems that something did not go correctly. Please contact support."
+
+    - debug:
+        var: group_list
+
+    - set_stats:
+        data:
+          list_to_pass: "{{ list_to_pass }}"
+          host_groups: "{{ group_list }}"
+        aggregate: no
+        per_host: no

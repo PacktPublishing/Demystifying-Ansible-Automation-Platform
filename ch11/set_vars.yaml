@@ -1,0 +1,29 @@
+---
+- name: "Set per host stats"
+  hosts: "{{ host_groups }}"
+  gather_facts: no
+
+  tasks:
+    - name: "Set Vars"
+      set_fact:
+        show_vars: 
+          other_info: 1
+
+    - name: "set a stat that has variables per host"
+      set_stats:
+        data:
+          _var_per_host: "{{ var_per_host | default({}) | combine({inventory_hostname: show_vars }) }}"
+
+    - debug:
+        var: show_vars
+
+# Results:
+# var_per_host:
+#   hostname1:
+#     other_info: 1
+#   hostname2:
+#     other_info: 1
+#   hostname3:
+#     other_info: 1
+
+# use in a later play: "{{ var_per_host [inventory_hostname] }}"

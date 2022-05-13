@@ -1,0 +1,8 @@
+---
+- name: "Sucess Playbook"
+  gather_facts: no
+  hosts: localhost
+  tasks:
+
+    - debug:
+        msg: Approval Denied, Marking Workflow as Successful.
