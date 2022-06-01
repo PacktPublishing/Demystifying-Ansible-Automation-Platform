@@ -1,0 +1,28 @@
+stages:
+  - lint
+  - test
+  - deploy
+
+update_main:
+  stage: deploy
+  only:
+    - main
+  script:
+    - ansible-galaxy collection install -r collections/requirements.yml --ignore-certs
+    - ansible-playbook configure_controller.yaml"
+
+update_on_mr:
+  stage: test
+  only:
+    - merge_requests
+  script:
+    - ansible-galaxy collection install -r collections/requirements.yml --ignore-certs
+    - ansible-playbook configure_controller.yaml --extra-vars "tower_branch=$CI_COMMIT_BRANCH"
+
+ansible-lint:
+  stage: lint
+  only:
+    refs:
+      - branches
+  script:
+    - ansible-lint

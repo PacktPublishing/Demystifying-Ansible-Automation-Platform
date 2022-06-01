@@ -1,0 +1,13 @@
+---
+controller_inventory_sources:
+  - name: Public APIs
+    source: scm
+    source_project: Inventory example
+    source_path: inventories/plugin.yml
+    inventory: Basic Inventory
+    organization: Default
+    overwrite: true
+    update_on_launch: true
+    update_cache_timeout: 0
+    wait: true
+...

@@ -1,0 +1,17 @@
+---
+- name: Publish collection
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Publish Collection
+      redhat_cop.ah_configuration.ah_collection:
+        namespace: custom_collection_space
+        name: custom_collection
+        path: custom_collection_custom_collection-1.0.0tar.gz
+        auto_approve: false
+        ah_host: https://automationhub.int.bell.ca
+        ah_token: "{{ ah_token }}"
+        ah_path_prefix: galaxy
+        validate_certs: false

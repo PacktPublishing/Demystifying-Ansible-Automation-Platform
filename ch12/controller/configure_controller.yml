@@ -1,0 +1,16 @@
+---
+- name: Playbook add user and team and user to team
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  pre_tasks:
+    - name: Include vars from configs directory
+      include_vars:
+        dir: ./configs
+  collections:
+    - awx.awx
+    - redhat_cop.controller_configuration
+  roles:
+    # The dispatch role is a special role that calls all the other roles.
+    - redhat_cop.controller_configuration.dispatch
+...

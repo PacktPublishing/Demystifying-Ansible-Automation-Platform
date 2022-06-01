@@ -1,0 +1,18 @@
+---
+controller_roles:
+  - user:  joe_123
+    team: Joes
+    role: member
+  - projects:
+      - Demo Project
+    job_templates:
+      - Demo Job Template
+    team: satlab
+    role: admin
+  - projects:
+      - Demo Project
+    job_templates:
+      - Demo Job Template
+    user: joe123
+    role: admin
+...

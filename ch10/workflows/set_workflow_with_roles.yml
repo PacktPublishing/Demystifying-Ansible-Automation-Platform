@@ -9,6 +9,8 @@
     controller_password: secret123
     controller_validate_certs: false
     controller_configuration_credentials_secure_logging: false
+    controller_configuration_async_delay: 4
+    controller_configuration_workflow_async_retries: 50
     controller_projects:
       - name: Test Project
         scm_type: git
@@ -33,7 +35,7 @@
         overwrite: true
         update_on_launch: true
         update_cache_timeout: 0
-        wait: true
+        wait: false
     controller_credentials:
       - credential_type: Red Hat Virtualization
         name: RHVM

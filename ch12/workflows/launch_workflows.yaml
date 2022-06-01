@@ -1,0 +1,59 @@
+---
+- name: Launch Workflows via API
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  # Import tower vars and test case vars
+  vars_files:
+    - "../vars/{{ env_type }}_environment.yaml"
+
+  tasks:
+    - name: Start Template
+      ansible.controller.job_launch:
+        name: "{{ template_name }}"
+        extra_vars: "{{ test_info }}"
+        wait: True
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+      register: test_job_launch
+
+    - debug:
+        var: test_job_launch
+
+    - name: Wait for a workflow node to finish
+      ansible.controller.workflow_node_wait:
+        workflow_job_id: "{{ workflow_id }}"
+        name: "{{ workflow_node_to_check | default( test_sequence_item.dryrun_commit_template_name ) }}"
+        timeout: 960
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+      register: node_lookup_results
+      ignore_errors: "{{ ignore_node_errors }}"
+
+    - name: Wait for approval node to activate and approve 
+      ansible.controller.workflow_approval:
+        workflow_job_id: "{{ workflow_id }}"
+        name: "{{ test_sequence_item.approval_template_name }}"
+        interval: 10
+        timeout: 200
+        action: approve
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+
+    - name: Wait for Workflow to finish
+      ansible.controller.tower_job_wait:
+        job_id:                         "{{ workflow_id }}"
+        job_type:                       "workflow_jobs"
+        interval:                       30
+        timeout:                        1000
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false

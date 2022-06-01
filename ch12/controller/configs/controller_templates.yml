@@ -1,0 +1,27 @@
+controller_templates:
+  - name: test-template-1
+    description: created by Ansible Playbook
+    job_type: run
+    inventory: RHVM-01
+    credentials:
+      - RHVM
+    project: Test Project
+    playbook: helloworld.yml
+    verbosity: 2
+    extra_vars:
+      target_hosts: infra-ansible-tower-01.example.com
+    survey_spec:
+      name: Survey Example template
+      description: Description goes here
+      spec:
+        - question_name: Target Host
+          question_description: target host is required for playbook to work, this host
+            needs to exist in the inventory
+          required: true
+          type: text
+          variable: target_hosts
+          min: 0
+          max: 1024
+          default: infra-ansible-tower-testing.infra.sat.rdu2.redhat.com
+          choices: ''
+          new_question: true

@@ -1,0 +1,6 @@
+---
+controller_settings:
+  settings:
+    SESSION_COOKIE_AGE: 3600
+    CUSTOM_LOGIN_INFO: "Welcome to the Automation Controller"
+...

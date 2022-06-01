@@ -1,0 +1,11 @@
+---
+controller_inventories:
+  - name: Basic Inventory
+    description: Create Inventory once piece at a time
+    organization: Default
+    variables:
+      inventory_var: inventory_value
+  - name: RHVM-01
+    organization: Default
+    description: created by Ansible Playbook - for RHVM-01
+...

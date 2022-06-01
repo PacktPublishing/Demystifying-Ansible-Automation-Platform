@@ -1,0 +1,27 @@
+---
+name: Run Controller Configuration Playbooks
+
+# Runs when a merge is made to master, because a merged pull request always results in a push.
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Controller-configuration:
+    name: Deploy configuration to controller
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: "Install dependencies"
+        run: pip install -r controller_configuration/.github/requirements.txt
+
+      - name: "Install Galaxy dependencies"
+        run: ansible-galaxy collection install -r .github/collections/requirements.yml
+
+      - name: "Perform playbook update"
+        run: ansible-playbook configure_controller.yml -e controller_hostname=https://controller.node -e controller_password=${{ secrets.controller_password }}
+...

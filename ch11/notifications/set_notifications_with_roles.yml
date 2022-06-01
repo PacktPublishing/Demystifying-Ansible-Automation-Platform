@@ -23,6 +23,7 @@
           port: 587
           timeout: 60
           use_tls: true
+          use_ssl: false
         messages:
           success:
             body: '{"fields": {"project": {"id": "11111"},"summary": "Lab {  { job.status
