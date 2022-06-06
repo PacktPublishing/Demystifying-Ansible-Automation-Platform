@@ -1,11 +1,5 @@
 ---
 collections:
-  - name: my_namespace.my_other_collection
-    version: 0.9.3
-    source: https://galaxy.ansible.com
-  - name: https://github.com/organization/repo_name.git
-    type: git
-    version: devel
-  - source: /tmp/my_namespace-my_collection-1.0.0.tar.gz
-    type: file
+  - name: redhat_cop.ah_configuration
+  - name: redhat_cop.tower_configuration
 ...

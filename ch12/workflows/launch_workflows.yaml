@@ -4,43 +4,49 @@
   connection: local
   gather_facts: false
 
-  # Import tower vars and test case vars
-  vars_files:
-    - "../vars/{{ env_type }}_environment.yaml"
+  vars:
+    workflow_name: Complicated workflow schema
+    workflow_extra_vars_dict:
+      test: data
+      variable: things
+    workflow_node_to_check: Template 1
+    approval_template_name: Aproval Node
+
 
   tasks:
-    - name: Start Template
-      ansible.controller.job_launch:
-        name: "{{ template_name }}"
-        extra_vars: "{{ test_info }}"
-        wait: True
+
+    - name: "Launch Workflow {{ workflow_name }}"
+      ansible.controller.workflow_launch:
+        workflow_template:              "{{ workflow_name }}"
+        extra_vars:                     "{{ workflow_extra_vars_dict | default(omit) }}"
+        wait: false
         controller_host: https://controller.node
         controller_username: admin
         controller_password: secret123
         validate_certs: false
-      register: test_job_launch
+      register: workflow_data
 
     - debug:
-        var: test_job_launch
+        var: workflow_data
 
     - name: Wait for a workflow node to finish
       ansible.controller.workflow_node_wait:
-        workflow_job_id: "{{ workflow_id }}"
-        name: "{{ workflow_node_to_check | default( test_sequence_item.dryrun_commit_template_name ) }}"
-        timeout: 960
+        workflow_job_id: "{{workflow_data.id}}"
+        name: "{{ workflow_node_to_check }}"
+        timeout: 90
         controller_host: https://controller.node
         controller_username: admin
         controller_password: secret123
         validate_certs: false
       register: node_lookup_results
-      ignore_errors: "{{ ignore_node_errors }}"
+      ignore_errors: true
 
     - name: Wait for approval node to activate and approve 
       ansible.controller.workflow_approval:
-        workflow_job_id: "{{ workflow_id }}"
-        name: "{{ test_sequence_item.approval_template_name }}"
-        interval: 10
-        timeout: 200
+        workflow_job_id: "{{workflow_data.id}}"
+        name: "{{ approval_template_name }}"
+        interval: 5
+        timeout: 20
         action: approve
         controller_host: https://controller.node
         controller_username: admin
@@ -49,10 +55,10 @@
 
     - name: Wait for Workflow to finish
       ansible.controller.tower_job_wait:
-        job_id:                         "{{ workflow_id }}"
+        job_id:                         "{{workflow_data.id}}"
         job_type:                       "workflow_jobs"
-        interval:                       30
-        timeout:                        1000
+        interval:                       5
+        timeout:                        60
         controller_host: https://controller.node
         controller_username: admin
         controller_password: secret123

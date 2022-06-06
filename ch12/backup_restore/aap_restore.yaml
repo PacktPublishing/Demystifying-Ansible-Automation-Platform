@@ -1,0 +1,17 @@
+---
+- name: Playbook to install the AAP Platform
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    aap_setup_down_offline_token: a.a.a
+    aap_setup_working_dir: /tmp/backup
+    aap_setup_down_type: setup
+    aap_setup_down_version: "2.2"
+  vars_files:
+    - inventory_vars/variables.yml
+  roles:
+    - redhat_cop.aap_utilities.aap_setup_download
+    - redhat_cop.aap_utilities.aap_setup_prepare
+    - redhat_cop.aap_utilities.aap_restore
+...

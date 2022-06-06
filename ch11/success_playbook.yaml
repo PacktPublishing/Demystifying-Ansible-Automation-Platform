@@ -5,4 +5,4 @@
   tasks:
 
     - debug:
-        msg: Approval Denied, Marking Workflow as Successful.
+        msg: Approval Denied, Marking workflow as Successful.

@@ -1,0 +1,50 @@
+---
+- name: Launch Workflows via API
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    workflow_name: Complicated workflow schema
+    workflow_extra_vars_dict:
+      test: data
+      variable: things
+    workflow_node_to_check: Template 1
+    approval_template_name: Aproval Node
+
+    controller_ad_hoc_commands:
+      - job_type: run
+        module_name: shell
+        module_args: ls -a
+        inventory: Demo Inventory
+        credential: Demo Credential+
+        wait: false
+
+    controller_ad_hoc_command_defaults:
+      fail_if_not_running: false
+      interval: 1
+      timeout: 10
+
+  roles:
+    - redhat_cop.controller_configuration.ad_hoc_command
+#    - redhat_cop.controller_configuration.ad_hoc_command_wait
+    - redhat_cop.controller_configuration.ad_hoc_command_cancel
+
+  tasks:
+    - name: Wait for ad joc command max 120s
+      ansible.controller.ad_hoc_command_wait:
+        command_id: "{{ command.id }}"
+        timeout: 10
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+
+    - name: Wait for ad joc command max 120s
+      ansible.controller.ad_hoc_command_cancel:
+        command_id: "{{ command.id }}"
+        timeout: 120
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
