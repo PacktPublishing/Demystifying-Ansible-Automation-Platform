@@ -27,24 +27,5 @@
 
   roles:
     - redhat_cop.controller_configuration.ad_hoc_command
-#    - redhat_cop.controller_configuration.ad_hoc_command_wait
+    - redhat_cop.controller_configuration.ad_hoc_command_wait
     - redhat_cop.controller_configuration.ad_hoc_command_cancel
-
-  tasks:
-    - name: Wait for ad joc command max 120s
-      ansible.controller.ad_hoc_command_wait:
-        command_id: "{{ command.id }}"
-        timeout: 10
-        controller_host: https://controller.node
-        controller_username: admin
-        controller_password: secret123
-        validate_certs: false
-
-    - name: Wait for ad joc command max 120s
-      ansible.controller.ad_hoc_command_cancel:
-        command_id: "{{ command.id }}"
-        timeout: 120
-        controller_host: https://controller.node
-        controller_username: admin
-        controller_password: secret123
-        validate_certs: false

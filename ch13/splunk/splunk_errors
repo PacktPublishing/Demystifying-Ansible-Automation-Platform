@@ -1,0 +1,89 @@
+{
+  "request": {
+    "url": "https://10.242.42.36:8088/services/collector/event",
+    "postdata": {
+      "event": {
+        "@timestamp": "2022-06-09T00: 16: 02.632Z",
+        "message": "ActivityStreamupdateentryforsetting",
+        "host": "controller.node",
+        "level": "INFO",
+        "logger_name": "awx.analytics.activity_stream",
+        "stack_info": null,
+        "changes": {
+          "value": [
+            "admin",
+            ""
+          ]
+        },
+        "relationship": "",
+        "actor": "admin",
+        "operation": "update",
+        "object1": "setting",
+        "object2": "",
+        "summary_fields": {
+          "actor": {
+            "id": 1,
+            "username": "admin",
+            "first_name": "",
+            "last_name": ""
+          },
+          "setting": [
+            {
+              "category": "logging",
+              "name": "LOG_AGGREGATOR_USERNAME"
+            }
+          ]
+        },
+        "guid": "2252bc5216534e37a276b50923d3c143",
+        "cluster_host_id": "controller.node",
+        "tower_uuid": null
+      }
+    }
+  },
+  "response": {
+    "status": 401,
+    "message": "{"text":"Token is required","code":2}"
+  }
+}{
+  "request": {
+    "url": "https://10.242.42.36:8088/services/collected/event",
+    "postdata": {
+      "event": {
+        "@timestamp": "2022-06-08T18: 45: 12.955Z",
+        "message": "Nonodestospawnforworkflow_job437(running)",
+        "host": "controller.node",
+        "level": "DEBUG",
+        "logger_name": "awx.main.scheduler",
+        "stack_info": null,
+        "guid": "098a82c4a5744380ac7f23c1f5c4e066",
+        "cluster_host_id": "controller.node",
+        "tower_uuid": null
+      }
+    }
+  },
+  "response": {
+    "status": 404,
+    "message": "{"text":"The requested URL was not found on this server.","code":404}"
+  }
+}{
+  "request": {
+    "url": "https://10.242.42.36:8088/services/collected/event",
+    "postdata": {
+      "event": {
+        "@timestamp": "2022-06-08T18: 45: 12.955Z",
+        "message": "Nonodestospawnforworkflow_job437(running)",
+        "host": "controller.node",
+        "level": "DEBUG",
+        "logger_name": "awx.main.scheduler",
+        "stack_info": null,
+        "guid": "098a82c4a5744380ac7f23c1f5c4e066",
+        "cluster_host_id": "controller.node",
+        "tower_uuid": null
+      }
+    }
+  },
+  "response": {
+    "status": 404,
+    "message": "{"text":"The requested URL was not found on this server.","code":404}"
+  }
+}
