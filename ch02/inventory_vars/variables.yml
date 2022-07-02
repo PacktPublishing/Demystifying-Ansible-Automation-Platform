@@ -1,24 +1,22 @@
 ---
 aap_setup_prep_inv_nodes:
   automationcontroller:
-    - controller.node
+    - controller
   database:
     - database
   automationhub:
-    - ah.node
+    - hub
   execution_nodes:
-    - exec.node
-  servicescatalog_workers:
-    - controller.node
+    - exec
+  automationcatalog:
+    - automationcatalog
   sso:
-    - sso.node
+    - sso
 
 aap_setup_prep_inv_vars:
   automationcontroller:
     peers: execution_nodes
   all:
-    # workaround to avoid enabling the codeready repo on the autohub server
-    pulp_rhel_codeready_repo: []
     admin_password: 'secret123'
     pg_host: 'database'
     pg_port: '5432'
@@ -41,14 +39,28 @@ aap_setup_prep_inv_vars:
     automationhub_pg_password: 'secret123'
     automationhub_pg_sslmode: 'prefer'
 
-    automationhub_main_url: 'https://ah.node'
-    automationhub_require_content_approval: False
+    automationhub_main_url: 'https://hub'
+    automationhub_require_content_approval: True
+    automationhub_auto_sign_collections: True
     automationhub_enable_unauthenticated_collection_access: True
 
     automationhub_ssl_validate_certs: False
 
+    # automationhub_collection_signing_service_key = /absolute/path/to/key/to/sign
+    # automationhub_collection_signing_service_script =  /absolute/path/to/script/that/signs
+
     sso_keystore_password: 'password'
     sso_console_admin_password: 'secret123'
+    sso_automationcatalog_create_user_group: True
+
+    # Automation Catalog Configuration
+    automationcatalog_pg_host: 'database'
+    automationcatalog_pg_port: "5432"
+    automationcatalog_pg_username: "automationservicescatalog"
+    automationcatalog_pg_password: "secret123"
+    automationcatalog_pg_database: "automationservicescatalog"
+    automationcatalog_controller_verify_ssl: "false"
+
 
 aap_setup_prep_inv_secrets:
   all:

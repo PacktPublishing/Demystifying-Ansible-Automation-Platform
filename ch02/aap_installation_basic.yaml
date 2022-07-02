@@ -1,0 +1,23 @@
+---
+- name: Playbook to install the AAP Platform
+  hosts: localhost
+  connection: local
+  vars:
+    aap_setup_down_offline_token: password123
+    aap_setup_working_dir: /home/username/Documents/aap_lab_prep
+    aap_setup_down_type: setup
+    aap_setup_inst_force: true
+  vars_files:
+    - inventory_vars/variables.yml
+  pre_tasks:
+    - name: display multiple file contents
+      ansible.builtin.debug: 
+        msg: "https://{{ controller_hostname | default((aap_setup_prep_inv_nodes['automationcontroller'].keys() | list)[0]) }}"
+    - name: display multiple file contents
+      ansible.builtin.debug: 
+        msg: "https://{{ ah_hostname | default((aap_setup_prep_inv_nodes['automationhub'].keys() | list)[0]) }}/ui/"
+  roles:
+    - redhat_cop.aap_utilities.aap_setup_download
+    - redhat_cop.aap_utilities.aap_setup_prepare
+    - redhat_cop.aap_utilities.aap_setup_install
+...
