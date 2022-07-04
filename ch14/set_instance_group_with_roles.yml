@@ -1,0 +1,22 @@
+---
+- name: Using role to create define instance groups
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    controller_hostname: https://controller
+    controller_username: admin
+    controller_password: secret123
+    controller_validate_certs: false
+    controller_projects:
+    controller_instance_groups:
+      - name: edge
+        instances:
+          - exec
+      - name: cloud
+  collections:
+    - awx.awx
+    - redhat_cop.controller_configuration
+  roles:
+    - redhat_cop.controller_configuration.instance_groups
+...

@@ -12,10 +12,15 @@ aap_setup_prep_inv_nodes:
     - automationcatalog
   sso:
     - sso
+  instance_group_edge:
+    - exec
 
 aap_setup_prep_inv_vars:
   automationcontroller:
     peers: execution_nodes
+    node_type: hybrid
+  execution_nodes:
+    node_type: execution
   all:
     admin_password: 'secret123'
     pg_host: 'database'

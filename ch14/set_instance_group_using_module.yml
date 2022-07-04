@@ -1,0 +1,18 @@
+---
+- name: Using module to update instance group.
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - ansible.controller
+  tasks:
+    - name: Add instances to instance group.
+      ansible.controller.instance_group:
+        name: edge
+        instances:
+          - exec
+        controller_host: https://10.0.0.1
+        controller_username: admin
+        controller_password: password
+        validate_certs: false
+...
