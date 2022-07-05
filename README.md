@@ -21,4 +21,3 @@ Author: Sean Sullivan
 |13|Integration with other services|Integration with other services, such as Red Hat insights, Splunk, and Prometheus.|
 |14|Automate at scale with Automation Mesh|Automate at scale with Automation Mesh.|
 |15|Using Ansible Services Catalog|Using Ansible Services Catalog.|
-|16|Performing maintenance & troubleshooting|Performing maintenance & troubleshooting.|
