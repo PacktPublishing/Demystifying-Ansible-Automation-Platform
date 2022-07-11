@@ -30,7 +30,7 @@
         force_basic_auth: yes
         status_code: 201
         body_format: json
-        body: 
+        body:
           username: joe_123
           password: password123
           organization: "{{ organization_data.json.results[0].id }}"
@@ -51,7 +51,7 @@
         force_basic_auth: yes
         status_code: 201
         body_format: json
-        body: 
+        body:
           name: joes
           organization: "{{ organization_data.json.results[0].id }}"
       register: team_data

@@ -19,7 +19,7 @@
     - name: List Result
       debug:
         var: user_data.json.results[0].id
-  
+
     - name: Find the data to get job template id and objects
       uri:
         url: "https://controller.node/api/v2/job_templates/?name=Demo%20Job%20Template"

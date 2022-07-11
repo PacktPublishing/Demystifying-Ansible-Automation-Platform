@@ -14,7 +14,7 @@
         force_basic_auth: yes
         status_code: 201
         body_format: json
-        body: 
+        body:
           name: Joes123
       register: group_data
       ignore_errors: true
@@ -54,7 +54,7 @@
         force_basic_auth: yes
         status_code: 201
         body_format: json
-        body: 
+        body:
           permission: ansible.change_collectionremote
       register: group_perm_data
       ignore_errors: true
@@ -78,7 +78,7 @@
         force_basic_auth: yes
         status_code: 201
         body_format: json
-        body: 
+        body:
           username: asdf1234
           password: diff$$pass
           groups:

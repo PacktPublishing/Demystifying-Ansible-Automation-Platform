@@ -41,7 +41,7 @@
       register: node_lookup_results
       ignore_errors: true
 
-    - name: Wait for approval node to activate and approve 
+    - name: Wait for approval node to activate and approve
       ansible.controller.workflow_approval:
         workflow_job_id: "{{workflow_data.id}}"
         name: "{{ approval_template_name }}"

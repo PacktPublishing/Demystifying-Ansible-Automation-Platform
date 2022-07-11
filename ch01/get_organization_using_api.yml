@@ -13,7 +13,7 @@
         password: secret123
         method: GET
         validate_certs: false
-        force_basic_auth: yes
+        force_basic_auth: true
         status_code: 200
       register: organizations
 

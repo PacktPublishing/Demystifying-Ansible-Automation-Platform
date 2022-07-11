@@ -45,18 +45,18 @@ aap_setup_prep_inv_vars:
     automationhub_pg_sslmode: 'prefer'
 
     automationhub_main_url: 'https://hub'
-    automationhub_require_content_approval: True
-    automationhub_auto_sign_collections: True
-    automationhub_enable_unauthenticated_collection_access: True
+    automationhub_require_content_approval: true
+    automationhub_auto_sign_collections: true
+    automationhub_enable_unauthenticated_collection_access: true
 
-    automationhub_ssl_validate_certs: False
+    automationhub_ssl_validate_certs: false
 
     # automationhub_collection_signing_service_key = /absolute/path/to/key/to/sign
     # automationhub_collection_signing_service_script =  /absolute/path/to/script/that/signs
 
     sso_keystore_password: 'password'
     sso_console_admin_password: 'secret123'
-    sso_automationcatalog_create_user_group: True
+    sso_automationcatalog_create_user_group: true
 
     # Automation Catalog Configuration
     automationcatalog_pg_host: 'database'

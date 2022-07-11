@@ -10,7 +10,7 @@
       ansible.controller.role:
         user: joe123
         role: admin
-        inventories: 
+        inventories:
           - Demo Inventory
         controller_host: https://10.0.0.1
         controller_username: admin

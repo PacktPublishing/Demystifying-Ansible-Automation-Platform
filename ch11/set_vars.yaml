@@ -6,7 +6,7 @@
   tasks:
     - name: "Set Vars"
       set_fact:
-        show_vars: 
+        show_vars:
           other_info: 1
 
     - name: "set a stat that has variables per host"

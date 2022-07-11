@@ -328,7 +328,7 @@ dn: CN=Allowed RODC Password Replication Group,CN=Users,DC=ansible,DC=lcl
 objectClass: top
 objectClass: group
 cn: Allowed RODC Password Replication Group
-description: Members in this group can have their passwords replicated to all 
+description: Members in this group can have their passwords replicated to all
  read-only domain controllers in the domain
 distinguishedName: CN=Allowed RODC Password Replication Group,CN=Users,DC=ansi
  ble,DC=lcl

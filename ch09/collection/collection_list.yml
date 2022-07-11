@@ -1,10 +1,10 @@
---- 
-ah_collections: 
-  - collection_name: cisco.iosxr 
-    git_url: https://github.com/ansible-collections/cisco.iosxr 
-  - collection_name: awx.awx 
-    collection_local_path: /var/tmp/collections/repo 
+---
+ah_collections:
+  - collection_name: cisco.iosxr
+    git_url: https://github.com/ansible-collections/cisco.iosxr
+  - collection_name: awx.awx
+    collection_local_path: /var/tmp/collections/repo
 
 ah_collection_list:
-  - /var/tmp/collections/awx_awx-15.0.0.tar.gz 
-... 
+  - /var/tmp/collections/awx_awx-15.0.0.tar.gz
+...

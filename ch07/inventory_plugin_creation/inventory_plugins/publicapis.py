@@ -17,7 +17,7 @@ DOCUMENTATION = r"""
             type: string
             required: True
             env:
-                - name: PUBLICAPI_URL                                  
+                - name: PUBLICAPI_URL
     requirements:
         - python >= 3.4
 """

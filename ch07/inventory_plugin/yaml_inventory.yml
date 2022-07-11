@@ -1,17 +1,17 @@
 ---
-all: 
+all:
     hosts:
         test1:
         test2:
             host_var: value
     vars:
         group_all_var: value
-    children: 
+    children:
         other_group:
             children:
                 group_x:
                     hosts:
-                        test5   
+                        test5
             vars:
                 g2_var2: value3
 ...

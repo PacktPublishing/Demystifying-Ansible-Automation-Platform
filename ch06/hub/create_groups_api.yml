@@ -13,7 +13,7 @@
         validate_certs: false
         status_code: 201
         body_format: json
-        body: 
+        body:
           name: Joes123
       register: group_data
 
@@ -30,7 +30,7 @@
         validate_certs: false
         status_code: 201
         body_format: json
-        body: 
+        body:
           permission: ansible.change_collectionremote
       register: group_perm_data
 
