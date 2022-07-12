@@ -6,15 +6,15 @@
   collections:
     - ansible.controller
   environment:
-     CONTROLLER_HOST: https://controller.node
-     CONTROLLER_USERNAME: admin
-     CONTROLLER_PASSWORD: secret123
-     CONTROLLER_VERIFY_SSL: False
+    CONTROLLER_HOST: https://controller.node
+    CONTROLLER_USERNAME: admin
+    CONTROLLER_PASSWORD: secret123
+    CONTROLLER_VERIFY_SSL: false
 
   tasks:
     - name: Export controller objects
       awx.awx.export:
-        all: True
+        all: true
       register: export_results
 
     - debug:

@@ -1,230 +1,227 @@
 ---
 assets:
-    workflow_job_templates:
-    -   allow_simultaneous: false
-        ask_inventory_on_launch: false
-        ask_limit_on_launch: false
-        ask_scm_branch_on_launch: false
-        ask_variables_on_launch: false
-        description: ''
-        extra_vars: ''
-        inventory: null
-        limit: null
+  workflow_job_templates:
+    - allow_simultaneous: false
+      ask_inventory_on_launch: false
+      ask_limit_on_launch: false
+      ask_scm_branch_on_launch: false
+      ask_variables_on_launch: false
+      description: ''
+      extra_vars: ''
+      inventory: null
+      limit: null
+      name: Complicated workflow schema
+      natural_key:
         name: Complicated workflow schema
-        natural_key:
-            name: Complicated workflow schema
-            organization: null
-            type: workflow_job_template
         organization: null
-        related:
-            labels: []
-            notification_templates_approvals: []
-            notification_templates_error: []
-            notification_templates_started: []
-            notification_templates_success: []
-            schedules: []
-            survey_spec: {}
-            workflow_nodes:
-            -   all_parents_must_converge: false
-                diff_mode: null
-                extra_data: {}
-                identifier: Inventory Update
-                inventory: null
-                job_tags: null
-                job_type: null
-                limit: null
-                natural_key:
-                    identifier: Inventory Update
-                    type: workflow_job_template_node
-                    workflow_job_template:
-                        name: Complicated workflow schema
-                        organization: null
-                        type: workflow_job_template
-                related:
-                    always_nodes: []
-                    credentials: []
-                    failure_nodes: []
-                    success_nodes:
-                    -   identifier: Template 1
-                        type: workflow_job_template_node
-                        workflow_job_template:
-                            name: Complicated workflow
-                                schema
-                            organization: null
-                            type: workflow_job_template
-                scm_branch: null
-                skip_tags: null
-                unified_job_template:
-                    inventory:
-                        name: RHVM-01
-                        organization:
-                            name: Default
-                            type: organization
-                        type: inventory
-                    name: RHVM-01
-                    type: inventory_source
-                verbosity: null
-                workflow_job_template:
+        type: workflow_job_template
+      organization: null
+      related:
+        labels: []
+        notification_templates_approvals: []
+        notification_templates_error: []
+        notification_templates_started: []
+        notification_templates_success: []
+        schedules: []
+        survey_spec: {}
+        workflow_nodes:
+          - all_parents_must_converge: false
+            diff_mode: null
+            extra_data: {}
+            identifier: Inventory Update
+            inventory: null
+            job_tags: null
+            job_type: null
+            limit: null
+            natural_key:
+              identifier: Inventory Update
+              type: workflow_job_template_node
+              workflow_job_template:
+                name: Complicated workflow schema
+                organization: null
+                type: workflow_job_template
+            related:
+              always_nodes: []
+              credentials: []
+              failure_nodes: []
+              success_nodes:
+                - identifier: Template 1
+                  type: workflow_job_template_node
+                  workflow_job_template:
                     name: Complicated workflow schema
                     organization: null
                     type: workflow_job_template
-            -   all_parents_must_converge: false
-                diff_mode: null
-                extra_data: {}
-                identifier: Project Update
-                inventory: null
-                job_tags: null
-                job_type: null
-                limit: null
-                natural_key:
-                    identifier: Project Update
-                    type: workflow_job_template_node
-                    workflow_job_template:
-                        name: Complicated workflow schema
-                        organization: null
-                        type: workflow_job_template
-                related:
-                    always_nodes: []
-                    credentials: []
-                    failure_nodes: []
-                    success_nodes:
-                    -   identifier: Template 1
-                        type: workflow_job_template_node
-                        workflow_job_template:
-                            name: Complicated workflow
-                                schema
-                            organization: null
-                            type: workflow_job_template
-                scm_branch: null
-                skip_tags: null
-                unified_job_template:
-                    name: Test Project
-                    organization:
-                        name: Default
-                        type: organization
-                    type: project
-                verbosity: null
-                workflow_job_template:
+            scm_branch: null
+            skip_tags: null
+            unified_job_template:
+              inventory:
+                name: RHVM-01
+                organization:
+                  name: Default
+                  type: organization
+                type: inventory
+              name: RHVM-01
+              type: inventory_source
+            verbosity: null
+            workflow_job_template:
+              name: Complicated workflow schema
+              organization: null
+              type: workflow_job_template
+          - all_parents_must_converge: false
+            diff_mode: null
+            extra_data: {}
+            identifier: Project Update
+            inventory: null
+            job_tags: null
+            job_type: null
+            limit: null
+            natural_key:
+              identifier: Project Update
+              type: workflow_job_template_node
+              workflow_job_template:
+                name: Complicated workflow schema
+                organization: null
+                type: workflow_job_template
+            related:
+              always_nodes: []
+              credentials: []
+              failure_nodes: []
+              success_nodes:
+                - identifier: Template 1
+                  type: workflow_job_template_node
+                  workflow_job_template:
                     name: Complicated workflow schema
                     organization: null
                     type: workflow_job_template
-            -   all_parents_must_converge: true
-                diff_mode: null
-                extra_data: {}
-                identifier: Template 1
-                inventory: null
-                job_tags: null
-                job_type: null
-                limit: null
-                natural_key:
-                    identifier: Template 1
-                    type: workflow_job_template_node
-                    workflow_job_template:
-                        name: Complicated workflow schema
-                        organization: null
-                        type: workflow_job_template
-                related:
-                    always_nodes: []
-                    credentials: []
-                    failure_nodes:
-                    -   identifier: Approval Node
-                        type: workflow_job_template_node
-                        workflow_job_template:
-                            name: Complicated workflow
-                                schema
-                            organization: null
-                            type: workflow_job_template
-                    success_nodes:
-                    -   identifier: Template 2
-                        type: workflow_job_template_node
-                        workflow_job_template:
-                            name: Complicated workflow
-                                schema
-                            organization: null
-                            type: workflow_job_template
-                scm_branch: null
-                skip_tags: null
-                unified_job_template:
-                    name: test-template-1
-                    organization:
-                        name: Default
-                        type: organization
-                    type: job_template
-                verbosity: null
-                workflow_job_template:
+            scm_branch: null
+            skip_tags: null
+            unified_job_template:
+              name: Test Project
+              organization:
+                name: Default
+                type: organization
+              type: project
+            verbosity: null
+            workflow_job_template:
+              name: Complicated workflow schema
+              organization: null
+              type: workflow_job_template
+          - all_parents_must_converge: true
+            diff_mode: null
+            extra_data: {}
+            identifier: Template 1
+            inventory: null
+            job_tags: null
+            job_type: null
+            limit: null
+            natural_key:
+              identifier: Template 1
+              type: workflow_job_template_node
+              workflow_job_template:
+                name: Complicated workflow schema
+                organization: null
+                type: workflow_job_template
+            related:
+              always_nodes: []
+              credentials: []
+              failure_nodes:
+                - identifier: Approval Node
+                  type: workflow_job_template_node
+                  workflow_job_template:
                     name: Complicated workflow schema
                     organization: null
                     type: workflow_job_template
-            -   all_parents_must_converge: false
-                diff_mode: null
-                extra_data: {}
-                identifier: Template 2
-                inventory: null
-                job_tags: null
-                job_type: null
-                limit: null
-                natural_key:
-                    identifier: Template 2
-                    type: workflow_job_template_node
-                    workflow_job_template:
-                        name: Complicated workflow schema
-                        organization: null
-                        type: workflow_job_template
-                related:
-                    always_nodes: []
-                    credentials: []
-                    failure_nodes: []
-                    success_nodes: []
-                scm_branch: null
-                skip_tags: null
-                unified_job_template:
-                    name: test-template-1
-                    organization:
-                        name: Default
-                        type: organization
-                    type: job_template
-                verbosity: null
-                workflow_job_template:
+              success_nodes:
+                - identifier: Template 2
+                  type: workflow_job_template_node
+                  workflow_job_template:
                     name: Complicated workflow schema
                     organization: null
                     type: workflow_job_template
-            -   all_parents_must_converge: false
-                diff_mode: null
-                extra_data: {}
-                identifier: Workflow demo
-                inventory: null
-                job_tags: null
-                job_type: null
-                limit: null
-                natural_key:
-                    identifier: Workflow demo
-                    type: workflow_job_template_node
-                    workflow_job_template:
-                        name: Complicated workflow schema
-                        organization: null
-                        type: workflow_job_template
-                related:
-                    always_nodes: []
-                    credentials: []
-                    failure_nodes: []
-                    success_nodes: []
-                scm_branch: null
-                skip_tags: null
-                unified_job_template:
-                    name: demo
-                    organization:
-                        name: Default
-                        type: organization
-                    type: workflow_job_template
-                verbosity: null
-                workflow_job_template:
-                    name: Complicated workflow schema
-                    organization: null
-                    type: workflow_job_template
-        scm_branch: null
-        survey_enabled: false
-        webhook_credential: null
-        webhook_service: ''
+            scm_branch: null
+            skip_tags: null
+            unified_job_template:
+              name: test-template-1
+              organization:
+                name: Default
+                type: organization
+              type: job_template
+            verbosity: null
+            workflow_job_template:
+              name: Complicated workflow schema
+              organization: null
+              type: workflow_job_template
+          - all_parents_must_converge: false
+            diff_mode: null
+            extra_data: {}
+            identifier: Template 2
+            inventory: null
+            job_tags: null
+            job_type: null
+            limit: null
+            natural_key:
+              identifier: Template 2
+              type: workflow_job_template_node
+              workflow_job_template:
+                name: Complicated workflow schema
+                organization: null
+                type: workflow_job_template
+            related:
+              always_nodes: []
+              credentials: []
+              failure_nodes: []
+              success_nodes: []
+            scm_branch: null
+            skip_tags: null
+            unified_job_template:
+              name: test-template-1
+              organization:
+                name: Default
+                type: organization
+              type: job_template
+            verbosity: null
+            workflow_job_template:
+              name: Complicated workflow schema
+              organization: null
+              type: workflow_job_template
+          - all_parents_must_converge: false
+            diff_mode: null
+            extra_data: {}
+            identifier: Workflow demo
+            inventory: null
+            job_tags: null
+            job_type: null
+            limit: null
+            natural_key:
+              identifier: Workflow demo
+              type: workflow_job_template_node
+              workflow_job_template:
+                name: Complicated workflow schema
+                organization: null
+                type: workflow_job_template
+            related:
+              always_nodes: []
+              credentials: []
+              failure_nodes: []
+              success_nodes: []
+            scm_branch: null
+            skip_tags: null
+            unified_job_template:
+              name: demo
+              organization:
+                name: Default
+                type: organization
+              type: workflow_job_template
+            verbosity: null
+            workflow_job_template:
+              name: Complicated workflow schema
+              organization: null
+              type: workflow_job_template
+      scm_branch: null
+      survey_enabled: false
+      webhook_credential: null
+      webhook_service: ''
 changed: false
 failed: false
+
 ...

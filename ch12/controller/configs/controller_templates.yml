@@ -1,3 +1,4 @@
+---
 controller_templates:
   - name: test-template-1
     description: created by Ansible Playbook
@@ -25,3 +26,4 @@ controller_templates:
           default: infra-ansible-tower-testing.infra.sat.rdu2.redhat.com
           choices: ''
           new_question: true
+...

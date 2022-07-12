@@ -1,5 +1,5 @@
 ---
 plugin: publicapis
-validate_certs: False
+validate_certs: false
 publicapi_url: 'https://api.publicapis.org/entries'
 ...

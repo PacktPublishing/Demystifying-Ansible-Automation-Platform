@@ -1,3 +1,4 @@
+---
 stages:
   - lint
   - test
@@ -26,3 +27,4 @@ ansible-lint:
       - branches
   script:
     - ansible-lint
+...

@@ -21,6 +21,6 @@ controller_groups:
       - basic_host
     children:
       - Basic Group2
-    preserve_existing_hosts: True
-    preserve_existing_children: True
+    preserve_existing_hosts: true
+    preserve_existing_children: true
 ...

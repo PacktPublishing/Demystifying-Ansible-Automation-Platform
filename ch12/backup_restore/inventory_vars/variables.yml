@@ -42,10 +42,10 @@ aap_setup_prep_inv_vars:
     automationhub_pg_sslmode: 'prefer'
 
     automationhub_main_url: 'https://ah.node'
-    automationhub_require_content_approval: False
-    automationhub_enable_unauthenticated_collection_access: True
+    automationhub_require_content_approval: false
+    automationhub_enable_unauthenticated_collection_access: true
 
-    automationhub_ssl_validate_certs: False
+    automationhub_ssl_validate_certs: false
 
     sso_keystore_password: 'password'
     sso_console_admin_password: 'secret123'

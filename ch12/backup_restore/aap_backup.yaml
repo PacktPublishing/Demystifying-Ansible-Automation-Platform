@@ -17,7 +17,7 @@
     - redhat_cop.aap_utilities.aap_backup
 ...
 
-#- name: Copy Backup to another directory
-#  copy:
-#    src: "{{aap_setup_working_dir}}/backup/automation-platform-backup-latest.tar.gz"
-#    dest: "automation-platform-backup-{{ ansible_date_time.date }}.tar.gz"
+# - name: Copy Backup to another directory
+#   copy:
+#     src: "{{aap_setup_working_dir}}/backup/automation-platform-backup-latest.tar.gz"
+#     dest: "automation-platform-backup-{{ ansible_date_time.date }}.tar.gz"

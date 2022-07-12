@@ -18,7 +18,7 @@
           password: tnbfksktebythfwv
           host: smtp.gmail.com
           recipients:
-          - asdf@gmail.com
+            - asdf@gmail.com
           sender: asdf@gmail.com
           port: 587
           timeout: 60
@@ -35,7 +35,7 @@
         notification_type: slack
         notification_configuration:
           channels:
-            - notification_test # group_approval_notification
+            - notification_test  # group_approval_notification
           token: xoxb-964864867521-1933681026007-lXrfEmQUU5TZ2y1icFxCkX6H
           use_ssl: false
           use_tls: false

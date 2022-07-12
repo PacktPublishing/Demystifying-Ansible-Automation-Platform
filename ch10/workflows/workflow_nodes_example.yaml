@@ -1,3 +1,4 @@
+---
 workflow_nodes:
   - identifier: Inventory Update
     related:
@@ -49,3 +50,4 @@ workflow_nodes:
       organization:
         name: Default
       type: job_template
+...

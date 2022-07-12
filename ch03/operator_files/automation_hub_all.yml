@@ -1,3 +1,4 @@
+---
 apiVersion: automationhub.ansible.com/v1beta1
 kind: AutomationHub
 metadata:
@@ -103,3 +104,4 @@ spec:
   sso_secret: automation-controller-operator-control-f1d1a6bd-dockercfg-kcfcw
   admin_password_secret: automation-controller-operator-controller-manager-token-l9wgx
   hostname: hostname
+...

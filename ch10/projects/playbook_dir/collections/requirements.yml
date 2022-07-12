@@ -8,4 +8,5 @@ collections:
     version: devel
   - source: /tmp/my_namespace-my_collection-1.0.0.tar.gz
     type: file
+  - name: ansible.controller
 ...

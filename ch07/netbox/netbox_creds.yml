@@ -28,3 +28,4 @@ controller_credentials:
     inputs:
       netbox_api_endpoint: https://netbox.node
       netbox_token: token
+...

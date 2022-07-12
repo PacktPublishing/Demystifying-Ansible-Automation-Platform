@@ -2,7 +2,7 @@
 name: Run Controller Configuration Playbooks
 
 # Runs when a merge is made to master, because a merged pull request always results in a push.
-on:
+on:  # yamllint disable-line
   push:
     branches:
       - main

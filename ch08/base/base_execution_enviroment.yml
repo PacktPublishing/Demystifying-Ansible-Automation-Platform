@@ -15,3 +15,4 @@ additional_build_steps:
     RUN cat /etc/os-release
   append:
     - RUN echo This is a post-install command!
+...

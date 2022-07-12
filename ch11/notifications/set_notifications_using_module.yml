@@ -14,7 +14,7 @@
         notification_type: slack
         notification_configuration:
           channels:
-            - notification_test # group_approval_notification
+            - notification_test  # group_approval_notification
           token: xoxb-964864867521-1933681026007-lXrfEmQUU5TZ2y1icFxCkX6H
         messages:
           started:

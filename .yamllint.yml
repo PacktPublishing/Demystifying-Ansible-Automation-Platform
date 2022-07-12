@@ -7,7 +7,6 @@ rules:
   colons:
     max-spaces-before: 0
     max-spaces-after: -1
-  document-end: {present: true}
   indentation:
     level: error
     indent-sequences: true  # to be consistent with ansible-lint

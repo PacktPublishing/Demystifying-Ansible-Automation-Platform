@@ -1,3 +1,4 @@
+---
 controller_organizations:
   - name: Satellite
     galaxy_credentials:
@@ -5,3 +6,4 @@ controller_organizations:
   - name: Default
     galaxy_credentials:
       - Ansible Galaxy
+...

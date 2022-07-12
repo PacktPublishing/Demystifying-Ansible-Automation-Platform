@@ -1,3 +1,4 @@
+---
 name: Survey Example template
 description: Description goes here
 spec:
@@ -93,3 +94,4 @@ spec:
     max: 1024
     default: 2.5
     choices: ''
+...

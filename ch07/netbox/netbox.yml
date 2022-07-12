@@ -1,10 +1,10 @@
 ---
 plugin: netbox.netbox.nb_inventory
-validate_certs: False
-config_context: True
-services: False
-interfaces: True
-fetch_all: False
+validate_certs: false
+config_context: true
+services: false
+interfaces: true
+fetch_all: false
 group_by:
   - device_roles
   - racks
@@ -15,4 +15,5 @@ query_filters:
 compose:
   foo: last_updated
   bar: display_name
+
 ...

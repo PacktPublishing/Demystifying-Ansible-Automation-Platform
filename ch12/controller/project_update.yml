@@ -6,15 +6,16 @@
 
   # Import tower vars and test case vars
   environment:
-    TOWER_VERIFY_SSL: False
+    TOWER_VERIFY_SSL: false
   tasks:
     - name: Update Project
       ansible.controller.project_update:
         name: Network Playbooks
         organization: Default
-        wait: True
+        wait: true
         timeout: 600
         interval: 10
         controller_oauthtoken: "{{ controller_oauthtoken }}"
         controller_host: "{{ controller_hostname }}"
-        validate_certs: no
+        validate_certs: false
+...

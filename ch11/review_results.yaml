@@ -1,7 +1,7 @@
 ---
 - name: "Allow user to easily view results"
   hosts: localhost
-  gather_facts: no
+  gather_facts: false
 
   tasks:
     - name: "Fail playbook and stop workflow if required vars are not defined."
@@ -19,5 +19,6 @@
         data:
           list_to_pass: "{{ list_to_pass }}"
           host_groups: "{{ group_list }}"
-        aggregate: no
-        per_host: no
+        aggregate: false
+        per_host: false
+...

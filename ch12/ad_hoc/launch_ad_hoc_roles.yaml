@@ -29,3 +29,4 @@
     - redhat_cop.controller_configuration.ad_hoc_command
     - redhat_cop.controller_configuration.ad_hoc_command_wait
     - redhat_cop.controller_configuration.ad_hoc_command_cancel
+...

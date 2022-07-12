@@ -12,26 +12,24 @@
         description: Create RHVM-01 Inventory
         organization: Default
         state: present
-        controller_host: https://controller.node
+        controller_host: 'https://controller.node'
         controller_username: admin
         controller_password: secret123
         validate_certs: false
-
     - name: Create the Hello world tower project
       ansible.controller.project:
         name: Test Project
         scm_type: git
-        scm_url: https://github.com/ansible/tower-example.git
+        scm_url: 'https://github.com/ansible/tower-example.git'
         scm_branch: master
         scm_clean: true
         description: Tower Hello World
         organization: Default
         wait: true
-        controller_host: https://controller.node
+        controller_host: 'https://controller.node'
         controller_username: admin
         controller_password: secret123
         validate_certs: false
-
     - name: Create Credentials
       ansible.controller.credential:
         name: RHVM
@@ -39,14 +37,13 @@
         organization: Default
         credential_type: Red Hat Virtualization
         inputs:
-          host: "https://example.com/ovirt-engine/api"
-          username: "user"
-          password: "password"
-        controller_host: https://controller.node
+          host: 'https://example.com/ovirt-engine/api'
+          username: user
+          password: password
+        controller_host: 'https://controller.node'
         controller_username: admin
         controller_password: secret123
         validate_certs: false
-
     - name: Create Job Template
       ansible.controller.job_template:
         name: test-template-1
@@ -65,8 +62,9 @@
           description: Description goes here
           spec:
             - question_name: Target Host
-              question_description: target host is required for playbook to work, this host
-                needs to exist in the inventory
+              question_description: >-
+                target host is required for playbook to work, this host needs to
+                exist in the inventory
               required: true
               type: text
               variable: target_hosts
@@ -76,21 +74,19 @@
               choices: ''
               new_question: true
         state: present
-        controller_host: https://controller.node
+        controller_host: 'https://controller.node'
         controller_username: admin
         controller_password: secret123
         validate_certs: false
-
     - name: Launch a job template with survey
       job_launch:
         job_template: test-template-1
         extra_vars:
-          target_hosts: "localhost"
-        controller_host: https://controller.node
+          target_hosts: localhost
+        controller_host: 'https://controller.node'
         controller_username: admin
         controller_password: secret123
         validate_certs: false
-
     - name: Push workflows to controller
       awx.awx.workflow_job_template:
         name: Complicated workflow nodes
@@ -149,13 +145,13 @@
             unified_job_template:
               name: demo
               organization:
-                  name: Default
+                name: Default
               type: workflow_job_template
           - identifier: Cleanup Job
             unified_job_template:
               name: Cleanup Activity Stream
               type: system_job
-        controller_host: https://controller.node
+        controller_host: 'https://controller.node'
         controller_username: admin
         controller_password: secret123
         validate_certs: false

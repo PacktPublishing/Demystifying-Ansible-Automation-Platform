@@ -3,7 +3,6 @@
   hosts: localhost
   connection: local
   gather_facts: false
-
   tasks:
     - name: Launch an ad hoc command
       ansible.controller.ad_hoc_command:
@@ -35,3 +34,4 @@
         controller_username: admin
         controller_password: secret123
         validate_certs: false
+...

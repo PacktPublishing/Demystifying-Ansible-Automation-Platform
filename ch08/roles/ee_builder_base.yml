@@ -1,6 +1,6 @@
 ---
 - name: Playbook to create custom EE
-  hosts: localhost # controller.node
+  hosts: localhost  # controller.node
   gather_facts: false
   collections:
     - redhat_cop.ee_utilities

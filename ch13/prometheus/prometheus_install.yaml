@@ -8,7 +8,7 @@
     prometheus_scrape_configs:
       - job_name: 'controller.node'
         tls_config:
-            insecure_skip_verify: True
+          insecure_skip_verify: true
         metrics_path: /api/v2/metrics
         scrape_interval: 5s
         scheme: https
@@ -17,6 +17,6 @@
         #   username: admin
         #   password: password
         static_configs:
-            - targets:
-                - controller.node
+          - targets:
+              - controller.node
 ...

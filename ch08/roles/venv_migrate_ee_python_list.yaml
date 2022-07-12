@@ -1,5 +1,5 @@
 ---
--   /opt/cust_venv/iaas_na/:
+- /opt/cust_venv/iaas_na/:
     - ansible
     - ansible-tower-cli
     - appdirs
@@ -78,7 +78,7 @@
     - yolk
     - zabbix-api
     - zipp
--   /opt/cust_venv/iaas_ansible_2_9_27/:
+- /opt/cust_venv/iaas_ansible_2_9_27/:
     - ansible
     - ansible-tower-cli
     - appdirs
@@ -157,7 +157,7 @@
     - yolk
     - zabbix-api
     - zipp
--   /var/lib/awx/venv/iaas_na/:
+- /var/lib/awx/venv/iaas_na/:
     - ansible
     - ansible-tower-cli
     - appdirs
@@ -236,7 +236,7 @@
     - yolk
     - zabbix-api
     - zipp
--   /var/lib/awx/venv/iaas_ansible_2_9_27/:
+- /var/lib/awx/venv/iaas_ansible_2_9_27/:
     - ansible
     - ansible-tower-cli
     - appdirs

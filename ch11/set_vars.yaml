@@ -1,7 +1,7 @@
 ---
 - name: "Set per host stats"
   hosts: "{{ host_groups }}"
-  gather_facts: no
+  gather_facts: false
 
   tasks:
     - name: "Set Vars"
@@ -27,3 +27,4 @@
 #     other_info: 1
 
 # use in a later play: "{{ var_per_host [inventory_hostname] }}"
+...

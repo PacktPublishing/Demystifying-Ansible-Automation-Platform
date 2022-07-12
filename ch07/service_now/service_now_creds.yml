@@ -39,3 +39,4 @@ controller_credentials:
       sn_host: servicenow.mydomain.com
       sn_username: admin
       sn_password: password
+...

@@ -11,7 +11,7 @@
         username: joe_123
         password: password123
         email: joe_123@example.org
-        superuser: yes
+        superuser: true
         state: present
         controller_host: https://controller.node
         controller_username: admin

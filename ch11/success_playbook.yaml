@@ -1,8 +1,9 @@
 ---
 - name: "Sucess Playbook"
-  gather_facts: no
+  gather_facts: false
   hosts: localhost
   tasks:
-
-    - debug:
+    - name: "Mark Workflow as Successful"
+      ansible.builtin.debug:
         msg: Approval Denied, Marking workflow as Successful.
+...

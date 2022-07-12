@@ -63,5 +63,5 @@
         ah_password: secret123
         ah_path_prefix: galaxy
         validate_certs: false
-      ignore_errors: true # Above token is fake so this will fail.
+      ignore_errors: true  # Above token is fake so this will fail.
 ...

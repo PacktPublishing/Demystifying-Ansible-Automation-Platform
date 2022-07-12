@@ -1,609 +1,615 @@
+---
 assets:
   credential_types:
-  - description: REST API Credential
-    injectors:
-      env:
-        rest_password_env: '{{ rest_password }}'
-        rest_username_env: '{{ rest_username }}'
-      extra_vars:
-        rest_password: '{{ rest_password }}'
-        rest_username: '{{ rest_username }}'
-      file:
-        template: '[ini_field] rest_username={{rest_username}} rest_password={{rest_password}}'
-    inputs:
-      fields:
-      - id: rest_username
-        label: REST Username
-        type: string
-      - id: rest_password
-        label: REST Password
-        secret: true
-        type: string
-      required:
-      - rest_username
-      - rest_password
-    kind: cloud
-    name: REST API Credential
-    natural_key:
+    - description: REST API Credential
+      injectors:
+        env:
+          rest_password_env: '{{ rest_password }}'
+          rest_username_env: '{{ rest_username }}'
+        extra_vars:
+          rest_password: '{{ rest_password }}'
+          rest_username: '{{ rest_username }}'
+        file:
+          template: >-
+            [ini_field] rest_username={{rest_username}}
+            rest_password={{rest_password}}
+      inputs:
+        fields:
+          - id: rest_username
+            label: REST Username
+            type: string
+          - id: rest_password
+            label: REST Password
+            secret: true
+            type: string
+        required:
+          - rest_username
+          - rest_password
       kind: cloud
       name: REST API Credential
-      type: credential_type
+      natural_key:
+        kind: cloud
+        name: REST API Credential
+        type: credential_type
   credentials:
-  - credential_type:
-      kind: galaxy
-      name: Ansible Galaxy/Automation Hub API Token
-      type: credential_type
-    description: ''
-    inputs:
-      token: ''
-      url: https://ah.node/api/galaxy/content/community/
-    name: Automation Hub Community Repository
-    natural_key:
-      credential_type:
+    - credential_type:
         kind: galaxy
         name: Ansible Galaxy/Automation Hub API Token
         type: credential_type
+      description: ''
+      inputs:
+        token: ''
+        url: 'https://ah.node/api/galaxy/content/community/'
       name: Automation Hub Community Repository
+      natural_key:
+        credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Automation Hub Community Repository
+        organization: null
+        type: credential
       organization: null
-      type: credential
-    organization: null
-  - credential_type:
-      kind: registry
-      name: Container Registry
-      type: credential_type
-    description: ''
-    inputs:
-      host: ah.node
-      password: ''
-      username: admin
-      verify_ssl: false
-    name: Automation Hub Container Registry
-    natural_key:
-      credential_type:
+    - credential_type:
         kind: registry
         name: Container Registry
         type: credential_type
+      description: ''
+      inputs:
+        host: ah.node
+        password: ''
+        username: admin
+        verify_ssl: false
       name: Automation Hub Container Registry
+      natural_key:
+        credential_type:
+          kind: registry
+          name: Container Registry
+          type: credential_type
+        name: Automation Hub Container Registry
+        organization: null
+        type: credential
       organization: null
-      type: credential
-    organization: null
-  - credential_type:
-      kind: galaxy
-      name: Ansible Galaxy/Automation Hub API Token
-      type: credential_type
-    description: ''
-    inputs:
-      token: ''
-      url: https://ah.node/api/galaxy/content/published/
-    name: Automation Hub Published Repository
-    natural_key:
-      credential_type:
+    - credential_type:
         kind: galaxy
         name: Ansible Galaxy/Automation Hub API Token
         type: credential_type
+      description: ''
+      inputs:
+        token: ''
+        url: 'https://ah.node/api/galaxy/content/published/'
       name: Automation Hub Published Repository
+      natural_key:
+        credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Automation Hub Published Repository
+        organization: null
+        type: credential
       organization: null
-      type: credential
-    organization: null
-  - credential_type:
-      kind: galaxy
-      name: Ansible Galaxy/Automation Hub API Token
-      type: credential_type
-    description: ''
-    inputs:
-      token: ''
-      url: https://ah.node/api/galaxy/content/rh-certified/
-    name: Automation Hub RH Certified Repository
-    natural_key:
-      credential_type:
+    - credential_type:
         kind: galaxy
         name: Ansible Galaxy/Automation Hub API Token
         type: credential_type
+      description: ''
+      inputs:
+        token: ''
+        url: 'https://ah.node/api/galaxy/content/rh-certified/'
       name: Automation Hub RH Certified Repository
+      natural_key:
+        credential_type:
+          kind: galaxy
+          name: Ansible Galaxy/Automation Hub API Token
+          type: credential_type
+        name: Automation Hub RH Certified Repository
+        organization: null
+        type: credential
       organization: null
-      type: credential
-    organization: null
-  - credential_type:
-      kind: ssh
-      name: Machine
-      type: credential_type
-    description: ''
-    inputs:
-      username: admin
-    name: Demo Credential
-    natural_key:
-      credential_type:
+    - credential_type:
         kind: ssh
         name: Machine
         type: credential_type
+      description: ''
+      inputs:
+        username: admin
       name: Demo Credential
-      organization: null
-      type: credential
-    organization: null
-    user:
-      type: user
-      username: admin
-  - credential_type:
-      kind: cloud
-      name: REST API Credential
-      type: credential_type
-    description: REST API Credential
-    inputs:
-      rest_password: ''
-      rest_username: rest_user
-    name: REST API Credential
-    natural_key:
-      credential_type:
-        kind: cloud
-        name: REST API Credential
-        type: credential_type
-      name: REST API Credential
-      organization:
-        name: Default
-        type: organization
-      type: credential
-    organization:
-      name: Default
-      type: organization
-  - credential_type:
-      kind: cloud
-      name: REST API Credential
-      type: credential_type
-    description: REST API Credential
-    inputs:
-      rest_password: ''
-      rest_username: rest_user
-    name: REST API Credential
-    natural_key:
-      credential_type:
-        kind: cloud
-        name: REST API Credential
-        type: credential_type
-      name: REST API Credential
-      organization:
-        name: Satellite
-        type: organization
-      type: credential
-    organization:
-      name: Satellite
-      type: organization
-  execution_environments:
-  - credential:
-      credential_type:
-        kind: registry
-        name: Container Registry
-        type: credential_type
-      name: Automation Hub Container Registry
-      organization: null
-      type: credential
-    description: ''
-    image: ah.node/ee-supported-rhel8:latest
-    name: Automation Hub Default execution environment
-    natural_key:
-      name: Automation Hub Default execution environment
-      type: execution_environment
-    organization: null
-    pull: ''
-  - credential:
-      credential_type:
-        kind: registry
-        name: Container Registry
-        type: credential_type
-      name: Automation Hub Container Registry
-      organization: null
-      type: credential
-    description: ''
-    image: ah.node/ee-29-rhel8:latest
-    name: Automation Hub Ansible Engine 2.9 execution environment
-    natural_key:
-      name: Automation Hub Ansible Engine 2.9 execution environment
-      type: execution_environment
-    organization: null
-    pull: ''
-  - credential:
-      credential_type:
-        kind: registry
-        name: Container Registry
-        type: credential_type
-      name: Automation Hub Container Registry
-      organization: null
-      type: credential
-    description: ''
-    image: ah.node/ee-minimal-rhel8:latest
-    name: Automation Hub Minimal execution environment
-    natural_key:
-      name: Automation Hub Minimal execution environment
-      type: execution_environment
-    organization: null
-    pull: ''
-  - credential:
-      credential_type:
-        kind: registry
-        name: Container Registry
-        type: credential_type
-      name: Default Execution Environment Registry Credential
-      organization: null
-      type: credential
-    description: ''
-    image: registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8:latest
-    name: Default execution environment
-    natural_key:
-      name: Default execution environment
-      type: execution_environment
-    organization: null
-    pull: ''
-  - credential:
-      credential_type:
-        kind: registry
-        name: Container Registry
-        type: credential_type
-      name: Default Execution Environment Registry Credential
-      organization: null
-      type: credential
-    description: ''
-    image: registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8:latest
-    name: Ansible Engine 2.9 execution environment
-    natural_key:
-      name: Ansible Engine 2.9 execution environment
-      type: execution_environment
-    organization: null
-    pull: ''
-  - credential:
-      credential_type:
-        kind: registry
-        name: Container Registry
-        type: credential_type
-      name: Default Execution Environment Registry Credential
-      organization: null
-      type: credential
-    description: ''
-    image: registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8:latest
-    name: Minimal execution environment
-    natural_key:
-      name: Minimal execution environment
-      type: execution_environment
-    organization: null
-    pull: ''
-  inventory:
-  - description: ''
-    host_filter: null
-    kind: ''
-    name: Demo Inventory
-    natural_key:
-      name: Demo Inventory
-      organization:
-        name: Default
-        type: organization
-      type: inventory
-    organization:
-      name: Default
-      type: organization
-    related:
-      groups: []
-      hosts:
-      - description: ''
-        enabled: true
-        instance_id: ''
-        inventory:
-          name: Demo Inventory
-          organization:
-            name: Default
-            type: organization
-          type: inventory
-        name: localhost
-        natural_key:
-          inventory:
-            name: Demo Inventory
-            organization:
-              name: Default
-              type: organization
-            type: inventory
-          name: localhost
-          type: host
-        related:
-          groups: []
-        variables: 'ansible_connection: local
-
-          ansible_python_interpreter: ''{{ ansible_playbook_python }}'''
-    variables: ''
-  inventory_sources: []
-  job_templates:
-  - allow_simultaneous: false
-    ask_credential_on_launch: false
-    ask_diff_mode_on_launch: false
-    ask_inventory_on_launch: false
-    ask_job_type_on_launch: false
-    ask_limit_on_launch: false
-    ask_scm_branch_on_launch: false
-    ask_skip_tags_on_launch: false
-    ask_tags_on_launch: false
-    ask_variables_on_launch: false
-    ask_verbosity_on_launch: false
-    become_enabled: false
-    description: ''
-    diff_mode: false
-    execution_environment: null
-    extra_vars: ''
-    force_handlers: false
-    forks: 0
-    host_config_key: ''
-    inventory:
-      name: Demo Inventory
-      organization:
-        name: Default
-        type: organization
-      type: inventory
-    job_slice_count: 1
-    job_tags: ''
-    job_type: run
-    limit: ''
-    name: Demo Job Template
-    natural_key:
-      name: Demo Job Template
-      organization:
-        name: Default
-        type: organization
-      type: job_template
-    playbook: hello_world.yml
-    project:
-      name: Demo Project
-      organization:
-        name: Default
-        type: organization
-      type: project
-    related:
-      credentials:
-      - credential_type:
+      natural_key:
+        credential_type:
           kind: ssh
           name: Machine
           type: credential_type
         name: Demo Credential
         organization: null
         type: credential
-      labels: []
-      notification_templates_error: []
-      notification_templates_started: []
-      notification_templates_success: []
-      schedules: []
-      survey_spec: {}
-    scm_branch: ''
-    skip_tags: ''
-    start_at_task: ''
-    survey_enabled: false
-    timeout: 0
-    use_fact_cache: false
-    verbosity: 0
-    webhook_credential: null
-    webhook_service: ''
+      organization: null
+      user:
+        type: user
+        username: admin
+    - credential_type:
+        kind: cloud
+        name: REST API Credential
+        type: credential_type
+      description: REST API Credential
+      inputs:
+        rest_password: ''
+        rest_username: rest_user
+      name: REST API Credential
+      natural_key:
+        credential_type:
+          kind: cloud
+          name: REST API Credential
+          type: credential_type
+        name: REST API Credential
+        organization:
+          name: Default
+          type: organization
+        type: credential
+      organization:
+        name: Default
+        type: organization
+    - credential_type:
+        kind: cloud
+        name: REST API Credential
+        type: credential_type
+      description: REST API Credential
+      inputs:
+        rest_password: ''
+        rest_username: rest_user
+      name: REST API Credential
+      natural_key:
+        credential_type:
+          kind: cloud
+          name: REST API Credential
+          type: credential_type
+        name: REST API Credential
+        organization:
+          name: Satellite
+          type: organization
+        type: credential
+      organization:
+        name: Satellite
+        type: organization
+  execution_environments:
+    - credential:
+        credential_type:
+          kind: registry
+          name: Container Registry
+          type: credential_type
+        name: Automation Hub Container Registry
+        organization: null
+        type: credential
+      description: ''
+      image: 'ah.node/ee-supported-rhel8:latest'
+      name: Automation Hub Default execution environment
+      natural_key:
+        name: Automation Hub Default execution environment
+        type: execution_environment
+      organization: null
+      pull: ''
+    - credential:
+        credential_type:
+          kind: registry
+          name: Container Registry
+          type: credential_type
+        name: Automation Hub Container Registry
+        organization: null
+        type: credential
+      description: ''
+      image: 'ah.node/ee-29-rhel8:latest'
+      name: Automation Hub Ansible Engine 2.9 execution environment
+      natural_key:
+        name: Automation Hub Ansible Engine 2.9 execution environment
+        type: execution_environment
+      organization: null
+      pull: ''
+    - credential:
+        credential_type:
+          kind: registry
+          name: Container Registry
+          type: credential_type
+        name: Automation Hub Container Registry
+        organization: null
+        type: credential
+      description: ''
+      image: 'ah.node/ee-minimal-rhel8:latest'
+      name: Automation Hub Minimal execution environment
+      natural_key:
+        name: Automation Hub Minimal execution environment
+        type: execution_environment
+      organization: null
+      pull: ''
+    - credential:
+        credential_type:
+          kind: registry
+          name: Container Registry
+          type: credential_type
+        name: Default Execution Environment Registry Credential
+        organization: null
+        type: credential
+      description: ''
+      image: >-
+        registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8:latest
+      name: Default execution environment
+      natural_key:
+        name: Default execution environment
+        type: execution_environment
+      organization: null
+      pull: ''
+    - credential:
+        credential_type:
+          kind: registry
+          name: Container Registry
+          type: credential_type
+        name: Default Execution Environment Registry Credential
+        organization: null
+        type: credential
+      description: ''
+      image: 'registry.redhat.io/ansible-automation-platform-22/ee-29-rhel8:latest'
+      name: Ansible Engine 2.9 execution environment
+      natural_key:
+        name: Ansible Engine 2.9 execution environment
+        type: execution_environment
+      organization: null
+      pull: ''
+    - credential:
+        credential_type:
+          kind: registry
+          name: Container Registry
+          type: credential_type
+        name: Default Execution Environment Registry Credential
+        organization: null
+        type: credential
+      description: ''
+      image: >-
+        registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8:latest
+      name: Minimal execution environment
+      natural_key:
+        name: Minimal execution environment
+        type: execution_environment
+      organization: null
+      pull: ''
+  inventory:
+    - description: ''
+      host_filter: null
+      kind: ''
+      name: Demo Inventory
+      natural_key:
+        name: Demo Inventory
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      organization:
+        name: Default
+        type: organization
+      related:
+        groups: []
+        hosts:
+          - description: ''
+            enabled: true
+            instance_id: ''
+            inventory:
+              name: Demo Inventory
+              organization:
+                name: Default
+                type: organization
+              type: inventory
+            name: localhost
+            natural_key:
+              inventory:
+                name: Demo Inventory
+                organization:
+                  name: Default
+                  type: organization
+                type: inventory
+              name: localhost
+              type: host
+            related:
+              groups: []
+            variables: |-
+              ansible_connection: local
+              ansible_python_interpreter: '{{ ansible_playbook_python }}'
+      variables: ''
+  inventory_sources: []
+  job_templates:
+    - allow_simultaneous: false
+      ask_credential_on_launch: false
+      ask_diff_mode_on_launch: false
+      ask_inventory_on_launch: false
+      ask_job_type_on_launch: false
+      ask_limit_on_launch: false
+      ask_scm_branch_on_launch: false
+      ask_skip_tags_on_launch: false
+      ask_tags_on_launch: false
+      ask_variables_on_launch: false
+      ask_verbosity_on_launch: false
+      become_enabled: false
+      description: ''
+      diff_mode: false
+      execution_environment: null
+      extra_vars: ''
+      force_handlers: false
+      forks: 0
+      host_config_key: ''
+      inventory:
+        name: Demo Inventory
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      job_slice_count: 1
+      job_tags: ''
+      job_type: run
+      limit: ''
+      name: Demo Job Template
+      natural_key:
+        name: Demo Job Template
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      playbook: hello_world.yml
+      project:
+        name: Demo Project
+        organization:
+          name: Default
+          type: organization
+        type: project
+      related:
+        credentials:
+          - credential_type:
+              kind: ssh
+              name: Machine
+              type: credential_type
+            name: Demo Credential
+            organization: null
+            type: credential
+        labels: []
+        notification_templates_error: []
+        notification_templates_started: []
+        notification_templates_success: []
+        schedules: []
+        survey_spec: {}
+      scm_branch: ''
+      skip_tags: ''
+      start_at_task: ''
+      survey_enabled: false
+      timeout: 0
+      use_fact_cache: false
+      verbosity: 0
+      webhook_credential: null
+      webhook_service: ''
   notification_templates: []
   organizations:
-  - default_environment: null
-    description: ''
-    max_hosts: 0
-    name: Default
-    natural_key:
+    - default_environment: null
+      description: ''
+      max_hosts: 0
       name: Default
-      type: organization
-    related:
-      execution_environments: []
-      galaxy_credentials:
-      - credential_type:
-          kind: galaxy
-          name: Ansible Galaxy/Automation Hub API Token
-          type: credential_type
-        name: Ansible Galaxy
-        organization: null
-        type: credential
-      notification_templates: []
-      notification_templates_approvals: []
-      notification_templates_error: []
-      notification_templates_started: []
-      notification_templates_success: []
-  - default_environment: null
-    description: ''
-    max_hosts: 0
-    name: Engineering
-    natural_key:
+      natural_key:
+        name: Default
+        type: organization
+      related:
+        execution_environments: []
+        galaxy_credentials:
+          - credential_type:
+              kind: galaxy
+              name: Ansible Galaxy/Automation Hub API Token
+              type: credential_type
+            name: Ansible Galaxy
+            organization: null
+            type: credential
+        notification_templates: []
+        notification_templates_approvals: []
+        notification_templates_error: []
+        notification_templates_started: []
+        notification_templates_success: []
+    - default_environment: null
+      description: ''
+      max_hosts: 0
       name: Engineering
-      type: organization
-    related:
-      execution_environments: []
-      galaxy_credentials:
-      - credential_type:
-          kind: galaxy
-          name: Ansible Galaxy/Automation Hub API Token
-          type: credential_type
-        name: Ansible Galaxy
-        organization: null
-        type: credential
-      notification_templates: []
-      notification_templates_approvals: []
-      notification_templates_error: []
-      notification_templates_started: []
-      notification_templates_success: []
-  - default_environment: null
-    description: ''
-    max_hosts: 0
-    name: Satellite
-    natural_key:
+      natural_key:
+        name: Engineering
+        type: organization
+      related:
+        execution_environments: []
+        galaxy_credentials:
+          - credential_type:
+              kind: galaxy
+              name: Ansible Galaxy/Automation Hub API Token
+              type: credential_type
+            name: Ansible Galaxy
+            organization: null
+            type: credential
+        notification_templates: []
+        notification_templates_approvals: []
+        notification_templates_error: []
+        notification_templates_started: []
+        notification_templates_success: []
+    - default_environment: null
+      description: ''
+      max_hosts: 0
       name: Satellite
-      type: organization
-    related:
-      execution_environments: []
-      galaxy_credentials:
-      - credential_type:
-          kind: galaxy
-          name: Ansible Galaxy/Automation Hub API Token
-          type: credential_type
-        name: Ansible Galaxy
-        organization: null
-        type: credential
-      notification_templates: []
-      notification_templates_approvals: []
-      notification_templates_error: []
-      notification_templates_started: []
-      notification_templates_success: []
+      natural_key:
+        name: Satellite
+        type: organization
+      related:
+        execution_environments: []
+        galaxy_credentials:
+          - credential_type:
+              kind: galaxy
+              name: Ansible Galaxy/Automation Hub API Token
+              type: credential_type
+            name: Ansible Galaxy
+            organization: null
+            type: credential
+        notification_templates: []
+        notification_templates_approvals: []
+        notification_templates_error: []
+        notification_templates_started: []
+        notification_templates_success: []
   projects:
-  - allow_override: false
-    credential: null
-    default_environment: null
-    description: ''
-    local_path: _6__demo_project
-    name: Demo Project
-    natural_key:
+    - allow_override: false
+      credential: null
+      default_environment: null
+      description: ''
+      local_path: _6__demo_project
       name: Demo Project
+      natural_key:
+        name: Demo Project
+        organization:
+          name: Default
+          type: organization
+        type: project
       organization:
         name: Default
         type: organization
-      type: project
-    organization:
-      name: Default
-      type: organization
-    related:
-      notification_templates_error: []
-      notification_templates_started: []
-      notification_templates_success: []
-      schedules: []
-    scm_branch: ''
-    scm_clean: false
-    scm_delete_on_update: false
-    scm_refspec: ''
-    scm_track_submodules: false
-    scm_type: git
-    scm_update_cache_timeout: 0
-    scm_update_on_launch: true
-    scm_url: https://github.com/ansible/ansible-tower-samples
-    timeout: 0
-  - allow_override: false
-    credential: null
-    default_environment: null
-    description: Test Project 1
-    local_path: _8__test_project
-    name: Test Project
-    natural_key:
+      related:
+        notification_templates_error: []
+        notification_templates_started: []
+        notification_templates_success: []
+        schedules: []
+      scm_branch: ''
+      scm_clean: false
+      scm_delete_on_update: false
+      scm_refspec: ''
+      scm_track_submodules: false
+      scm_type: git
+      scm_update_cache_timeout: 0
+      scm_update_on_launch: true
+      scm_url: 'https://github.com/ansible/ansible-tower-samples'
+      timeout: 0
+    - allow_override: false
+      credential: null
+      default_environment: null
+      description: Test Project 1
+      local_path: _8__test_project
       name: Test Project
+      natural_key:
+        name: Test Project
+        organization:
+          name: Default
+          type: organization
+        type: project
       organization:
         name: Default
         type: organization
-      type: project
-    organization:
-      name: Default
-      type: organization
-    related:
-      notification_templates_error: []
-      notification_templates_started: []
-      notification_templates_success: []
-      schedules: []
-    scm_branch: master
-    scm_clean: true
-    scm_delete_on_update: false
-    scm_refspec: ''
-    scm_track_submodules: false
-    scm_type: git
-    scm_update_cache_timeout: 0
-    scm_update_on_launch: false
-    scm_url: https://github.com/ansible/tower-example.git
-    timeout: 0
-  - allow_override: false
-    credential: null
-    default_environment: null
-    description: Test Project 2
-    local_path: _9__test_project_2
-    name: Test Project 2
-    natural_key:
+      related:
+        notification_templates_error: []
+        notification_templates_started: []
+        notification_templates_success: []
+        schedules: []
+      scm_branch: master
+      scm_clean: true
+      scm_delete_on_update: false
+      scm_refspec: ''
+      scm_track_submodules: false
+      scm_type: git
+      scm_update_cache_timeout: 0
+      scm_update_on_launch: false
+      scm_url: 'https://github.com/ansible/tower-example.git'
+      timeout: 0
+    - allow_override: false
+      credential: null
+      default_environment: null
+      description: Test Project 2
+      local_path: _9__test_project_2
       name: Test Project 2
+      natural_key:
+        name: Test Project 2
+        organization:
+          name: Default
+          type: organization
+        type: project
       organization:
         name: Default
         type: organization
-      type: project
-    organization:
-      name: Default
-      type: organization
-    related:
-      notification_templates_error: []
-      notification_templates_started: []
-      notification_templates_success: []
-      schedules: []
-    scm_branch: ''
-    scm_clean: false
-    scm_delete_on_update: false
-    scm_refspec: ''
-    scm_track_submodules: false
-    scm_type: git
-    scm_update_cache_timeout: 0
-    scm_update_on_launch: false
-    scm_url: https://github.com/ansible/ansible-examples.git
-    timeout: 0
+      related:
+        notification_templates_error: []
+        notification_templates_started: []
+        notification_templates_success: []
+        schedules: []
+      scm_branch: ''
+      scm_clean: false
+      scm_delete_on_update: false
+      scm_refspec: ''
+      scm_track_submodules: false
+      scm_type: git
+      scm_update_cache_timeout: 0
+      scm_update_on_launch: false
+      scm_url: 'https://github.com/ansible/ansible-examples.git'
+      timeout: 0
   teams:
-  - description: ''
-    name: joes
-    natural_key:
+    - description: ''
       name: joes
+      natural_key:
+        name: joes
+        organization:
+          name: Default
+          type: organization
+        type: team
       organization:
         name: Default
         type: organization
-      type: team
-    organization:
-      name: Default
-      type: organization
-    related:
-      roles: []
-  - description: All the Joes
-    name: Joes
-    natural_key:
+      related:
+        roles: []
+    - description: All the Joes
       name: Joes
+      natural_key:
+        name: Joes
+        organization:
+          name: Default
+          type: organization
+        type: team
       organization:
         name: Default
         type: organization
-      type: team
-    organization:
-      name: Default
-      type: organization
-    related:
-      roles: []
+      related:
+        roles: []
   users:
-  - email: admin@example.com
-    first_name: ''
-    is_superuser: true
-    is_system_auditor: false
-    last_name: ''
-    natural_key:
-      type: user
+    - email: admin@example.com
+      first_name: ''
+      is_superuser: true
+      is_system_auditor: false
+      last_name: ''
+      natural_key:
+        type: user
+        username: admin
+      related:
+        roles:
+          - content_object:
+              credential_type:
+                kind: ssh
+                name: Machine
+                type: credential_type
+              name: Demo Credential
+              organization: null
+              type: credential
+            name: Admin
+            type: role
+          - name: System Administrator
+            type: role
       username: admin
-    related:
-      roles:
-      - content_object:
-          credential_type:
-            kind: ssh
-            name: Machine
-            type: credential_type
-          name: Demo Credential
-          organization: null
-          type: credential
-        name: Admin
-        type: role
-      - name: System Administrator
-        type: role
-    username: admin
-  - email: joe_123@example.org
-    first_name: ''
-    is_superuser: false
-    is_system_auditor: false
-    last_name: ''
-    natural_key:
-      type: user
+    - email: joe_123@example.org
+      first_name: ''
+      is_superuser: false
+      is_system_auditor: false
+      last_name: ''
+      natural_key:
+        type: user
+        username: joe_123
+      related:
+        roles:
+          - content_object:
+              name: Joes
+              organization:
+                name: Default
+                type: organization
+              type: team
+            name: Member
+            type: role
       username: joe_123
-    related:
-      roles:
-      - content_object:
-          name: Joes
-          organization:
-            name: Default
-            type: organization
-          type: team
-        name: Member
-        type: role
-    username: joe_123
   workflow_job_templates: []
 changed: false
 failed: false
+...
