@@ -11,7 +11,7 @@ spec:
     variable: text
     min: 0
     max: 1034
-    default: infra-ansible-tower-testing.infra.sat.rdu2.redhat.com
+    default: infra-ansible-controller-testing.infra.sat.rdu2.redhat.com
     choices: ''
     formattedChoices:
       - choice: ''

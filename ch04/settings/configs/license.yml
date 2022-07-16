@@ -1,4 +1,3 @@
-# User may add tower auth creds to this file and encrypt it using `ansible-vault`
 ---
 controller_license:
   manifest_file: manifest_file.zip

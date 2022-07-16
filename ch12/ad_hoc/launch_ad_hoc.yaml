@@ -8,8 +8,8 @@
       ansible.controller.ad_hoc_command:
         module_name: shell
         module_args: ls -a
-        inventory: "Demo Inventory"
-        credential: "Demo Credential"
+        inventory: Demo Inventory
+        credential: Demo Credential
         wait: false
         controller_host: https://controller.node
         controller_username: admin

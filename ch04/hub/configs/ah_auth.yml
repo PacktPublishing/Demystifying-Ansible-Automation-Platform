@@ -1,4 +1,4 @@
-# User may add tower auth creds to this file and encrypt it using `ansible-vault`
+# User may add auth creds to this file and encrypt it using `ansible-vault`
 ---
 ah_host: https://ahnosso.node
 ah_username: admin

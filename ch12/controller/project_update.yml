@@ -4,9 +4,9 @@
   connection: local
   gather_facts: false
 
-  # Import tower vars and test case vars
+  # Import controller vars and test case vars
   environment:
-    TOWER_VERIFY_SSL: false
+    CONTROLLER_VERIFY_SSL: false
   tasks:
     - name: Update Project
       ansible.controller.project_update:

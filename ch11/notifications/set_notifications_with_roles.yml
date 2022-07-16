@@ -66,7 +66,7 @@
         description: Test Project 1
         organization: Default
         wait: true
-        update: true
+        update_project: true
         notification_templates_error:
           - Gmail notification
         notification_templates_started: []

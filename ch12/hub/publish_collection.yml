@@ -11,7 +11,7 @@
         name: custom_collection
         path: custom_collection_custom_collection-1.0.0tar.gz
         auto_approve: false
-        ah_host: https://automationhub.int.bell.ca
+        ah_host: https://hub
         ah_token: "{{ ah_token }}"
         ah_path_prefix: galaxy
         validate_certs: false

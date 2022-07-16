@@ -17,14 +17,14 @@
         controller_password: secret123
         validate_certs: false
 
-    - name: Create the Hello world tower project
+    - name: Create the test project
       ansible.controller.project:
         name: Test Project
         scm_type: git
         scm_url: https://github.com/ansible/test-playbooks.git
         scm_branch: master
         scm_clean: true
-        description: Tower Hello World
+        description: Test Project 1
         organization: Default
         wait: true
         controller_host: https://controller.node
@@ -53,12 +53,14 @@
         description: created by Ansible Playbook
         project: Test Project
         inventory: RHVM-01
+        organization: Default
         playbook: chatty_payload.yml
         credentials:
           - RHVM
         verbosity: 2
+        ask_variables_on_launch: true
         extra_vars:
-          target_hosts: infra-ansible-tower-01.example.com
+          target_hosts: infra-ansible-controller-01.example.com
         job_type: run
         survey_spec:
           name: Survey Example template
@@ -72,7 +74,7 @@
               variable: target_hosts
               min: 0
               max: 1024
-              default: infra-ansible-tower-testing.infra.sat.rdu2.redhat.com
+              default: infra-ansible-controller-testing.infra.sat.rdu2.redhat.com
               choices: ''
               new_question: true
         state: present

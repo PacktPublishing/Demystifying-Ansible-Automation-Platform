@@ -42,8 +42,9 @@
         project: Test Project
         playbook: chatty_payload.yml
         verbosity: 2
+        ask_variables_on_launch: true
         extra_vars:
-          target_hosts: infra-ansible-tower-01.example.com
+          target_hosts: infra-ansible-controller-01.example.com
         survey_spec:
           name: Survey Example template
           description: Description goes here
@@ -56,7 +57,7 @@
               variable: target_hosts
               min: 0
               max: 1024
-              default: infra-ansible-tower-testing.infra.sat.rdu2.redhat.com
+              default: infra-ansible-controller-testing.infra.sat.rdu2.redhat.com
               choices: ''
               new_question: true
   collections:

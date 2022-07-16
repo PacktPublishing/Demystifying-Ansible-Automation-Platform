@@ -4,9 +4,9 @@
   connection: local
   gather_facts: false
   vars:
-    controller_hostname: https://10.0.0.1
+    controller_hostname: https://controller.node
     controller_username: admin
-    controller_password: password
+    controller_password: secret123
     controller_validate_certs: false
     controller_projects:
       - name: Test Project
@@ -17,7 +17,7 @@
         description: Test Project 1
         organization: Default
         wait: true
-        update: true
+        update_project: true
   collections:
     - awx.awx
     - redhat_cop.controller_configuration

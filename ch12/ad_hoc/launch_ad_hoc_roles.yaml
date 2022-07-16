@@ -5,19 +5,17 @@
   gather_facts: false
 
   vars:
-    workflow_name: Complicated workflow schema
-    workflow_extra_vars_dict:
-      test: data
-      variable: things
-    workflow_node_to_check: Template 1
-    approval_template_name: Aproval Node
+    controller_hostname: https://controller.node
+    controller_username: admin
+    controller_password: secret123
+    controller_validate_certs: false
 
     controller_ad_hoc_commands:
       - job_type: run
         module_name: shell
         module_args: ls -a
         inventory: Demo Inventory
-        credential: Demo Credential+
+        credential: Demo Credential
         wait: false
 
     controller_ad_hoc_command_defaults:
@@ -27,6 +25,5 @@
 
   roles:
     - redhat_cop.controller_configuration.ad_hoc_command
-    - redhat_cop.controller_configuration.ad_hoc_command_wait
     - redhat_cop.controller_configuration.ad_hoc_command_cancel
 ...

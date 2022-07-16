@@ -29,6 +29,6 @@ The python script runs is found at inventory_plugins/plugin.py
 
 export PUBLICAPI_URL='https://api.publicapis.org/entries'
 
-## Tower Enviromrent Variables entry
+## Controller Enviromrent Variables entry
 
 publicapi_url: 'https://api.publicapis.org/entries'

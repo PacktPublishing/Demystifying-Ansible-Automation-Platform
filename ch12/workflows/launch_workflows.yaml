@@ -31,7 +31,7 @@
 
     - name: Wait for a workflow node to finish
       ansible.controller.workflow_node_wait:
-        workflow_job_id: "{{workflow_data.id}}"
+        workflow_job_id: "{{ workflow_data.id }}"
         name: "{{ workflow_node_to_check }}"
         timeout: 90
         controller_host: https://controller.node
@@ -43,7 +43,7 @@
 
     - name: Wait for approval node to activate and approve
       ansible.controller.workflow_approval:
-        workflow_job_id: "{{workflow_data.id}}"
+        workflow_job_id: "{{ workflow_data.id }}"
         name: "{{ approval_template_name }}"
         interval: 5
         timeout: 20
@@ -54,8 +54,8 @@
         validate_certs: false
 
     - name: Wait for Workflow to finish
-      ansible.controller.tower_job_wait:
-        job_id:                         "{{workflow_data.id}}"
+      ansible.controller.job_wait:
+        job_id:                         "{{ workflow_data.id }}"
         job_type:                       "workflow_jobs"
         interval:                       5
         timeout:                        60
