@@ -13,7 +13,7 @@
 
   tasks:
     - name: Export controller objects
-      awx.awx.export:
+      ansible.controller.export:
         all: true
       register: export_results
 

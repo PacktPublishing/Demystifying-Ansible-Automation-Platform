@@ -15,7 +15,7 @@
           - exec
       - name: cloud
   collections:
-    - awx.awx
+    - ansible.controller
     - redhat_cop.controller_configuration
   roles:
     - redhat_cop.controller_configuration.instance_groups

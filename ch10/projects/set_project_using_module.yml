@@ -6,7 +6,7 @@
   collections:
     - ansible.controller
   tasks:
-    - name: Create the test project
+    - name: Create the Test Project
       ansible.controller.project:
         name: Test Project
         scm_type: git

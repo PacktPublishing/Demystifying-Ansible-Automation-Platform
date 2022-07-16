@@ -2,7 +2,7 @@
 - name: Launch Workflow Job From Webhook
   hosts: localhost
   collections:
-    - awx.awx
+    - ansible.controller
   tasks:
     - block:
         - name: Extract Git branch name from webhook payload

@@ -8,7 +8,7 @@
       include_vars:
         dir: ./configs
   collections:
-    - awx.awx
+    - ansible.controller
     - redhat_cop.controller_configuration
   roles:
     # The dispatch role is a special role that calls all the other roles.

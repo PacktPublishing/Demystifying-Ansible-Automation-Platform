@@ -10,7 +10,7 @@ controller_templates:
     playbook: chatty_payload.yml
     verbosity: 2
     extra_vars:
-      target_hosts: infra-ansible-controller-01.example.com
+      target_hosts: infra-ansible-01.example.com
     survey_spec:
       name: Survey Example template
       description: Description goes here
@@ -23,7 +23,7 @@ controller_templates:
           variable: target_hosts
           min: 0
           max: 1024
-          default: infra-ansible-controller-testing.infra.sat.rdu2.redhat.com
+          default: infra-ansible-testing.infra.sat.rdu2.redhat.com
           choices: ''
           new_question: true
 ...

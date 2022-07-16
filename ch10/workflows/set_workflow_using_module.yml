@@ -4,7 +4,7 @@
   connection: local
   gather_facts: false
   collections:
-    - awx.awx
+    - ansible.controller
   tasks:
     - name: Add inventory
       ansible.controller.inventory:
@@ -55,7 +55,7 @@
           - RHVM
         verbosity: 2
         extra_vars:
-          target_hosts: infra-ansible-controller-01.example.com
+          target_hosts: infra-ansible-01.example.com
         job_type: run
         survey_spec:
           name: Survey Example template
@@ -70,7 +70,7 @@
               variable: target_hosts
               min: 0
               max: 1024
-              default: infra-ansible-controller-testing.infra.sat.rdu2.redhat.com
+              default: infra-ansible-testing.infra.sat.rdu2.redhat.com
               choices: ''
               new_question: true
         state: present
@@ -88,7 +88,7 @@
         controller_password: secret123
         validate_certs: false
     - name: Push workflows to controller
-      awx.awx.workflow_job_template:
+      ansible.controller.workflow_job_template:
         name: Complicated workflow nodes
         workflow_nodes:
           - identifier: Inventory Update

@@ -1,5 +1,5 @@
 ---
-- name: Using role create project
+- name: Using role to create project
   hosts: localhost
   connection: local
   gather_facts: false
@@ -19,7 +19,7 @@
         wait: true
         update_project: true
   collections:
-    - awx.awx
+    - ansible.controller
     - redhat_cop.controller_configuration
   roles:
     - redhat_cop.controller_configuration.projects

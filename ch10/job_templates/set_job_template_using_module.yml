@@ -60,7 +60,7 @@
         verbosity: 2
         ask_variables_on_launch: true
         extra_vars:
-          target_hosts: infra-ansible-controller-01.example.com
+          target_hosts: infra-ansible-01.example.com
         job_type: run
         survey_spec:
           name: Survey Example template
@@ -74,7 +74,7 @@
               variable: target_hosts
               min: 0
               max: 1024
-              default: infra-ansible-controller-testing.infra.sat.rdu2.redhat.com
+              default: infra-ansible-testing.infra.sat.rdu2.redhat.com
               choices: ''
               new_question: true
         state: present

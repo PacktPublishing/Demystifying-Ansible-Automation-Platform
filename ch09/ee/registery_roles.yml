@@ -17,6 +17,6 @@
   collections:
     - redhat_cop.ah_configuration
   roles:
-    - redhat_cop.ah_configuration.ee_registries
-    - redhat_cop.ah_configuration.ee_registries_sync
+    - redhat_cop.ah_configuration.ee_registry
+    - redhat_cop.ah_configuration.ee_registry_sync
 ...

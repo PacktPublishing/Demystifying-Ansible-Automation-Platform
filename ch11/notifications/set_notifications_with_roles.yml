@@ -74,7 +74,7 @@
         notification_templates_approvals: []
 
   collections:
-    - awx.awx
+    - ansible.controller
     - redhat_cop.controller_configuration
   roles:
     - redhat_cop.controller_configuration.notification_templates

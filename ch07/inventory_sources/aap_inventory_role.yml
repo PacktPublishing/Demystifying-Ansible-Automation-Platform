@@ -3,7 +3,7 @@
   hosts: localhost
   connection: local
   collections:
-    - awx.awx
+    - ansible.controller
     - redhat_cop.controller_configuration
   pre_tasks:
     - name: Include vars from configs directory
