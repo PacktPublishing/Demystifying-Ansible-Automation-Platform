@@ -507,7 +507,7 @@ assets:
       scm_type: git
       scm_update_cache_timeout: 0
       scm_update_on_launch: false
-      scm_url: 'https://github.com/ansible/tower-example.git'
+      scm_url: 'https://github.com/ansible/test-playbooks.git'
       timeout: 0
     - allow_override: false
       credential: null

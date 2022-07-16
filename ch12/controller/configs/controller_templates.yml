@@ -7,7 +7,7 @@ controller_templates:
     credentials:
       - RHVM
     project: Test Project
-    playbook: helloworld.yml
+    playbook: chatty_payload.yml
     verbosity: 2
     extra_vars:
       target_hosts: infra-ansible-tower-01.example.com

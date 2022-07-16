@@ -14,7 +14,7 @@
     controller_projects:
       - name: Test Project
         scm_type: git
-        scm_url: https://github.com/ansible/tower-example.git
+        scm_url: https://github.com/ansible/test-playbooks.git
         scm_branch: master
         scm_clean: true
         description: Test Project 1
@@ -53,7 +53,7 @@
         credentials:
           - RHVM
         project: Test Project
-        playbook: helloworld.yml
+        playbook: chatty_payload.yml
         verbosity: 2
         extra_vars:
           target_hosts: infra-ansible-tower-01.example.com

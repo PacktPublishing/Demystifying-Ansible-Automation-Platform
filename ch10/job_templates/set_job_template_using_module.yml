@@ -21,7 +21,7 @@
       ansible.controller.project:
         name: Test Project
         scm_type: git
-        scm_url: https://github.com/ansible/tower-example.git
+        scm_url: https://github.com/ansible/test-playbooks.git
         scm_branch: master
         scm_clean: true
         description: Tower Hello World
@@ -53,7 +53,7 @@
         description: created by Ansible Playbook
         project: Test Project
         inventory: RHVM-01
-        playbook: helloworld.yml
+        playbook: chatty_payload.yml
         credentials:
           - RHVM
         verbosity: 2

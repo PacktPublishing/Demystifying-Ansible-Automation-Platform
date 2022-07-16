@@ -32,7 +32,7 @@
       ansible.controller.project:
         name: Tower Test Project
         scm_type: git
-        scm_url: https://github.com/ansible/tower-example.git
+        scm_url: https://github.com/ansible/test-playbooks.git
         scm_branch: master
         scm_clean: true
         description: Tower Hello World

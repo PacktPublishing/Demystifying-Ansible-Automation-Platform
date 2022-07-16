@@ -17,16 +17,16 @@
         validate_certs: false
       register: command
 
-    - name: Wait for ad joc command max 120s
+    - name: Wait for ad job command max 120s
       ansible.controller.ad_hoc_command_wait:
         command_id: "{{ command.id }}"
-        timeout: 10
+        timeout: 120
         controller_host: https://controller.node
         controller_username: admin
         controller_password: secret123
         validate_certs: false
 
-    - name: Wait for ad joc command max 120s
+    - name: Wait for ad job command max 120s
       ansible.controller.ad_hoc_command_cancel:
         command_id: "{{ command.id }}"
         timeout: 120
