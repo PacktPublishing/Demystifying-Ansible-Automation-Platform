@@ -18,7 +18,7 @@ update_on_mr:
     - merge_requests
   script:
     - ansible-galaxy collection install -r collections/requirements.yml --ignore-certs
-    - ansible-playbook configure_controller.yaml --extra-vars "tower_branch=$CI_COMMIT_BRANCH"
+    - ansible-playbook configure_controller.yaml --extra-vars "controller_branch=$CI_COMMIT_BRANCH"
 
 ansible-lint:
   stage: lint

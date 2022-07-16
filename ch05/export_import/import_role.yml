@@ -1,9 +1,0 @@
----
-- name: Include vars from configs directory
-  include_vars:
-    file: controller.yaml
-
-- name: Import all assets from our export
-  ansible.controller.import:
-    assets: "{{ assets }}"
-...

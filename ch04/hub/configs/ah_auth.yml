@@ -1,6 +1,6 @@
 # User may add auth creds to this file and encrypt it using `ansible-vault`
 ---
-ah_host: https://ahnosso.node
+ah_host: https://ah.node
 ah_username: admin
 ah_password: secret123
 ah_path_prefix: galaxy

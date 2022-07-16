@@ -6,7 +6,7 @@
   tasks:
     - name: Create the group
       uri:
-        url: https://ahnosso.node/api/galaxy/_ui/v1/groups/
+        url: https://ah.node/api/galaxy/_ui/v1/groups/
         user: admin
         password: secret123
         method: POST
@@ -30,7 +30,7 @@
 
     - name: Find the data to get group id
       uri:
-        url: https://ahnosso.node/api/galaxy/_ui/v1/groups/?name=Joes123
+        url: https://ah.node/api/galaxy/_ui/v1/groups/?name=Joes123
         user: admin
         password: secret123
         method: GET
@@ -46,7 +46,7 @@
 
     - name: Create the group permisions
       uri:
-        url: "https://ahnosso.node/api/galaxy/_ui/v1/groups/{{group_data.json.data[0].id}}/model-permissions/"
+        url: "https://ah.node/api/galaxy/_ui/v1/groups/{{group_data.json.data[0].id}}/model-permissions/"
         user: admin
         password: secret123
         method: POST
@@ -70,7 +70,7 @@
 
     - name: Create the user
       uri:
-        url: "https://ahnosso.node/api/galaxy/_ui/v1/users/"
+        url: "https://ah.node/api/galaxy/_ui/v1/users/"
         user: admin
         password: secret123
         method: POST
