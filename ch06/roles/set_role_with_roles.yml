@@ -8,6 +8,13 @@
     controller_username: admin
     controller_password: secret123
     controller_validate_certs: false
+    controller_user_accounts:
+      - user: joe123
+        is_superuser: false
+        password: password123
+    controller_teams:
+      - name: satlab
+        organization: Default
     controller_roles:
       - projects:
           - Demo Project
@@ -25,5 +32,7 @@
     - awx.awx
     - redhat_cop.controller_configuration
   roles:
+    - redhat_cop.controller_configuration.users
+    - redhat_cop.controller_configuration.teams
     - redhat_cop.controller_configuration.roles
 ...

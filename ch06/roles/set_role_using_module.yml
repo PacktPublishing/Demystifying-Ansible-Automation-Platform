@@ -6,6 +6,18 @@
   collections:
     - ansible.controller
   tasks:
+    - name: Create user
+      ansible.controller.user:
+        username: joe123
+        password: password123
+        email: joe_123@example.org
+        superuser: true
+        state: present
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+
     - name: Set user to admin over inventory
       ansible.controller.role:
         user: joe123

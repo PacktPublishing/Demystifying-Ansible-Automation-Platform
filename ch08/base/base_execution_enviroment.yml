@@ -3,6 +3,7 @@ version: 1
 
 build_arg_defaults:
   EE_BASE_IMAGE: 'ah.node/ee-minimal-rhel8:latest'
+  ANSIBLE_GALAXY_CLI_COLLECTION_OPTS: "-v"
 
 dependencies:
   galaxy: requirements.yml

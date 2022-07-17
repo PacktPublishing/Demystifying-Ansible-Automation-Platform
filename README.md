@@ -15,7 +15,7 @@ Author: Sean Sullivan
 |5|Configuring the Basics after Installation|Basics of creating organizations, credential types and credentials, and exporting configuration from the Automation Controller.|
 |6|Configuring Role- Based Access Control|Configuring RBAC settings for the Automation controller and hub.|
 |7|Inventories|Inventory and inventory source creation, including inventory plugin creation.|
-|8|Using CI/CD to interact with Automation controller|Execution Environment creation, as well as using configuration as code to create EEs|
+|8|Creating Execution Environments|Execution Environment creation, as well as using configuration as code to create EEs|
 |9|Automation Hub Management |Automation hub management including images, collections, and repositories.|
 |10|Creating Job Templates and Workflows|Creation of projects, job templates, and workflows.|
 |11|Creating Advanced Workflows and Jobs|Additional ways to use workflows and notifications.|
