@@ -8,9 +8,9 @@ Author: Sean Sullivan
 
 |#|Chapter Name|Description|
 |:---|:---|:---|
-|1|Introduction to Ansible Automation Platform|Introducution to the book. The code in this chapter has examples of various code used in the book.|
+|1|Introduction to Ansible Automation Platform|Introduction to the book. The code in this chapter has examples of various code used in the book.|
 |2|Installation of Ansible Automation Platform|Installation of the AAP on servers.|
-|3|Installation of Ansible Automation Platform on OpenShift|Installation of the AAP with operatiors on Openshift.|
+|3|Installation of Ansible Automation Platform on OpenShift|Installation of the AAP with operators on OpenShift.|
 |4|Configuring Settings and Authentication|Configuring settings and authentication the AAP|
 |5|Configuring the Basics after Installation|Basics of creating organizations, credential types and credentials, and exporting configuration from the Automation Controller.|
 |6|Configuring Role- Based Access Control|Configuring RBAC settings for the Automation controller and hub.|
