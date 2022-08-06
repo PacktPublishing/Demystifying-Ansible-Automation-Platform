@@ -12,8 +12,10 @@
     controller_instance_groups:
       - name: edge
         instances:
-          - exec
+          - controller
       - name: cloud
+        instances:
+          - controller
   collections:
     - ansible.controller
     - redhat_cop.controller_configuration

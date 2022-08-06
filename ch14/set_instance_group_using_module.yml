@@ -6,11 +6,11 @@
   collections:
     - ansible.controller
   tasks:
-    - name: Add instances to instance group.
+    - name: Create edge instance group with exec instance.
       ansible.controller.instance_group:
         name: edge
         instances:
-          - exec
+          - controller
         controller_host: https://controller.node
         controller_username: admin
         controller_password: secret123
