@@ -1,0 +1,29 @@
+---
+- name: Get subscription for controller
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  collections:
+    - awx.awx
+  tasks:
+    - name: Get subscriptions with a filter
+      awx.awx.subscriptions:
+        username: redhat_username
+        password: password
+        filters:
+          product_name: Red Hat Ansible Automation Platform
+          support_level: Self-Support
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+      register: subscription
+
+    - name: Attach to a pool
+      awx.awx.license:
+        pool_id: "{{ subscription.subscriptions[0].pool_id }}"
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
+        validate_certs: false
+...

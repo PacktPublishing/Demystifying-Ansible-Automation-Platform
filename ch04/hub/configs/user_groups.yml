@@ -6,7 +6,7 @@ ah_groups:
       - view_collectionremote
 ah_users:
   - username: joe123
-    password: 123456789
+    password: 123456789$
     groups:
       - Joes
     is_superuser: true

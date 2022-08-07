@@ -12,6 +12,6 @@
         force: true
         controller_host: https://controller.node
         controller_username: admin
-        controller_password: secret123s
+        controller_password: secret123
         validate_certs: false
 ...
