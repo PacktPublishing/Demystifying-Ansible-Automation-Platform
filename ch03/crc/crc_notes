@@ -1,20 +1,22 @@
+https://developers.redhat.com/products/openshift-local/overview
 
 crc setup
 
-crc config set cpus 10
-crc config set memory 10000
+crc config set cpus 12
+crc config set memory 50000
 
 crc start
 
 
 Log in as administrator:
   Username: kubeadmin
-  Password: nYF8X-UBSDn-2hzzS-Tg52E
+  Password: Wvnbr-G6NRm-IGnC5-Vcw7q
 Use the 'oc' command line interface:
 eval $(crc oc-env)
 oc login -u developer https://api.crc.testing:6443
 
 https://console-openshift-console.apps-crc.testing
 
+Controller secret password
 admin
-2QbLdxQJZTmjMKyjLxicJ3TfOBuExxi2
+apYwgoLr5IbrqKzJxNTVdX14JdVhDxxv
