@@ -1,0 +1,10 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx-mini
+spec:
+  service_type: nodeport
+  nodeport_port: 30080
+  ingress_type: Ingress
+  create_preload_data: true

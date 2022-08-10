@@ -1,0 +1,21 @@
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+minikube start --cpus=8 --memory=12g --addons=ingress
+alias kubectl="minikube kubectl --"
+minikube dashboard
+
+kustomize build . | kubectl apply -f -
+
+kubectl config set-context --current --namespace=awx
+
+Set the additional kustomize
+kustomize build . | kubectl apply -f -
+kubectl logs -f deployments/awx-operator-controller-manager -c awx-manager
+
+minikube service awx-mini-service --url -n awx
+http://192.168.39.94:30080
+
+kubectl get secret awx-mini-admin-password -o jsonpath="{.data.password}" | base64 --decode
+
+1gBvFVkHfBEh4nG8N82LMi0b9eALHyw4

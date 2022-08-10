@@ -5,12 +5,15 @@
   collections:
     - redhat_cop.ee_utilities
   vars:
-    ee_registry_dest: ahnosso.node
+    ee_registry_dest: hub
     ee_builder_dir_clean: true
-    ee_ah_host: ahnosso.node
-    ee_ah_token: 4ab76668c4b2622ab1dfb7cbee7e6c9b8e62c0f5
+    ee_ah_host: hub
+    ee_ah_token: 39c1cbdd87fa4d00b3cfcea504a2c035115f2448
     ee_registry_username: admin
     ee_registry_password: secret123
+    ee_validate_certs: false
+    base_registery_username: username
+    base_registery_password: password
     ee_list:
       - name: custom_ee
         # base_image

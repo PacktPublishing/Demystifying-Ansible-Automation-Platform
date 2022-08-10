@@ -22,10 +22,12 @@
 - name: Build EEs with ee_builder role
   hosts: localhost
   vars:
-    ee_registry_dest: ahnosso.node
-    ee_ah_host: ahnosso.node
-    ee_ah_token: 4ab76668c4b2622ab1dfb7cbee7e6c9b8e62c0f5
+    ee_registry_dest: hub
+    ee_ah_host: hub
+    ee_ah_token: f12ca3e34afcbfe2c81a563ad5446ae61cd7d530
+    ee_validate_certs: false
     ee_list: "{{ hostvars[groups['tower'][0]]['ee_list'] }}"
+    ee_image_push: false
   tasks:
 
     - name: Create EE

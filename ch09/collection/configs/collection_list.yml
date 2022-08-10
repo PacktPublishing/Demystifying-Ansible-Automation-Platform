@@ -1,0 +1,7 @@
+---
+ah_collections:
+  - collection_name: community_test.test
+    git_url: https://github.com/sean-m-sullivan/collection_test
+  - collection_name: community_test.awx
+    collection_local_path: /var/tmp/collections/repo
+...

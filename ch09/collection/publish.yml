@@ -11,6 +11,10 @@
     ah_password: secret123
     ah_path_prefix: galaxy
     ah_validate_certs: false
+  pre_tasks:
+    - name: Include vars from configs directory
+      include_vars:
+        dir: ./configs
   tasks:
     - name: Create namespace
       include_role:
@@ -21,11 +25,12 @@
         name: redhat_cop.ah_configuration.publish
       vars:
         ah_auto_approve: true
+        ah_overwrite_existing: true
 
     - name: Upload collection to automation hub
       redhat_cop.ah_configuration.ah_collection:
         namespace: awx
         name: awx
-        path: /var/tmp/collections/awx_awx-15.0.0.tar.gz
+        path: /var/tmp/collections/community_test-awx-0.0.15.tar.gz
 
 ...

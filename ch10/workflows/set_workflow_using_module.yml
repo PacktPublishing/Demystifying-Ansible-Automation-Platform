@@ -90,7 +90,7 @@
     - name: Push workflows to controller
       ansible.controller.workflow_job_template:
         name: Complicated workflow nodes
-        workflow_nodes:
+        schema:
           - identifier: Inventory Update
             related:
               always_nodes: []
@@ -141,16 +141,6 @@
               organization:
                 name: Default
               type: job_template
-          - identifier: Workflow demo
-            unified_job_template:
-              name: demo
-              organization:
-                name: Default
-              type: workflow_job_template
-          - identifier: Cleanup Job
-            unified_job_template:
-              name: Cleanup Activity Stream
-              type: system_job
         controller_host: 'https://controller.node'
         controller_username: admin
         controller_password: secret123

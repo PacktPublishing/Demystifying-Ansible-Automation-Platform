@@ -1,0 +1,20 @@
+
+crc setup
+
+crc config set cpus 10
+crc config set memory 10000
+
+crc start
+
+
+Log in as administrator:
+  Username: kubeadmin
+  Password: nYF8X-UBSDn-2hzzS-Tg52E
+Use the 'oc' command line interface:
+eval $(crc oc-env)
+oc login -u developer https://api.crc.testing:6443
+
+https://console-openshift-console.apps-crc.testing
+
+admin
+2QbLdxQJZTmjMKyjLxicJ3TfOBuExxi2

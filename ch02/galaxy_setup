@@ -1,0 +1,24 @@
+git clone https://github.com/ansible/galaxy_ng.git
+cd galaxy_ng
+git checkout 4.4.4
+
+git clone git clone https://github.com/ansible/ansible-hub-ui.git
+cd ansible-hub-ui
+git checkout 4.4.4
+
+./compose up -d keycloak kc-postgres ldap
+ansible-playbook ./dev/standalone-keycloak/keycloak-playbook.yaml
+
+Get Token
+
+cat <<EOT >> galaxy_ng/.compose.env
+COMPOSE_PROFILE=standalone-keycloak
+DEV_SOURCE_PATH='galaxy_ng'
+ANSIBLE_HUB_UI_PATH='/home/excalibrax/work/ansible-hub-ui/'
+PULP_SOCIAL_AUTH_KEYCLOAK_PUBLIC_KEY="Token"
+EOT
+
+./compose build
+./compose up -d postgres redis
+./compose run --rm api manage migrate
+./compose up -d
