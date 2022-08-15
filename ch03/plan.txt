@@ -1,5 +1,0 @@
-Minikube install    X
-awx on Minikube     X
-CRC install
-Operator on Openshift
-Backup/restore
