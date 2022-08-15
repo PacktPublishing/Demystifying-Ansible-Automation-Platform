@@ -15,12 +15,12 @@
         notification_configuration:
           channels:
             - notification_test  # group_approval_notification
-          token: xoxb-964864867521-1933681026007-lXrfEmQUU5TZ2y1icFxCkX6H
+          token: xoxb-aabbcc
         messages:
           started:
             message: "{{ '{{ job_friendly_name }}{{ job.id }} started' }}"
           success:
-            message: "{{ '{{ job_friendly_name }} completed in {{ job.elapsed }} seconds' }}"
+            message: "{{ '{{ job_friendly_name }} completed in {{ job.elapsed }} seconds, job data: {{ job_metadata }}' }}"
           error:
             message: "{{ '{{ job_friendly_name }} FAILED! Please look at {{ job.url }}' }}"
         controller_host: https://controller.node
@@ -40,6 +40,8 @@
         wait: true
         update_project: true
         notification_templates_error:
+          - Slack_notification
+        notification_templates_success:
           - Slack_notification
         controller_host: https://controller.node
         controller_username: admin

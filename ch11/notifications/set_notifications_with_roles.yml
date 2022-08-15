@@ -4,9 +4,9 @@
   connection: local
   gather_facts: false
   vars:
-    controller_hostname: https://10.0.0.1
+    controller_hostname: https://controller.node
     controller_username: admin
-    controller_password: password
+    controller_password: secret123
     controller_validate_certs: false
     controller_notifications:
       - name: Gmail notification
@@ -36,10 +36,12 @@
         notification_configuration:
           channels:
             - notification_test  # group_approval_notification
-          token: xoxb-964864867521-1933681026007-lXrfEmQUU5TZ2y1icFxCkX6H
+          token: xoxb-aabbcc
           use_ssl: false
           use_tls: false
         messages:
+          success:
+            body: '{  { job_friendly_name }} completed in {  { job.elapsed }} seconds, job data: {  { job_metadata }}'
           workflow_approval:
             approved:
               body:
@@ -68,9 +70,10 @@
         wait: true
         update_project: true
         notification_templates_error:
-          - Gmail notification
+          - Slack_notification
         notification_templates_started: []
-        notification_templates_success: []
+        notification_templates_success:
+          - Slack_notification
         notification_templates_approvals: []
 
   collections:

@@ -1,5 +1,5 @@
 ---
-- name: Using role create job template
+- name: Using role create Workflow
   hosts: localhost
   connection: local
   gather_facts: false

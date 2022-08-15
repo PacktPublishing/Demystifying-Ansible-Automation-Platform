@@ -1,0 +1,121 @@
+---
+- name: Set Chapter 11 Workflow
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    controller_hostname: https://controller.node
+    controller_username: admin
+    controller_password: secret123
+    controller_validate_certs: false
+    controller_configuration_async_delay: 4
+    controller_configuration_workflow_async_retries: 50
+    controller_projects:
+      - name: Chapter 11 Project
+        scm_type: git
+        scm_url: https://github.com/sean-m-sullivan/controller_playbook_repo.git
+        scm_branch: main
+        scm_clean: true
+        description: Test Project 1
+        organization: Default
+        wait: true
+        update: true
+    controller_inventories:
+      - name: Ch11 Inventory
+        organization: Default
+    controller_hosts:
+      - name: infra-ansible-01.example.com
+        inventory: Ch11 Inventory
+        variables:
+          ansible_connection: local
+      - name: infra-ansible-02.example.com
+        inventory: Ch11 Inventory
+        variables:
+          ansible_connection: local
+    controller_groups:
+      - name: Ch11_Group
+        inventory: Ch11 Inventory
+        hosts:
+          - infra-ansible-01.example.com
+          - infra-ansible-02.example.com
+    controller_templates:
+      - name: Set Variables and Stats
+        inventory: Ch11 Inventory
+        project: Chapter 11 Project
+        playbook: set_vars.yaml
+        verbosity: 1
+        extra_vars:
+          host_groups: Ch11_Group
+      - name: Review Results
+        inventory: Demo Inventory
+        project: Chapter 11 Project
+        playbook: review_results.yaml
+        verbosity: 1
+      - name: Fail for review
+        inventory: Demo Inventory
+        project: Chapter 11 Project
+        playbook: fail_playbook.yaml
+        verbosity: 1
+      - name: Set job as Successful
+        inventory: Demo Inventory
+        project: Chapter 11 Project
+        playbook: success_playbook.yaml
+        verbosity: 1
+    controller_workflows:
+      - name: Chapter 11 Workflow
+        related:
+          workflow_nodes:
+            - identifier: Set Variables and Stats
+              related:
+                success_nodes:
+                  - identifier: Review Results
+              unified_job_template:
+                name: Set Variables and Stats
+                organization:
+                  name: Default
+                type: job_template
+            - identifier: Review Results
+              related:
+                success_nodes:
+                  - identifier: Fail for review
+              unified_job_template:
+                name: Review Results
+                organization:
+                  name: Default
+                type: job_template
+            - identifier: Fail for review
+              related:
+                failure_nodes:
+                  - identifier: Approval Node
+              unified_job_template:
+                name: Fail for review
+                organization:
+                  name: Default
+                type: job_template
+            - identifier: Approval Node
+              related:
+                failure_nodes:
+                  - identifier: Set as Successful
+              unified_job_template:
+                description: Approval node for example
+                timeout: 900
+                type: workflow_approval
+                name: Approval to continue
+            - identifier: Set as Successful
+              unified_job_template:
+                name: Set job as Successful
+                organization:
+                  name: Default
+                type: job_template
+
+  collections:
+    - ansible.controller
+    - redhat_cop.controller_configuration
+  roles:
+    - redhat_cop.controller_configuration.projects
+    - redhat_cop.controller_configuration.inventories
+    - redhat_cop.controller_configuration.hosts
+    - redhat_cop.controller_configuration.groups
+    - redhat_cop.controller_configuration.job_templates
+    - redhat_cop.controller_configuration.workflow_job_templates
+...

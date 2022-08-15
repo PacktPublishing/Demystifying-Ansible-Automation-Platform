@@ -12,7 +12,7 @@
       redhat_cop.ah_configuration.ah_ee_registry:
         name: quay
         url: https://quay.io/
-        ah_host: https://ah.node/
+        ah_host: https://hub.node/
         ah_username: admin
         ah_password: secret123
         ah_path_prefix: galaxy
@@ -22,7 +22,9 @@
       redhat_cop.ah_configuration.ah_ee_registry:
         name: rh-registry
         url: registry.redhat.io
-        ah_host: https://ah.node/
+        username: user
+        password: password
+        ah_host: https://hub.node/
         ah_username: admin
         ah_password: secret123
         ah_path_prefix: galaxy
@@ -32,7 +34,7 @@
       ah_ee_registry_sync:
         name: rh-registry
         wait: false
-        ah_host: https://ah.node/
+        ah_host: https://hub.node/
         ah_username: admin
         ah_password: secret123
         ah_path_prefix: galaxy

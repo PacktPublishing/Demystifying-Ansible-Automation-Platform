@@ -26,5 +26,5 @@
 #   hostname3:
 #     other_info: 1
 
-# use in a later play: "{{ var_per_host [inventory_hostname] }}"
+# use in a later play: "{{ var_per_host[inventory_hostname] }}"
 ...

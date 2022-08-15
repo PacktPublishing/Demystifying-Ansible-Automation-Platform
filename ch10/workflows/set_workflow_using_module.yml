@@ -1,5 +1,5 @@
 ---
-- name: Using module to create job template
+- name: Using module to Workflow
   hosts: localhost
   connection: local
   gather_facts: false
