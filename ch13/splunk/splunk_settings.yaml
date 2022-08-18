@@ -10,11 +10,11 @@
     controller_validate_certs: false
     controller_settings:
       settings:
-        LOG_AGGREGATOR_HOST: https://10.242.42.36/services/collector/event
+        LOG_AGGREGATOR_HOST: https://10.242.42.215/services/collector/event
         LOG_AGGREGATOR_PORT: 8088
         LOG_AGGREGATOR_TYPE: splunk
         LOG_AGGREGATOR_USERNAME: admin
-        LOG_AGGREGATOR_PASSWORD: 9008cca6-157f-49c7-be35-9c5771f8d6ef
+        LOG_AGGREGATOR_PASSWORD: ae231e54-eee7-423b-9962-ed9ffdac4a99
         LOG_AGGREGATOR_INDIVIDUAL_FACTS: true
         LOG_AGGREGATOR_ENABLED: true
         LOG_AGGREGATOR_VERIFY_CERT: false

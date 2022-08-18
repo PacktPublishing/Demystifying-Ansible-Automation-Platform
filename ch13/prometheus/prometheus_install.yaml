@@ -12,10 +12,10 @@
         metrics_path: /api/v2/metrics
         scrape_interval: 5s
         scheme: https
-        bearer_token: token
-        # basic_auth:
-        #   username: admin
-        #   password: password
+        # bearer_token: token
+        basic_auth:
+          username: admin
+          password: secret123
         static_configs:
           - targets:
               - controller.node

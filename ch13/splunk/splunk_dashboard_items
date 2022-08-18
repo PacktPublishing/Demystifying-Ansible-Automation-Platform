@@ -1,0 +1,7 @@
+Find the most used playbooks:
+    index=ansible | chart count by event_data.playbook | sort by count
+Find the most used modules being run?
+    index=ansible | chart count by event_data.task_action
+Find the jobs that hosts have run, removing null data
+    index=ansible "event_data.remote_addr" !=NULL AND "event_data.playbook" !=NULL
+        | chart count by event_data.remote_addr event_data.playbook
