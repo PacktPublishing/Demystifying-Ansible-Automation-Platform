@@ -1,6 +1,8 @@
-Create workflow
-show Workflow
-Notifications
-    role
-    module
-Show slack notification
+configure controller x
+update project x
+configure hub x
+publish collection x
+launch workflows
+ad hoc x
+backup
+restore

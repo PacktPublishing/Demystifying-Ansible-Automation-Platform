@@ -2,4 +2,6 @@
 controller_teams:
   - name: Joes
     organization: Default
+  - name: satlab
+    organization: Default
 ...

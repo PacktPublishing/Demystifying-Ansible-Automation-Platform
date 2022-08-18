@@ -4,6 +4,7 @@ controller_templates:
     description: created by Ansible Playbook
     job_type: run
     inventory: RHVM-01
+    execution_environment: Default execution environment
     credentials:
       - RHVM
     project: Test Project

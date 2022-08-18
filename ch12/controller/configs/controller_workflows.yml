@@ -2,6 +2,7 @@
 controller_workflows:
   - name: Complicated workflow schema
     destroy_current_schema: true
+    ask_variables_on_launch: true
     related:
       workflow_nodes:
         - identifier: Inventory Update
@@ -12,7 +13,7 @@ controller_workflows:
             inventory:
               organization:
                 name: Default
-            name: RHVM-01
+            name: Public APIs
             type: inventory_source
         - identifier: Project Update
           related:

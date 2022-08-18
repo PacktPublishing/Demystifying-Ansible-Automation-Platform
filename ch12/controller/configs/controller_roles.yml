@@ -13,6 +13,6 @@ controller_roles:
       - Demo Project
     job_templates:
       - Demo Job Template
-    user: joe123
+    user: joe_123
     role: admin
 ...

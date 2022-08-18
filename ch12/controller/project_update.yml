@@ -10,12 +10,13 @@
   tasks:
     - name: Update Project
       ansible.controller.project_update:
-        name: Network Playbooks
+        name: Test Project
         organization: Default
         wait: true
         timeout: 600
         interval: 10
-        controller_oauthtoken: "{{ controller_oauthtoken }}"
-        controller_host: "{{ controller_hostname }}"
+        controller_host: https://controller.node
+        controller_username: admin
+        controller_password: secret123
         validate_certs: false
 ...

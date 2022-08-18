@@ -1,5 +1,5 @@
 ---
-- name: Launch Workflows via API
+- name: Launch Ad hoc with modules
   hosts: localhost
   connection: local
   gather_facts: false
