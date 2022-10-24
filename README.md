@@ -82,3 +82,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 **Sean Sullivan**
 works as a consultant for Red Hat and attended Purdue University, where he focused on networking. He has helped both small and large companies manage their Ansible deployments for the past five years, specializing in configuration as code and Ansible Automation Platform. He is a keen contributor to Red Hat’s GitHub repository and an avid board gamer whose favorite game is Brass: Birmingham.
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781803244884">https://packt.link/free-ebook/9781803244884 </a> </p>
