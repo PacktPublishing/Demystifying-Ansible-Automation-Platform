@@ -4,18 +4,9 @@
   gather_facts: false
 
   tasks:
-    - name: "Set Vars"
-      set_fact:
-        show_vars:
-          other_info: 1
-
-    - name: "set a stat that has variables per host"
-      set_stats:
-        data:
-          var_per_host: "{{ var_per_host | default({}) | combine({inventory_hostname: show_vars }) }}"
 
     - debug:
-        var: show_vars
+        var: var_per_host
 
 # Results:
 # var_per_host:

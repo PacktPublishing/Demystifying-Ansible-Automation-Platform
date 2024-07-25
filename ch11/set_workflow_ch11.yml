@@ -46,6 +46,13 @@
         verbosity: 1
         extra_vars:
           host_groups: Ch11_Group
+      - name: Use Variables from Stats
+        inventory: Ch11 Inventory
+        project: Chapter 11 Project
+        playbook: use_set_vars.yaml
+        verbosity: 1
+        extra_vars:
+          host_groups: Ch11_Group
       - name: Review Results
         inventory: Demo Inventory
         project: Chapter 11 Project
@@ -104,6 +111,24 @@
             - identifier: Set as Successful
               unified_job_template:
                 name: Set job as Successful
+                organization:
+                  name: Default
+                type: job_template
+      - name: Example Set Stats Workflow
+        related:
+          workflow_nodes:
+            - identifier: Set Variables and Stats
+              related:
+                success_nodes:
+                  - identifier: Show vars from Stats Results
+              unified_job_template:
+                name: Set Variables and Stats
+                organization:
+                  name: Default
+                type: job_template
+            - identifier: Show vars from Stats Results
+              unified_job_template:
+                name: Use Variables from Stats
                 organization:
                   name: Default
                 type: job_template
